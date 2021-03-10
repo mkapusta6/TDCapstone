@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="Lab3.Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Noah Khan, Mehari Daniel</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <asp:Table ID="Table1" runat="server" Height="16px" Style="margin-right: 0px" Width="16px">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="/images/loginHeader.jpg" Width="1345" Height="150" />
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+            <fieldset>
+                <legend></legend>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </fieldset>
+        </div>
+    </form>
+</body>
+</html>
