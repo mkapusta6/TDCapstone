@@ -5,7 +5,7 @@
     Employees -> <asp:Button ID="employeeLoginBtn" runat="server" Text="Login As Employee" OnClick="employeeLoginBtn_Click" style="margin-left: 188px" Width="269px" />
     <br />
     Returning Customers -> <asp:Button ID="customerLoginBtn" runat="server" Text="Login As Customer" OnClick="customerLoginBtn_Click" style="margin-left: 121px" Width="269px" />
-    <br />
+    <br /><br />
     <br />
     <br />
     New Customers Create An Account Here ->
