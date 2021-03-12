@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%--Beginning section of page layout and buttons--%>
         Submit The Form Below To Finalize Your Account!
-        <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 404px;">
+        <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 500px;">
             <legend>Account Creation Continued</legend>
 
             <%-- Labels and Textboxes--%>
@@ -35,7 +35,27 @@
             <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
             <br 
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
-            <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest"  runat="server" style="margin-left: 67px"></asp:DropDownList>
+            <asp:DropDownList 
+                ID="interestList" 
+                DataTextField="CustomerInterest" 
+                DataValueField="CustomerInterest"  
+                runat="server" 
+                AutoPostBack="true"
+                style="margin-left: 67px"></asp:DropDownList><br />
+            <asp:Label ID="AlsoNeedMovingLbl" runat="server" Text="Will you also require Moving Services?" Visible="false"></asp:Label>
+            <asp:CheckBoxList 
+                ID="AlsoNeedMovingCheckbox" 
+                runat="server"
+                AutoPostBack="true"
+                RepeatDirection="horizontal"
+                visible="false"
+                enabled="false"
+                >
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:CheckBoxList>
+            <asp:Label ID="HowMuchLbl" runat="server" Text="How Much Do you Have to Sell?" visible="false"></asp:Label>
+            <asp:TextBox ID="HowMuchTBox" runat="server" visible="false"></asp:TextBox>
             <br />
             <asp:Label ID="cusEmailLbl" runat="server" Text="Email:" Width="40px"></asp:Label>
             <asp:TextBox ID="addCEmail" runat="server" Style="margin-top: 0px; margin-left: 121px;" Width="128px"></asp:TextBox>
@@ -56,6 +76,27 @@
             <asp:Label ID="currentDateLbl" runat="server" Text="Date Of Submission"></asp:Label>
             <asp:TextBox ID="currentDateTxtBox" runat="server"></asp:TextBox>
             <asp:TextBox ID="customerEmailTxtBox" runat="server" Visible="false"></asp:TextBox>
+            <br />
+            <asp:Label ID="downsizingLbl" runat="server" Text="Are you downsizing?"></asp:Label>
+            <asp:CheckBoxList 
+                ID="downsizingCheckbox" 
+                runat="server"
+                AutoPostBack="true"
+                RepeatDirection="horizontal"
+                OnSelectIndexChanged="Check_Clicked">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:CheckBoxList>
+            <asp:Label ID="SettleLbl" runat="server" Text="Are you Settling an Estate?"></asp:Label>
+            <asp:CheckBoxList 
+                ID="SettleEstateCheckbox" 
+                runat="server"
+                AutoPostBack="true"
+                RepeatDirection="horizontal"
+                OnSelectIndexChanged="EstateCheck_Clicked">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:CheckBoxList>
             <br />
             <asp:Button ID="addCustBtn" runat="server" Text="Add Info & Go To System Request" OnClick="addCustBtn_Click" Style="margin-top: 29px" />
             <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" OnClick="populateBtn_Click" CausesValidation="false" Width="174px" />

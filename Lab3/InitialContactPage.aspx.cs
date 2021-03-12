@@ -25,7 +25,47 @@ namespace Lab3
                 interestList.Items.Add("Auction");
 
                 currentDateTxtBox.Text += DateTime.Now.ToString();
+
+                if (interestList.SelectedValue == "Auction")
+                {
+                    AlsoNeedMovingCheckbox.Enabled = true;
+                    AlsoNeedMovingCheckbox.Visible = true;
+                    AlsoNeedMovingLbl.Visible = true;
+                    HowMuchTBox.Visible = true;
+                    HowMuchLbl.Visible = true;
+                }
+
+                else
+                {
+                    AlsoNeedMovingCheckbox.Enabled = false;
+                    AlsoNeedMovingCheckbox.Visible = false;
+                    AlsoNeedMovingLbl.Visible = false;
+                    HowMuchTBox.Visible = false;
+                    HowMuchLbl.Visible = false;
+                }
             }
+
+            else
+            {
+                if (interestList.SelectedValue == "Auction")
+                {
+                    AlsoNeedMovingCheckbox.Enabled = true;
+                    AlsoNeedMovingCheckbox.Visible = true;
+                    AlsoNeedMovingLbl.Visible = true;
+                    HowMuchTBox.Visible = true;
+                    HowMuchLbl.Visible = true;
+                }
+
+                else
+                {
+                    AlsoNeedMovingCheckbox.Enabled = false;
+                    AlsoNeedMovingCheckbox.Visible = false;
+                    AlsoNeedMovingLbl.Visible = false;
+                    HowMuchTBox.Visible = false;
+                    HowMuchLbl.Visible = false;
+                }
+            }
+                    
 
             if (Application["Username"] != null)
             {
@@ -142,6 +182,16 @@ namespace Lab3
             addCCity.Text = String.Empty;
             addCZip.Text = String.Empty;
             dscvrdtxtbox.Text = String.Empty;
+        }
+
+        protected void Check_Clicked(Object sender, EventArgs e)
+        {
+
+        }
+
+        protected void EstateCheck_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

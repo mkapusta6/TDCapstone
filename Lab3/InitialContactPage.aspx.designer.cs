@@ -177,6 +177,42 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.DropDownList interestList;
 
         /// <summary>
+        /// AlsoNeedMovingLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlsoNeedMovingLbl;
+
+        /// <summary>
+        /// AlsoNeedMovingCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList AlsoNeedMovingCheckbox;
+
+        /// <summary>
+        /// HowMuchLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HowMuchLbl;
+
+        /// <summary>
+        /// HowMuchTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HowMuchTBox;
+
+        /// <summary>
         /// cusEmailLbl control.
         /// </summary>
         /// <remarks>
@@ -310,6 +346,42 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox customerEmailTxtBox;
+
+        /// <summary>
+        /// downsizingLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label downsizingLbl;
+
+        /// <summary>
+        /// downsizingCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList downsizingCheckbox;
+
+        /// <summary>
+        /// SettleLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SettleLbl;
+
+        /// <summary>
+        /// SettleEstateCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList SettleEstateCheckbox;
 
         /// <summary>
         /// addCustBtn control.
