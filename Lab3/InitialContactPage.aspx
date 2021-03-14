@@ -33,7 +33,7 @@
             <asp:TextBox ID="addCPhone" runat="server" Width="128px" Style="margin-left: 122px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredPhoneNumber" ControlToValidate="addCPhone" runat="server" ErrorMessage="Phone Number Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
-            <br 
+            <br />
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
             <asp:DropDownList 
                 ID="interestList" 
