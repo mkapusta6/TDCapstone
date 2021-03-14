@@ -1,0 +1,25 @@
+Instructions: 
+
+SQL CREATION ORDER: Create Tables 'Lab3sql.txt' -> Create Stored Procedure 'JeremyEzellLab3.txt' -> Create Tables & EXEC 'Lab3_AUTH'.txt
+
+Start Page: LoginDecisionPage.aspx
+
+In order to login as a customer you must first create a new customer account; (There are no existing customers from launch)
+Then login using the username and password you have just created
+
+Employee Login:
+---------------
+Username: admin
+Password: password
+
+The application will run in any order but I suggest going through it in the following order for clarity;
+
+- Create A New Customer Account
+- Login With Your New Account
+- Create A Systems Request
+- Logout Of Customer Portal And Login As Employee
+
+- On the Employee Side it makes the most sense 
+  to follow the above button links in the order they are displayed
+
+Thank You!

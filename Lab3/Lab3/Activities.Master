@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Activities.master.cs" Inherits="Lab3.Activities" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <title>Noah Khan, Daniel Mehari</title>
+    <script type="text/javascript">
+        // Status Bar 
+        // Need a way to pass a number value for which part of lifecycle customer is on
+        // Like if wating for phone call value will be a number that puts status bar in bewteen Phone call label - Noah
+        function SetStatus(value) {
+            var divStatus = document.getElementById('divStatus');
+            divStatus.style.width = value + "%";
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="border:1px solid black; width:41 %">
+            <div id="divStatus" style="background-color:green; width:20%">&nbsp;</div>
+            </div>
+
+        <br />
+        <table>
+            <tr>
+                <td style="width": 158px">|Phone Call|</td>
+                <td style="width": 158px">|Questions & Answers|</td>
+                <td style="width": 158px">|Event Occurance|</td>
+                <td style="width": 158px">|Payment|</td>
+                <td style="width": 158px">|Review|</td>
+                <td style="width": 158px">|Completed|</td>
+            </tr>
+        </table>
+
+        <br />
+        <%--Corresponds to value that we need to be changing on accordance with the stage of the customer -Noah --%>
+        <asp:Button ID="statusBtn" runat="server" Text="Status" CausesValidation="false" OnClientClick="SetStatus(50);return false;" />
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="Select An Activity:" CausesValidation="false" Font-Size="Large" Font-Bold="true" Font-Underline="true"></asp:Label>
+            <asp:LinkButton ID="customerLnkBtn" runat="server" OnClick="customerLnkBtn_Click" CausesValidation="false">Initial Contact Form</asp:LinkButton>
+            <asp:LinkButton ID="serviceLnkBtn" runat="server" OnClick="serviceLnkBtn_Click" CausesValidation="false">Service Order Form</asp:LinkButton>
+            <asp:LinkButton ID="moveLnkBtn" runat="server" OnClick="moveLnkBtn_Click" CausesValidation="false">Moving Form</asp:LinkButton>
+            <asp:LinkButton ID="Ticket" runat="server" OnClick="Ticket_Click" CausesValidation="false">View Info</asp:LinkButton>
+            <asp:LinkButton ID="TicketHistory" runat="server" OnClick="TicketHistory_Click" CausesValidation="false">Past Services</asp:LinkButton>
+            <%--<asp:LinkButton ID="createNewTicket" runat="server" OnClick="createNewTicket_Click" CausesValidation="false">Create Service Ticket</asp:LinkButton>--%>
+            <asp:LinkButton ID="updateTicket" runat="server" OnClick="updateTicket_Click" CausesValidation="false">Update Tickets</asp:LinkButton>
+            <asp:LinkButton ID="allTicketHistoryUpdates" runat="server" OnClick="allTicketHistoryUpdates_Click" CausesValidation="false">View Ticket History & Notes</asp:LinkButton>
+            <asp:LinkButton ID="auctionBtn" runat="server" CausesValidation="false" OnClick="auctionBtn_Click">Auction Scheduling Form</asp:LinkButton>
+            <asp:LinkButton ID="moveScheduleBtn" runat="server" CausesValidation="false" OnClick="moveScheduleBtn_Click">Move Scheduling Screen</asp:LinkButton>
+            <asp:LinkButton ID="auctionPickUpBtn" runat="server" CausesValidation="false" OnClick="auctionPickUpBtn_Click">Auction Pick Up Page</asp:LinkButton>
+            <asp:LinkButton ID="completionBtn" runat="server" CausesValidation="false" OnClick="completionBtn_Click">Completion Form</asp:LinkButton>
+            <asp:LinkButton ID="folderBtn" runat="server" CausesValidation="false" OnClick="folderBtn_Click">Client Folders</asp:LinkButton>
+            <asp:Button ID="logoutBtn" runat="server" Text="Log Out" OnClick="logoutBtn_Click" CausesValidation="false" style="margin-left: 1006px" Height="24px" />
+            <br />
+            <asp:Label ID="searchLbl" runat="server" Text="Search By Customer Name:"></asp:Label>
+            <asp:TextBox ID="searchTxtBox" runat="server" Text=""></asp:TextBox>
+            <asp:Button ID="searchBtn" runat="server" Text="Search For Customer Ticket Data" OnClick="searchBtn_Click" CausesValidation="false" />
+            <asp:Button ID="srchBtn" runat="server" Text="Search For Customer Existence" OnClick="srchBtn_Click" CausesValidation="false" />
+
+            <asp:Button ID="viewNotifications" runat="server" Text="View System Request Notifications" CausesValidation="false" OnClick="viewNotifications_Click"/>
+            
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <asp:GridView ID="searchForCustGrd" runat="server"></asp:GridView>
+            <asp:Label ID="statusLbl" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl2" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl3" runat="server" ForeColor="Red" Text="" Font-Bold="true"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
