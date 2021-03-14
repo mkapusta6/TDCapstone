@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerInterface.master.cs" Inherits="Lab3.CustomerInterface" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: #99FF99">
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="headerID" runat="server" Text="Customer Portal" Font-Bold="true" Font-Underline="true" Font-Size="X-Large" ></asp:Label>
+            <asp:Button ID="logOutBtn" runat="server" Text="Log Out" OnClick="logOutBtn_Click" style="margin-left: 810px" CausesValidation="false" />
+            <fieldset>
+                <legend>
+                    <asp:Label ID="custName" runat="server" Text=""></asp:Label></legend>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+            </fieldset>
+        </div>
+    </form>
+</body>
+</html>

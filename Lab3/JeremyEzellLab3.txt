@@ -1,0 +1,18 @@
+-- PLEASE CREATE THIS STORED PROCEDURE BEFORE RUNNING 'Lab3_AUTH', THANK YOU! --
+
+-- Stored Procedure --
+Create Procedure JeremyEzellLab3
+	@EmpUsername as NVARCHAR(40),
+	@EmpPassword as NVARCHAR(40)
+
+as
+BEGIN
+
+	SET NOCOUNT ON;
+
+	SELECT EmpUsername, EmpPassword
+	FROM EmployeeCredentials
+	WHERE EmpUsername = @EmpUsername
+	AND EmpPassword = EmpPassword;
+
+END;
