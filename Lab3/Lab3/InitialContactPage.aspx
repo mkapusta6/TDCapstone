@@ -35,7 +35,21 @@
             <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
             <br 
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
-            <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest"  runat="server" style="margin-left: 67px"></asp:DropDownList>
+            <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest" AutoPostBack="true"  runat="server" style="margin-left: 67px"></asp:DropDownList><br />
+            <asp:Label ID="AlsoNeedMovingLbl" runat="server" Text="Will you also require Moving Services?" Visible="false"></asp:Label>
+            <asp:CheckBoxList 
+                ID="AlsoNeedMovingCheckbox" 
+                runat="server"
+                AutoPostBack="true"
+                RepeatDirection="horizontal"
+                visible="false"
+                enabled="false"
+                >
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:CheckBoxList>
+            <asp:Label ID="HowMuchLbl" runat="server" Text="How Much Do you Have to Sell?" visible="false"></asp:Label>
+            <asp:TextBox ID="HowMuchTBox" runat="server" visible="false"></asp:TextBox>
             <br />
             <asp:Label ID="cusEmailLbl" runat="server" Text="Email:" Width="40px"></asp:Label>
             <asp:TextBox ID="addCEmail" runat="server" Style="margin-top: 0px; margin-left: 121px;" Width="128px"></asp:TextBox>

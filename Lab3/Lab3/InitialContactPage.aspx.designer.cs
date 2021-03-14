@@ -177,6 +177,42 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.DropDownList interestList;
 
         /// <summary>
+        /// AlsoNeedMovingLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlsoNeedMovingLbl;
+
+        /// <summary>
+        /// AlsoNeedMovingCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList AlsoNeedMovingCheckbox;
+
+        /// <summary>
+        /// HowMuchLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HowMuchLbl;
+
+        /// <summary>
+        /// HowMuchTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HowMuchTBox;
+
+        /// <summary>
         /// cusEmailLbl control.
         /// </summary>
         /// <remarks>
