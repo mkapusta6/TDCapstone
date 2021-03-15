@@ -13,6 +13,7 @@ namespace Lab3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Application["CustomerInterest"] != null)
             {
                     string customerInterest = Application["CustomerInterest"].ToString();

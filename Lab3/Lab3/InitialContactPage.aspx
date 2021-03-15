@@ -23,9 +23,6 @@
             <asp:Label ID="initialContactLbl" runat="server" Text="Initial Contact"></asp:Label>
             <asp:DropDownList ID="initialContactList" DataTextField="InitialContact" DataValueField="InitialContact"  runat="server" style="margin-left: 97px"></asp:DropDownList>
             <br />
-            <asp:Label ID="otherTxtBoxLbl" runat="server" Text="Other"></asp:Label>
-            <asp:TextBox ID="otherTxtBox" runat="server" style="margin-left: 126px" Width="114px"></asp:TextBox>
-            <br />
             <asp:Label ID="discoveredLbl" Text="Source Of Exposure?" runat ="server"></asp:Label>
             <asp:TextBox ID="dscvrdtxtbox" runat="server" style="margin-left: 26px" Width="114px"></asp:TextBox>
             <br />
@@ -33,9 +30,28 @@
             <asp:TextBox ID="addCPhone" runat="server" Width="128px" Style="margin-left: 122px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredPhoneNumber" ControlToValidate="addCPhone" runat="server" ErrorMessage="Phone Number Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
-            <br 
+            <br />
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
             <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest"  runat="server" style="margin-left: 67px"></asp:DropDownList>
+            <br />
+            <asp:Label ID="ifAuctionLbl" runat="server" Text="If Auction:"></asp:Label>
+            <asp:DropDownList ID="ifAuctionDropDownList" DataTextField="IfAuction" DataValueField="IfAuction" runat="server"></asp:DropDownList>
+            <br />
+            <asp:Label ID="ifMovingLbl" runat="server" Text="If Moving:"></asp:Label>
+            From Address: <asp:TextBox ID="fromtxtBox" runat="server"></asp:TextBox>
+            To Address: <asp:TextBox ID="toTxtBox" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="downsizingLbl" runat="server" Text="Downsizing?"></asp:Label>
+            <asp:DropDownList ID="downsizeDropDownList" DataTextField="Downsizing" DataValueField="Downsizing" runat="server"></asp:DropDownList>
+            <asp:Label ID="sellingEstateLbl" runat="server" Text="Selling Estate?"></asp:Label>
+            <asp:DropDownList ID="estateDropDownList" DataTextField="SellingEstate" DataValueField="SellingEstate" runat="server"></asp:DropDownList>
+            <asp:Label ID="howMuchToSellLbl" runat="server" Text="Amount Being Sold?"></asp:Label>
+            <asp:DropDownList ID="howMuchDropDownList" DataTextField="AmountToBeSold" DataValueField="AmountToBeSold" runat="server"></asp:DropDownList>
+            <asp:Label ID="whatIsBeingSoldLbl" runat="server" Text="What Is Being Sold?"></asp:Label>
+            <asp:TextBox ID="whatIsBeingSoldTxtBox" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="deadlineLbl" runat="server" Text="Desired Deadline Date:"></asp:Label>
+            <asp:TextBox ID="addDeadlineTxtBox" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="cusEmailLbl" runat="server" Text="Email:" Width="40px"></asp:Label>
             <asp:TextBox ID="addCEmail" runat="server" Style="margin-top: 0px; margin-left: 121px;" Width="128px"></asp:TextBox>
@@ -53,6 +69,13 @@
             <asp:TextBox ID="addCZip" runat="server" Width="128px" Style="margin-left: 134px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorCusZip" ControlToValidate="AddCZip" runat="server" ErrorMessage="Zip Code Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
+            <asp:Label ID="addAddressLbl" runat="server" Text="Address"></asp:Label>
+            <asp:TextBox ID="addAddressTxtBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="addressRequiredFieldValidator" runat="server" ErrorMessage="Address Required" ControlToValidate="addAddressTxtBox" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="nameOfEmployee" runat="server" Text="Employee Who Is Creating Form:"></asp:Label>
+            <asp:DropDownList ID="creatorList" DataTextField="EmployeeHandler" DataValueField="EmployeeHandler" runat="server"></asp:DropDownList>
+            <br />
             <asp:Label ID="currentDateLbl" runat="server" Text="Date Of Submission"></asp:Label>
             <asp:TextBox ID="currentDateTxtBox" runat="server"></asp:TextBox>
             <asp:TextBox ID="customerEmailTxtBox" runat="server" Visible="false"></asp:TextBox>
@@ -60,6 +83,7 @@
             <asp:Button ID="addCustBtn" runat="server" Text="Add Info & Go To System Request" OnClick="addCustBtn_Click" Style="margin-top: 29px" />
             <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" OnClick="populateBtn_Click" CausesValidation="false" Width="174px" />
             <asp:Button ID="clearBtn" runat="server" Text="Clear Form" OnClick="clearBtn_Click" CausesValidation="false" Width="174px" />
+            <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
         </fieldset>
     <asp:SqlDataSource ID="srcAddCustomer" runat="server"
         ConnectionString="<%$ ConnectionStrings:Lab3 %>"

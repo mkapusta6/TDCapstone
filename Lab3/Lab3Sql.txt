@@ -21,7 +21,7 @@ CREATE TABLE Customer
 	WhatIsToBeSold varchar(50) NULL,
 	DesiredDeadlineDate datetime NOT NULL,
 	CAddress varchar(50) NOT NULL,
-	EmployeeHandler varchar(40) NOT NULL,	
+	EmployeeHandler varchar(40) NULL,	
 CONSTRAINT Customer_PK PRIMARY KEY (CustomerID));
 
 INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Noah', 'Khan', '5404244549', 'khan2na@dukes.jmu.edu', 'VA', 'Fredericksburg', '22801', 'Noah Khan', '03/20/2021', '11811 Woodland View Dr.', 'Creg');
