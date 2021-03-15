@@ -27,41 +27,35 @@ namespace Lab3
         {
             SqlConnection DBConn = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ConnectionString);
 
-
-
-
-            SqlCommand loginCommand = new SqlCommand();
-
-            loginCommand.Connection = DBConn;
-            loginCommand.CommandType = CommandType.StoredProcedure;
-            loginCommand.CommandText = "JeremyEzellLab3";
-
-            loginCommand.Parameters.AddWithValue("@EmpUsername", usrnameTxtBox.Text);
-            loginCommand.Parameters.AddWithValue("@EmpPassword", usrnameTxtBox.Text);
-
-
-
-
-
             DBConn.Open();
-
+            SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = DBConn;
+            loginCommand.CommandText = "SELECT PasswordHash FROM Pass WHERE Username = @Username";
+            loginCommand.Parameters.Add(new SqlParameter("@Username", usrnameTxtBox.Text));
 
             SqlDataReader reader = loginCommand.ExecuteReader();
 
-
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                Session["Username"] = usrnameTxtBox.Text;
-                Response.Redirect("AddCustomerPage.aspx");
-            }
-            else
-            {
-                lblIncorrectLogin.Text = "Username and/or Password is incorrect";
+                while (reader.Read())
+                {
+                    string storedHash = reader["PasswordHash"].ToString();
+                    if (HashPassword.ValidatePassword(pswrdTxtBox.Text, storedHash))
+                    {
+                        lblIncorrectLogin.Text = "Login Successful";
+                        Session["Username"] = usrnameTxtBox.Text;
+                        Response.Redirect("AddCustomerPage.aspx");
+                    }
+                    else
+                    {
+                        lblIncorrectLogin.Text = "Username and/or Password is incorrect";
+                    }
+                }
             }
 
             usrnameTxtBox.Text = HttpUtility.HtmlEncode(usrnameTxtBox.Text);
             pswrdTxtBox.Text = HttpUtility.HtmlEncode(pswrdTxtBox.Text);
+
         }
     }
 }

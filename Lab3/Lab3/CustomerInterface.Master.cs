@@ -21,6 +21,7 @@ namespace Lab3
 
         protected void logOutBtn_Click(object sender, EventArgs e)
         {
+            Session.Abandon();
             Response.Redirect("LoginDecisionPage.aspx");
 
         }
