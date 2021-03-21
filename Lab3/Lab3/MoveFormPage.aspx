@@ -1,5 +1,40 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Activities.Master" AutoEventWireup="true" CodeBehind="MoveFormPage.aspx.cs" Inherits="Lab3.WebForm16" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style12 {
+            margin-left: 11px;
+        }
+        .auto-style13 {
+            margin-left: 23px;
+        }
+        .auto-style14 {
+            margin-left: 27px;
+        }
+        .auto-style15 {
+            margin-left: 10px;
+        }
+        .auto-style16 {
+            margin-left: 20px;
+        }
+        .auto-style17 {
+            margin-left: 17px;
+            margin-top: 16px;
+        }
+        .auto-style18 {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        .auto-style19 {
+            margin-left: 66px;
+            margin-top: 11px;
+        }
+        .auto-style20 {
+            margin-left: 26px;
+        }
+        .auto-style21 {
+            margin-top: 12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <fieldset>
@@ -18,7 +53,7 @@
             ID="loadDropDownList" 
             runat="server"
             DataTextField="LoadingConditions"
-            DataValueField="LoadingConditions" style="margin-left: 117px"
+            DataValueField="LoadingConditions" CssClass="auto-style12"
             ></asp:DropDownList>
         <br />
         <asp:Label ID="sectionLbl" runat="server" Text="House Section:"></asp:Label>
@@ -26,38 +61,38 @@
             ID="sectionDropDownList"
             runat="server"
             DataTextField ="HouseSection"
-            DataValueField="HouseSection" style="margin-left: 103px"
+            DataValueField="HouseSection" CssClass="auto-style13"
             ></asp:DropDownList>
         <br />
         <asp:Label ID="floorLbl" runat="server" Text="Floor:"></asp:Label>
-        <asp:DropDownList ID="floorDropDownList" DataTextField="Mfloor" DataValueField="Mfloor" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="floorDropDownList" DataTextField="Mfloor" DataValueField="Mfloor" runat="server" CssClass="auto-style14"></asp:DropDownList>
         <br />
         <%--<asp:Label ID="mediaLbl" runat="server" Text="Media:"></asp:Label>
         <asp:TextBox ID="mediaTxtBox" runat="server"></asp:TextBox>
         <br />--%>
         <asp:Label ID="boxTypeLbl" runat="server" Text="Box Type:"></asp:Label>
-        <asp:TextBox ID="boxTypeTxtBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="boxTypeTxtBox" runat="server" CssClass="auto-style15"></asp:TextBox>
         <br />
         <asp:Label ID="numBoxLbl" runat="server" Text="# Of Boxes:"></asp:Label>
         <asp:TextBox ID="numBoxTxtBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="blanketLbl" runat="server" Text="Blankets:"></asp:Label>
-        <asp:TextBox ID="blanketTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="blanketTextBox" runat="server" CssClass="auto-style16"></asp:TextBox>
         <br />
         <asp:Label ID="itemsLabel" runat="server" Text="Items:"></asp:Label>
-        <asp:TextBox ID="itemsTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="itemsTextBox" runat="server" TextMode="MultiLine" CssClass="auto-style17"></asp:TextBox>
         <br />
         <asp:Label ID="accessLbl" runat="server" Text="Room Accessibility:"></asp:Label>
-        <asp:TextBox ID="accessTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="accessTextBox" runat="server" TextMode="MultiLine" CssClass="auto-style18"></asp:TextBox>
         <br />
         <asp:Label ID="valueLabel" runat="server" Text="Item Value:"></asp:Label>
-        <asp:DropDownList ID="valDropDownList1" DataTextField="ValueOfItem" DataValueField="ValueOfItem" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="valDropDownList1" DataTextField="ValueOfItem" DataValueField="ValueOfItem" runat="server" CssClass="auto-style19"></asp:DropDownList>
         <br />
         <asp:Label ID="notesLabel" runat="server" Text="Additional Notes:"></asp:Label>
-        <asp:TextBox ID="notesTextBox" runat="server" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="notesTextBox" runat="server" TextMode="MultiLine" CssClass="auto-style20"></asp:TextBox>
         <br />
         <asp:Label ID="customerLabel" runat="server" Text="Customer:"></asp:Label>
-        <asp:DropDownList ID="customerDropDownList" DataSourceID="custDtaSrc" runat="server" DataTextField="CustomerName" DataValueField="CustomerID"></asp:DropDownList>
+        <asp:DropDownList ID="customerDropDownList" DataSourceID="custDtaSrc" runat="server" DataTextField="CustomerName" DataValueField="CustomerID" CssClass="auto-style21"></asp:DropDownList>
         <br />
         <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false"></asp:TextBox>
         <asp:Button ID="popBtn" runat="server" Text="Populate Fields" OnClick="popBtn_Click" CausesValidation="false"/>

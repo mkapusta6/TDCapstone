@@ -6,6 +6,8 @@
 
     <div style="text-align: left; position: relative">
         <%--Beginning section of page layout and buttons--%>
+        Push Notification:
+        <asp:Label ID="pushNotificationLabel" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
         <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 404px;">
             <legend>Initial Contact Form</legend>
 

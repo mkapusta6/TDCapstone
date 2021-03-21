@@ -68,12 +68,22 @@ namespace Lab3
 
         protected void popBtn_Click(object sender, EventArgs e)
         {
-
+            boxTypeTxtBox.Text = "taped";
+            numBoxTxtBox.Text = "4";
+            blanketTextBox.Text = "Necessary";
+            itemsTextBox.Text = "Cards";
+            accessTextBox.Text = "Low Ceilings";
+            notesTextBox.Text = "Come through basement door.";
         }
 
         protected void clearBtn_Click(object sender, EventArgs e)
         {
-
+            boxTypeTxtBox.Text = String.Empty;
+            numBoxTxtBox.Text = String.Empty;
+            blanketTextBox.Text = String.Empty;
+            itemsTextBox.Text = String.Empty;
+            accessTextBox.Text = String.Empty;
+            notesTextBox.Text = String.Empty;
         }
 
         protected void createSrvcTckt_Click(object sender, EventArgs e)
@@ -119,6 +129,15 @@ namespace Lab3
 
                 myConnection.Open();
                 MyCommand.ExecuteNonQuery();
+
+                boxTypeTxtBox.Text = String.Empty;
+                numBoxTxtBox.Text = String.Empty;
+                blanketTextBox.Text = String.Empty;
+                itemsTextBox.Text = String.Empty;
+                accessTextBox.Text = String.Empty;
+                notesTextBox.Text = String.Empty;
+
+                addedLbl.Text = "Form Successfully Submitted";
             }
         }
     }

@@ -41,12 +41,22 @@ namespace Lab3
         {
             ticketStrtTxtBox.Text = "02/28/2021";
             tcktNameTxtBox.Text = "Test Ticket";
+            date1TxtBox.Text = "03/20/2021";
+            date2TxtBox.Text = "03/22/2021";
+            lookAtTextBox.Text = "03/23/2021";
+            bringInTextBox.Text = "03/24/2021";
+            pickUpTextBox.Text = "03/21/2021";
         }
 
         protected void clearBtn_Click(object sender, EventArgs e)
         {
             ticketStrtTxtBox.Text = String.Empty;
             tcktNameTxtBox.Text = String.Empty;
+            date1TxtBox.Text = String.Empty;
+            date2TxtBox.Text = String.Empty;
+            lookAtTextBox.Text = String.Empty;
+            bringInTextBox.Text = String.Empty;
+            pickUpTextBox.Text = String.Empty;
         }
 
         protected void createSrvcTckt_Click(object sender, EventArgs e)
@@ -91,6 +101,12 @@ namespace Lab3
 
                 ticketStrtTxtBox.Text = String.Empty;
                 tcktNameTxtBox.Text = String.Empty;
+                date1TxtBox.Text = String.Empty;
+                date2TxtBox.Text = String.Empty;
+                lookAtTextBox.Text = String.Empty;
+                bringInTextBox.Text = String.Empty;
+                pickUpTextBox.Text = String.Empty;
+
                 addedLbl.Text = "Ticket Successfully Created";
             }
         }
