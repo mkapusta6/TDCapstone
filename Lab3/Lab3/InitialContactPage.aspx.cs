@@ -50,45 +50,6 @@ namespace Lab3
                 creatorList.Items.Add("Sierra");
 
                 currentDateTxtBox.Text += DateTime.Now.ToString();
-
-                if (interestList.SelectedValue == "Auction")
-                {
-                    AlsoNeedMovingCheckbox.Enabled = true;
-                    AlsoNeedMovingCheckbox.Visible = true;
-                    AlsoNeedMovingLbl.Visible = true;
-                    HowMuchTBox.Visible = true;
-                    HowMuchLbl.Visible = true;
-                }
-
-                else
-                {
-                    AlsoNeedMovingCheckbox.Enabled = false;
-                    AlsoNeedMovingCheckbox.Visible = false;
-                    AlsoNeedMovingLbl.Visible = false;
-                    HowMuchTBox.Visible = false;
-                    HowMuchLbl.Visible = false;
-                }
-            }
-
-            else
-            {
-                if (interestList.SelectedValue == "Auction")
-                {
-                    AlsoNeedMovingCheckbox.Enabled = true;
-                    AlsoNeedMovingCheckbox.Visible = true;
-                    AlsoNeedMovingLbl.Visible = true;
-                    HowMuchTBox.Visible = true;
-                    HowMuchLbl.Visible = true;
-                }
-
-                else
-                {
-                    AlsoNeedMovingCheckbox.Enabled = false;
-                    AlsoNeedMovingCheckbox.Visible = false;
-                    AlsoNeedMovingLbl.Visible = false;
-                    HowMuchTBox.Visible = false;
-                    HowMuchLbl.Visible = false;
-                }
             }
 
             if (Application["Username"] != null)
