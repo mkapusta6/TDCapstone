@@ -61,7 +61,9 @@ namespace Lab3
             // Logic to make sure duplicate customer names cannot be added
             if (!IsPostBack && reader.HasRows)
             {
-                Response.Write("<script>alert('You have a(n) new service request(s)')</script>");
+                //Response.Write("<script>alert('You have a(n) new service request(s)')</script>");
+                //Make go away after clicking view requests button
+                pushNotificationLabel.Text = "You have a(n) new service request(s)";
             }
             else
             {

@@ -13,7 +13,6 @@ namespace Lab3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void customerLnkBtn_Click(object sender, EventArgs e)
@@ -178,5 +177,10 @@ namespace Lab3
         {
             Response.Redirect("CompletionForm.aspx");
         }
+
+        protected void statusBtn_Click1(object sender, EventArgs e)
+        {
+        }
+
     }
 }

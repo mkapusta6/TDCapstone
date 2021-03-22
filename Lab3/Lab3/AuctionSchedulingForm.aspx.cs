@@ -14,26 +14,29 @@ namespace Lab3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            truckDropDownList1.Items.Add(new ListItem("Accessible"));
-            truckDropDownList1.Items.Add(new ListItem("Non-Accessible"));
+            if (!IsPostBack)
+            {
+                truckDropDownList1.Items.Add(new ListItem("Accessible"));
+                truckDropDownList1.Items.Add(new ListItem("Non-Accessible"));
 
-            statusDropDownList1.Items.Add(new ListItem("Active"));
-            statusDropDownList1.Items.Add(new ListItem("Inactive"));
+                statusDropDownList1.Items.Add(new ListItem("Active"));
+                statusDropDownList1.Items.Add(new ListItem("Inactive"));
 
-            truckTypeDropDownList.Items.Add(new ListItem("2015"));
-            truckTypeDropDownList.Items.Add(new ListItem("2011"));
-            truckTypeDropDownList.Items.Add(new ListItem("Cube"));
-            truckTypeDropDownList.Items.Add(new ListItem("GMC"));
-            truckTypeDropDownList.Items.Add(new ListItem("Green"));
-            truckTypeDropDownList.Items.Add(new ListItem("Van"));
-            truckTypeDropDownList.Items.Add(new ListItem("Trailer"));
+                truckTypeDropDownList.Items.Add(new ListItem("2015"));
+                truckTypeDropDownList.Items.Add(new ListItem("2011"));
+                truckTypeDropDownList.Items.Add(new ListItem("Cube"));
+                truckTypeDropDownList.Items.Add(new ListItem("GMC"));
+                truckTypeDropDownList.Items.Add(new ListItem("Green"));
+                truckTypeDropDownList.Items.Add(new ListItem("Van"));
+                truckTypeDropDownList.Items.Add(new ListItem("Trailer"));
 
-            crewDropDownList.Items.Add(new ListItem("Brad Campbell"));
-            crewDropDownList.Items.Add(new ListItem("Sabastian"));
-            crewDropDownList.Items.Add(new ListItem("Zach"));
-            crewDropDownList.Items.Add(new ListItem("Creg"));
-            crewDropDownList.Items.Add(new ListItem("Sam"));
-            crewDropDownList.Items.Add(new ListItem("Scotty"));
+                crewDropDownList.Items.Add(new ListItem("Brad Campbell"));
+                crewDropDownList.Items.Add(new ListItem("Sabastian"));
+                crewDropDownList.Items.Add(new ListItem("Zach"));
+                crewDropDownList.Items.Add(new ListItem("Creg"));
+                crewDropDownList.Items.Add(new ListItem("Sam"));
+                crewDropDownList.Items.Add(new ListItem("Scotty"));
+            }
         }
 
         protected void bringInBtn_Click(object sender, EventArgs e)
@@ -80,6 +83,11 @@ namespace Lab3
             auctionTxtBox.Text = "Memorabilia Auction";
             custItemTxtBox.Text = "Jerseys and Clothing";
             dateTextBox.Text = "03/12/2021";
+            suppliesTextBox.Text = "Packing tape";
+            numBoxTextBox1.Text = "4";
+            typeBoxTextBox.Text = "Packing";
+            numOfTrucksTextBox.Text = "2";
+
         }
 
         protected void clrBt_Click(object sender, EventArgs e)
@@ -87,6 +95,10 @@ namespace Lab3
             auctionTxtBox.Text = String.Empty;
             custItemTxtBox.Text = String.Empty;
             dateTextBox.Text = String.Empty;
+            suppliesTextBox.Text = String.Empty;
+            numBoxTextBox1.Text = String.Empty;
+            typeBoxTextBox.Text = String.Empty;
+            numOfTrucksTextBox.Text = String.Empty;
         }
 
         protected void addAuctionBtn_Click(object sender, EventArgs e)
@@ -135,9 +147,14 @@ namespace Lab3
                 auctionTxtBox.Text = String.Empty;
                 dateTextBox.Text = String.Empty;
                 custItemTxtBox.Text = String.Empty;
+                dateTextBox.Text = String.Empty;
+                suppliesTextBox.Text = String.Empty;
+                numBoxTextBox1.Text = String.Empty;
+                typeBoxTextBox.Text = String.Empty;
+                numOfTrucksTextBox.Text = String.Empty;
 
-                Response.Redirect("AuctionSchedulingForm.aspx");
                 addedLbl.Text = "Auction Successfully Added";
+                
             }
         }
     }

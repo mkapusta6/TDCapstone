@@ -21,7 +21,7 @@ CREATE TABLE Customer
 	WhatIsToBeSold varchar(50) NULL,
 	DesiredDeadlineDate datetime NOT NULL,
 	CAddress varchar(50) NOT NULL,
-	EmployeeHandler varchar(40) NOT NULL,	
+	EmployeeHandler varchar(40) NULL,	
 CONSTRAINT Customer_PK PRIMARY KEY (CustomerID));
 
 INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Noah', 'Khan', '5404244549', 'khan2na@dukes.jmu.edu', 'VA', 'Fredericksburg', '22801', 'Noah Khan', '03/20/2021', '11811 Woodland View Dr.', 'Creg');
@@ -181,17 +181,19 @@ CONSTRAINT Auction_PK PRIMARY KEY (AuctionID),
 CONSTRAINT Auction_FK FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
 CONSTRAINT Auction_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID)); 
 
-INSERT INTO Auction (AuctionHeading, AuctionDate, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Clothing Auction', '03/03/2021', 'Noah Khan', 'Clothing', '1', '1');
-INSERT INTO Auction (AuctionHeading, AuctionDate, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Basketball Auction', '03/08/2021', 'Kobe Bryant', 'Clothing', '2', '1');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Clothing Auction', '03/03/2021', '03/08/2021', '03/12/2021', '03/15/2021', 'Noah Khan', 'Clothing', '1', '1');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Basketball Auction', '03/08/2021', '03/09/2021', '03/10/2021', '03/12/2021', 'Kobe Bryant', 'Clothing', '2', '2');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Printer Auction', '03/012/2021', '03/15/2021', '03/20/2021', '03/22/2021', 'Dwight Schrute', 'Printers', '3', '3');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Football Auction', '03/010/2021', '03/11/2021', '03/15/2021', '03/25/2021', 'Chase Young', 'Memorabilia', '4', '4');
 
 Create Table Moving(
 	MovingID int IDENTITY(1,1) NOT NULL,
-	HouseStories varchar(40) NOT NULL,
-	DistanceFromTruck varchar(40) NOT NULL,
-	DrivewayAccessibility varchar(40) NOT NULL,
-	LoadingConditions varchar(40) NOT NULL,
-	HouseSection varchar(40) NOT NULL,
-	Mfloor varchar(20) NOT NULL,
+	HouseStories varchar(40) NULL,
+	DistanceFromTruck varchar(40) NULL,
+	DrivewayAccessibility varchar(40) NULL,
+	LoadingConditions varchar(40) NULL,
+	HouseSection varchar(40) NULL,
+	Mfloor varchar(20) NULL,
 	Media varbinary(max) NULL, 
 	BoxType varchar(40) NULL,
 	NumberOfBoxes int NULL,
@@ -206,6 +208,11 @@ Create Table Moving(
 	CustomerID int NOT NULL,
 CONSTRAINT Moving_PK PRIMARY KEY (MovingID),
 CONSTRAINT Moving_FK FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)); 
+
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('2', 'Short', 'Fair', 'Fair', 'Attic', '2', 'Taped', '3', 'Necessary', 'Clothes', 'Room has low ceiling', 'Please lock door when done', '04/01/2021', '1');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Long', 'Fair', 'Fair', 'Bedroom#1', '2', 'Taped', '6', 'Unecessary', 'Jerseys', 'Door opens inverted', 'Please lock door when done', '04/02/2021', '2');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Medium', 'Fair', 'Fair', 'Living Room', '1', 'Taped', '1', 'Necessary', 'Printer', 'Location has faulty locks', 'Please lock door when done', '04/03/2021', '3');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('4', 'Short', 'Fair', 'Fair', 'Basement', '1', 'Taped', '4', 'Necessary', 'Memorabilia', 'Living Room spacious', 'Please lock door when done', '04/04/2021', '4');
 
 Create Table MovingEmployeeEquipmentInv(
 	MovingID int NOT NULL,
