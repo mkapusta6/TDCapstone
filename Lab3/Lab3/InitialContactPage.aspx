@@ -9,7 +9,7 @@
 
             <%-- Labels and Textboxes--%>
            <%-- <asp:Label ID="cusNameLbl" runat="server" Text="Name:" Style="text-align: right"></asp:Label>
-            <asp:TextBox ID="addCustomerTxtBox" runat="server" Width="128px" Style="margin-left: 123px; margin-top: 0px;" Height="18px"></asp:TextBox>
+            <asp:TextBox ID="addCustomerTxtBox" runat="server" Width="128px" Style="margin-left: 123px; margin-top: 0px;" Height="18px"></asp:TextBox><br />
             <asp:RequiredFieldValidator ID="RequiredCustomerName" ControlToValidate="addCustomerTxtBox" runat="server" ErrorMessage="Name Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />--%>
             <asp:Label ID="cusFirstNameLbl" runat="server" Text="First Name" ></asp:Label>
