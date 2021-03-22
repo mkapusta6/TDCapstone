@@ -33,7 +33,7 @@
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email address">--%>
                     <asp:Label ID="emailLbl" runat="server" class="sr-only" Text="Email address"></asp:Label>
                     <asp:TextBox ID="email" type="email" class="form-control" placeholder="Email address" runat="server"></asp:TextBox>
-                  </div>
+                  </div> 
                   <div class="form-group mb-4">
                     <%--<label for="password" class="sr-only">Password</label>
                     <input type="password" name="password" id="password" class="form-control" placeholder="***********">--%>
