@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Lab3
 {
-    public partial class AwsConnectionPage : System.Web.UI.Page
+    public partial class navigationDash : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("http://capstone.us-east-1.elasticbeanstalk.com/");
+
         }
     }
 }

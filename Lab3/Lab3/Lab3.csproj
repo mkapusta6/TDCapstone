@@ -76,6 +76,7 @@
     <Content Include="Activities.Master" />
     <Content Include="assets\loginStyle.css" />
     <Content Include="assets\normalize.css" />
+    <Content Include="assets\todoList.css" />
     <Content Include="bootsrapNavigationMaster.aspx" />
     <Content Include="bootstrapLogin.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -93,6 +94,7 @@
     <Content Include="CustomerLogin.aspx" />
     <Content Include="EditTicketPage.aspx" />
     <Content Include="images\amazing-solid-green-background.jpg" />
+    <Content Include="images\formTemplateImage.png" />
     <Content Include="images\header-logo.png" />
     <Content Include="images\Vertical Green Gradient iOS7 iPhone 5 Wallpaper-320x480.jpg" />
     <Content Include="InitialContactPage.aspx" />
@@ -203,6 +205,9 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="navigationDash.Master" />
+    <Content Include="dashboardItems.aspx" />
+    <Content Include="bootsrapFormSelection.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="images\CustomerPortal.png" />
     <Content Include="images\loginHeader.jpg" />
@@ -250,6 +255,13 @@
       <DependentUpon>CustomerPortalPage.Master</DependentUpon>
     </Compile>
     <Compile Include="HashPassword.cs" />
+    <Compile Include="navigationDash.Master.cs">
+      <DependentUpon>navigationDash.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="navigationDash.Master.designer.cs">
+      <DependentUpon>navigationDash.Master</DependentUpon>
+    </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
@@ -399,6 +411,20 @@
     </Compile>
     <Compile Include="CompletionForm.aspx.designer.cs">
       <DependentUpon>CompletionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardItems.aspx.cs">
+      <DependentUpon>dashboardItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboardItems.aspx.designer.cs">
+      <DependentUpon>dashboardItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootsrapFormSelection.aspx.cs">
+      <DependentUpon>bootsrapFormSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootsrapFormSelection.aspx.designer.cs">
+      <DependentUpon>bootsrapFormSelection.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
