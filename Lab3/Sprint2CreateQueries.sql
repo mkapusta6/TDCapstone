@@ -1,0 +1,235 @@
+CREATE TABLE Customer
+	(CustomerID int IDENTITY(1,1),
+	CustomerFirstName varchar(40) NOT NULL,
+	CustomerLastName varchar(40) NOT NULL,
+	InitialContact varchar(40) NULL,
+	Discovered varchar(40) NULL,
+	CustomerPhone BigInt NOT NULL,
+	CustomerInterest varchar(40) NULL,
+	CustomerEmail varchar(40) NOT NULL,
+	CustomerState varchar(40) NOT NULL,
+	CustomerCity varchar(40) NOT NULL,
+	CustomerZip varchar(10) NOT NULL,
+	CustomerDate dateTime NULL,
+	CustomerName varchar(40) NOT NULL,
+	IfAuction varchar(40) NULL,
+	FromAddress varchar(50) NULL,
+	ToAddress varchar(50) NULL,
+	Downsizing varchar(40) NULL,
+	SellingEstate varchar(40) NULL,
+	AmountToBeSold varchar(40) NULL,
+	WhatIsToBeSold varchar(50) NULL,
+	DesiredDeadlineDate datetime NOT NULL,
+	CAddress varchar(50) NOT NULL,
+	EmployeeHandler varchar(40) NULL,	
+CONSTRAINT Customer_PK PRIMARY KEY (CustomerID));
+
+INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Noah', 'Khan', '5404244549', 'khan2na@dukes.jmu.edu', 'VA', 'Fredericksburg', '22801', 'Noah Khan', '03/20/2021', '11811 Woodland View Dr.', 'Creg');
+INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Kobe', 'Bryant', '7039669495', 'mamba@gmail.com', 'CA', 'Los Angeles', '22315', 'Kobe Bryant', '03/22/2021', '22343 Mary Lane', 'Laura');
+INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Dwight', 'Schrute', '8089091011', 'schrute@hotmail.com', 'PA', 'Colonial', '21121', 'Dwight Schrute', '03/18/2021', '1056 Lois Ln', 'Sherrl');
+INSERT INTO Customer (CustomerFirstName, CustomerLastName, CustomerPhone, CustomerEmail, CustomerState, CustomerCity, CustomerZip, CustomerName, DesiredDeadlineDate, CAddress, EmployeeHandler) VALUES ('Chase', 'Young', '7573420908', 'cyoung@aol.com', 'VA', 'D.C.', '22318', 'Chase Young', '04/12/2021', '1256 Capital St.', 'Elizabeth');
+
+
+Create Table Request(
+	RequestID int IDENTITY(1,1) NOT NULL,
+	EmailRequest varchar(50) NOT NULL,
+	ServiceType varchar(25) NOT NULL,
+	R_Description varchar(MAX) NOT NULL,
+	R_Date datetime NOT NULL,
+CONSTRAINT Request_PK PRIMARY KEY (RequestID));
+
+
+CREATE TABLE Employee
+	(EmployeeID int IDENTITY(1,1),
+	EmployeeName varchar(40) NOT NULL,
+	EmployeePhone BigInt NULL,
+	CustomerEmail varchar(40) NOT NULL,
+	EmployeeType varchar(20) NOT NULL,
+	EmployeeTerm varchar(20) NULL,
+CONSTRAINT Employee_PK PRIMARY KEY (EmployeeID));
+
+INSERT INTO Employee VALUES ('Creg', '5403322345', 'jack@dukes.jmu.edu', 'Mover', 'Part-Time');
+INSERT INTO Employee VALUES ('Laura', '8937465092', 'uzumaki@dukes.jmu.edu', 'Auctioner', 'Full-Time');
+INSERT INTO Employee VALUES ('Sherrl', '8976438902', 'cal@dukes.jmu.edu', 'Mover', 'Seasonal');
+INSERT INTO Employee VALUES ('Elizabeth', '3478902987', 'liz@dukes.jmu.edu', 'Manager', 'Full-Time');
+INSERT INTO Employee VALUES ('Sierra', '7848902984', 'sierra@dukes.jmu.edu', 'Manager', 'Full-Time');
+
+
+
+
+
+CREATE TABLE Service_T
+	(ServiceID int IDENTITY(1,1),
+	ServiceType varchar(30) NOT NULL,
+	DateStarted date NULL,
+	DateCompleted date NULL,
+	DateLastModified date NOT NULL,
+	CompletionPercentage varchar(10) NULL,
+	ServiceDescription varchar(45) NOT NULL,
+	
+CONSTRAINT Service_PK PRIMARY KEY (ServiceID));
+
+INSERT INTO Service_T (ServiceType, DateStarted, DateLastModified, ServiceDescription)  VALUES ('Auction', '02/01/2021', '02/25/2021', 'Auctioning used car');
+INSERT INTO Service_T (ServiceType, DateStarted, DateLastModified, DateCompleted, ServiceDescription)  VALUES ('Auction', '01/03/2021', '01/15/2021', '01/16/2021', 'Auctioning autographed basketball');
+INSERT INTO Service_T (ServiceType, DateStarted, DateLastModified, ServiceDescription)  VALUES ('Moving', '12/18/2020', '02/15/2021', 'Random office service');
+INSERT INTO Service_T (ServiceType, DateStarted, DateLastModified, ServiceDescription)  VALUES ('Miscellaneous', '12/01/2020', '02/18/2021', 'Moving furniture');
+
+
+CREATE TABLE ServiceTicket
+	(ServiceTicketID int IDENTITY(1,1),
+	TicketStatus varchar(30) NOT NULL,
+	TicketStartDate date NOT NULL,
+	CustomerID int NOT NULL,
+	ServiceID int NOT NULL,
+	EmployeeID int NOT NULL,
+	ServiceTicketName varchar(40)NOT NULL,
+	DateTimeOptionOne date NULL,
+	DateTimeOptionTwo date NULL,
+	LookAtDate date NULL,
+	BringInDate date NULL,
+	PickUpDate date NULL,
+	AddServices varchar(40) NULL,
+	ServiceType varchar(40) NULL,
+CONSTRAINT ServiceTicket_PK PRIMARY KEY (ServiceTicketID),
+CONSTRAINT ServiceTicket_FK1 FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID),
+CONSTRAINT ServiceTicket_FK2 FOREIGN KEY (ServiceID) REFERENCES Service_T(ServiceID),
+CONSTRAINT ServiceTicket_FK3 FOREIGN KEY(EmployeeID) REFERENCES Employee(EmployeeID));
+
+INSERT INTO ServiceTicket VALUES ('New', '02/12/2021', '1', '1', '1', 'Noah Khans Ticket', '04/12/2021', '04/15/2021', '04/20/2021', '04/20/2021', '05/12/2021', 'Storage', 'Auction');
+INSERT INTO ServiceTicket VALUES ('New', '02/15/2021', '2', '2', '2', 'Kobe Bryants Ticket', '04/12/2021', '04/15/2021', '04/20/2021', '05/04/2021', '05/06/2021', 'Cleaning', 'Moving');
+INSERT INTO ServiceTicket VALUES ('New', '02/18/2021', '3', '3', '3', 'Dwight Schrutes Ticket', '04/12/2021', '04/15/2021', '04/20/2021', '05/07/2021', '05/09/2021', 'Trash Removal', 'Miscellaneous');
+INSERT INTO ServiceTicket VALUES ('New', '02/18/2021', '4', '4', '4', 'Chase Youngs Ticket', '04/12/2021', '04/15/2021', '04/20/2021', '05/08/2021', '05/22/2021', 'N/A', 'Combination');
+
+
+CREATE TABLE Equipment
+	(EquipmentID int IDENTITY(1,1) PRIMARY KEY,
+	EquipmentType varchar(20) NULL,
+	EquipmentName varchar(100) NULL,
+	EquipmentCount int NULL,
+	EquipmentStatus varchar(20) NULL,
+	SuppliesNeeded varchar(50) NULL,
+	TruckAccess varchar(20) NULL,
+	NumberOfBoxes varchar(20) NULL,
+	BoxType varchar(40) NULL,
+	Crew varchar(40) NULL,
+	NumberOfTrucks varchar(20) NULL,
+	TruckTypes varchar(30) NULL,
+	EquipmentDescription varchar(30) NULL);
+
+INSERT INTO Equipment VALUES ('Truck', 'GMC', 2, 'Available', 'None', 'Yes', 'NA', 'NA', '2 crew', '2', 'NA', 'GMC Truck for Moving');
+
+
+CREATE TABLE TicketHistory
+	(TicketHistoryID int IDENTITY(1,1),
+	TicketMovingStatus varchar(40)NOT NULL,
+	TicketDateChanged date NOT NULL,
+	ServiceTicketID int NOT NULL,
+	EmployeeID int NOT NULL,
+	NoteHeading varchar(30) NULL,
+	NoteContents varchar(MAX),
+CONSTRAINT TicketHistory_PK PRIMARY KEY (TicketHistoryID),
+CONSTRAINT TicketHistory_FK1 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
+CONSTRAINT TicketHistory_FK2 FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID));
+
+INSERT INTO TicketHistory VALUES ('New', '02/20/2021', '1', '1','Email Confirmation', 'Call to confirm Email.');
+INSERT INTO TicketHistory VALUES ('New', '02/20/2021', '2', '2','Award Auction', 'Auctioning Trophies.');
+INSERT INTO TicketHistory VALUES ('New', '02/20/2021', '3', '3','Dunder Miflin Printer Moving', 'Moving printers to new location.');
+INSERT INTO TicketHistory VALUES ('New', '02/20/2021', '4', '4','Random Task', 'Clean out storage garage.');
+
+
+
+
+CREATE TABLE Workflow
+	(WorkflowID int IDENTITY(1,1),
+	WorkflowStatus varchar(50) NOT NULL,
+	ServiceID int NOT NULL);
+
+CREATE TABLE Inventory
+	(ItemID int IDENTITY(1,1),
+	ItemType varchar(20) NULL,
+	ItemCount int NULL,
+	ItemCost money NULL,
+	ItemDescription varchar(45) NOT NULL,
+	WorkflowID int NOT NULL);
+
+CREATE TABLE CustomerWorkflow
+	(CustomerPhone BigInt NOT NULL,
+	WorkflowID int NOT NULL,
+	WorkflowDate date NULL,
+	WorkflowCost money NULL);
+
+CREATE TABLE EquipmentServiceTicket
+	(ServiceTicketID int NOT NULL,
+	EquipmentID int NOT NULL,
+	EquipmentStatus date NULL);
+
+
+CREATE TABLE EmployeeWorkflow
+	(EmployeeID int NOT NULL,
+	WorkflowID int NOT NULL);
+
+
+Create Table Auction(
+	AuctionID int IDENTITY(1,1) NOT NULL,
+	AuctionHeading varchar(50) NOT NULL,
+	AuctionDate DateTime NOT NULL,
+	AuctionLookAt DateTime NULL,
+	AuctionBringIn DateTime NULL,
+	AuctionPickUp DateTime NULL,
+	R_CustomerName varchar(30) NOT NULL,
+	R_Item varchar(50),
+	CustomerID int NOT NULL,
+	ServiceTicketID int NOT NULL,
+CONSTRAINT Auction_PK PRIMARY KEY (AuctionID),
+CONSTRAINT Auction_FK FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+CONSTRAINT Auction_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID)); 
+
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Clothing Auction', '03/03/2021', '03/08/2021', '03/12/2021', '03/15/2021', 'Noah Khan', 'Clothing', '1', '1');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Basketball Auction', '03/08/2021', '03/09/2021', '03/10/2021', '03/12/2021', 'Kobe Bryant', 'Clothing', '2', '2');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Printer Auction', '03/012/2021', '03/15/2021', '03/20/2021', '03/22/2021', 'Dwight Schrute', 'Printers', '3', '3');
+INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn, AuctionPickUp, R_CustomerName, R_Item, CustomerID, ServiceTicketID) VALUES ('Football Auction', '03/010/2021', '03/11/2021', '03/15/2021', '03/25/2021', 'Chase Young', 'Memorabilia', '4', '4');
+
+Create Table Moving(
+	MovingID int IDENTITY(1,1) NOT NULL,
+	HouseStories varchar(40) NULL,
+	DistanceFromTruck varchar(40) NULL,
+	DrivewayAccessibility varchar(40) NULL,
+	LoadingConditions varchar(40) NULL,
+	HouseSection varchar(40) NULL,
+	Mfloor varchar(20) NULL,
+	Media varbinary(max) NULL, 
+	BoxType varchar(40) NULL,
+	NumberOfBoxes int NULL,
+	Blankets varchar(40) NULL,
+	Items varchar(40) NULL,
+	Accessibility varchar(40) NULL,
+	ValueOfItem varchar(40) NULL,
+	AdditionalNotes varchar(max) NULL,
+	PricingMethod varchar(max) NULL,
+	ContractPrice varchar(30) NULL,
+	FinalDate date NULL,
+	CustomerID int NOT NULL,
+CONSTRAINT Moving_PK PRIMARY KEY (MovingID),
+CONSTRAINT Moving_FK FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)); 
+
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('2', 'Short', 'Fair', 'Fair', 'Attic', '2', 'Taped', '3', 'Necessary', 'Clothes', 'Room has low ceiling', 'Please lock door when done', '04/01/2021', '1');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Long', 'Fair', 'Fair', 'Bedroom#1', '2', 'Taped', '6', 'Unecessary', 'Jerseys', 'Door opens inverted', 'Please lock door when done', '04/02/2021', '2');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Medium', 'Fair', 'Fair', 'Living Room', '1', 'Taped', '1', 'Necessary', 'Printer', 'Location has faulty locks', 'Please lock door when done', '04/03/2021', '3');
+INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('4', 'Short', 'Fair', 'Fair', 'Basement', '1', 'Taped', '4', 'Necessary', 'Memorabilia', 'Living Room spacious', 'Please lock door when done', '04/04/2021', '4');
+
+Create Table MovingEmployeeEquipmentInv(
+	MovingID int NOT NULL,
+	EmployeeID int NOT NULL,
+	EquipmentID int NOT NULL,
+	CostOfSupplies varchar(30) NULL,
+	Mours varchar(30) NULL,
+	Milage varchar(30) NULL,
+	Fuel varchar(30) NULL,
+	Insurance varchar(30) NULL,
+	CostOfEachWorker varchar(30) NULL,
+	FoodHotelReq varchar(30) NULL,
+	MenAmount varchar(30) NULL,
+
+CONSTRAINT MovingEmpEq_FK FOREIGN KEY (MovingID) REFERENCES Moving(MovingID),
+CONSTRAINT MovingEmpEq_FK2 FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
+CONSTRAINT MovingEmpEq_FK3 FOREIGN KEY (EquipmentID) REFERENCES Equipment(EquipmentID));

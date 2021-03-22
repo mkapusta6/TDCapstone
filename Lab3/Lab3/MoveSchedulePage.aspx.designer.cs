@@ -105,13 +105,40 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox numTrucksTextBox;
 
         /// <summary>
-        /// truckListBtn control.
+        /// TruckDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button truckListBtn;
+        protected global::System.Web.UI.WebControls.DropDownList TruckDropDown;
+
+        /// <summary>
+        /// AddTruckButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddTruckButton;
+
+        /// <summary>
+        /// EditTruckButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditTruckButton;
+
+        /// <summary>
+        /// TruckDetailsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView TruckDetailsView;
 
         /// <summary>
         /// menAmountLbl control.
@@ -132,13 +159,40 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox menAmountTextBox;
 
         /// <summary>
-        /// empListBtn control.
+        /// EmpDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button empListBtn;
+        protected global::System.Web.UI.WebControls.DropDownList EmpDropDown;
+
+        /// <summary>
+        /// AddEmpButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddEmpButton;
+
+        /// <summary>
+        /// EditEmpButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditEmpButton;
+
+        /// <summary>
+        /// EmpDetailsView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView EmpDetailsView;
 
         /// <summary>
         /// contractPriceLbl control.

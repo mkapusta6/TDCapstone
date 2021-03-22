@@ -1,0 +1,15 @@
+DROP TABLE MovingEmployeeEquipmentInv;
+DROP TABLE Moving;
+DROP TABLE Auction;
+DROP TABLE EmployeeWorkflow;
+DROP TABLE EquipmentServiceTicket;
+DROP TABLE CustomerWorkflow;
+DROP TABLE Inventory;
+DROP TABLE Workflow;
+DROP TABLE TicketHistory;
+DROP TABLE Equipment;
+DROP TABLE ServiceTicket;
+DROP TABLE Service_T;
+DROP TABLE Employee;
+DROP TABLE Request;
+DROP TABLE Customer;
