@@ -10,7 +10,7 @@
     <asp:Label ID="pswrdLbl" runat="server" Text="Password:"></asp:Label>
     <asp:TextBox ID="pswrdTxtBox" runat="server" style="margin-left: 6px" TextMode="Password"></asp:TextBox>
     <asp:RequiredFieldValidator ID="RequiredPswrd" runat="server" ControlToValidate="pswrdTxtBox" ErrorMessage="Password Required" ForeColor="Red"></asp:RequiredFieldValidator>
-    <br />
+    <br /><br />
     <asp:Label ID="lblIncorrectLogin" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
     
     <br />
