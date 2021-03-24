@@ -51,6 +51,159 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox contDateTextBox;
 
         /// <summary>
+        /// PossibleActionTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table PossibleActionTable;
+
+        /// <summary>
+        /// PossibleBringInLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PossibleBringInLbl;
+
+        /// <summary>
+        /// PossibleBringInDateCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar PossibleBringInDateCld;
+
+        /// <summary>
+        /// PossiblePickUpLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PossiblePickUpLbl;
+
+        /// <summary>
+        /// PossiblePickUpCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar PossiblePickUpCld;
+
+        /// <summary>
+        /// PossibleLookAtLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PossibleLookAtLbl;
+
+        /// <summary>
+        /// PossibleLookAtCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar PossibleLookAtCld;
+
+        /// <summary>
+        /// PossibleAppraisalLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PossibleAppraisalLbl;
+
+        /// <summary>
+        /// PossibleAppraisalCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar PossibleAppraisalCld;
+
+        /// <summary>
+        /// PossibleSaleDateLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PossibleSaleDateLbl;
+
+        /// <summary>
+        /// PossibleSaleDateCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar PossibleSaleDateCld;
+
+        /// <summary>
+        /// PossibleBringInTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PossibleBringInTBox;
+
+        /// <summary>
+        /// PossiblePickUpTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PossiblePickUpTBox;
+
+        /// <summary>
+        /// PossibleLookAtTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PossibleLookAtTBox;
+
+        /// <summary>
+        /// PossibleAppraisalTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PossibleAppraisalTBox;
+
+        /// <summary>
+        /// PossibleSaleDateTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PossibleSaleDateTBox;
+
+        /// <summary>
+        /// ConfirmedDatesTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ConfirmedDatesTable;
+
+        /// <summary>
         /// bringInLbl control.
         /// </summary>
         /// <remarks>
@@ -60,13 +213,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label bringInLbl;
 
         /// <summary>
-        /// bringInTextBox2 control.
+        /// ConfirmedBringInDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bringInTextBox2;
+        protected global::System.Web.UI.WebControls.Calendar ConfirmedBringInDate;
 
         /// <summary>
         /// pickUpLabel4 control.
@@ -78,13 +231,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label pickUpLabel4;
 
         /// <summary>
-        /// pickUpTextBox3 control.
+        /// ConfirmedPickupDateCld control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pickUpTextBox3;
+        protected global::System.Web.UI.WebControls.Calendar ConfirmedPickupDateCld;
 
         /// <summary>
         /// lookAtLabel5 control.
@@ -96,13 +249,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label lookAtLabel5;
 
         /// <summary>
-        /// lookAtTextBox4 control.
+        /// ConfirmedLookAtDateCld control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lookAtTextBox4;
+        protected global::System.Web.UI.WebControls.Calendar ConfirmedLookAtDateCld;
 
         /// <summary>
         /// appraisalDateLabel6 control.
@@ -114,13 +267,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label appraisalDateLabel6;
 
         /// <summary>
-        /// appraisalTextBox5 control.
+        /// ConfirmedAppraisalDateCld control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox appraisalTextBox5;
+        protected global::System.Web.UI.WebControls.Calendar ConfirmedAppraisalDateCld;
 
         /// <summary>
         /// saleDateLabel7 control.
@@ -130,6 +283,51 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label saleDateLabel7;
+
+        /// <summary>
+        /// ConfirmedSaleDateCld control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar ConfirmedSaleDateCld;
+
+        /// <summary>
+        /// bringInTextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox bringInTextBox2;
+
+        /// <summary>
+        /// pickUpTextBox3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pickUpTextBox3;
+
+        /// <summary>
+        /// lookAtTextBox4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lookAtTextBox4;
+
+        /// <summary>
+        /// appraisalTextBox5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox appraisalTextBox5;
 
         /// <summary>
         /// saleDateTextBox6 control.
