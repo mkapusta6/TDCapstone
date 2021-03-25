@@ -12,23 +12,23 @@
             <legend>Initial Contact Form</legend>
 
             <%-- Labels and Textboxes--%>
-           <%-- <asp:Label ID="cusNameLbl" runat="server" Text="Name:" Style="text-align: right"></asp:Label>
+            <%-- <asp:Label ID="cusNameLbl" runat="server" Text="Name:" Style="text-align: right"></asp:Label>
             <asp:TextBox ID="addCustomerTxtBox" runat="server" Width="128px" Style="margin-left: 123px; margin-top: 0px;" Height="18px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredCustomerName" ControlToValidate="addCustomerTxtBox" runat="server" ErrorMessage="Name Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />--%>
-            <asp:Label ID="cusFirstNameLbl" runat="server" Text="First Name" ></asp:Label>
-            <asp:TextBox ID="addCustFirstName" runat="server"  Width="128px" Style="margin-left: 95px; margin-top: 0px;" Height="18px"></asp:TextBox>
+            <asp:Label ID="cusFirstNameLbl" runat="server" Text="First Name"></asp:Label>
+            <asp:TextBox ID="addCustFirstName" runat="server" Width="128px" Style="margin-left: 95px; margin-top: 0px;" Height="18px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFirstName" ControlToValidate="addCustFirstName" runat="server" ErrorMessage="First Name Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="cusLastNameLbl" runat="server" Text="Last Name"></asp:Label>
-            <asp:TextBox ID="addCustLastName" runat="server" Width="128px" Style="margin-left: 97px; margin-top: 0px;" Height="18px" ></asp:TextBox>
+            <asp:TextBox ID="addCustLastName" runat="server" Width="128px" Style="margin-left: 97px; margin-top: 0px;" Height="18px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredLastName" ControlToValidate="addCustLastName" runat="server" ErrorMessage="Last Name Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="initialContactLbl" runat="server" Text="Initial Contact"></asp:Label>
-            <asp:DropDownList ID="initialContactList" DataTextField="InitialContact" DataValueField="InitialContact"  runat="server" style="margin-left: 97px"></asp:DropDownList>
+            <asp:DropDownList ID="initialContactList" DataTextField="InitialContact" DataValueField="InitialContact" runat="server" Style="margin-left: 97px"></asp:DropDownList>
             <br />
-            <asp:Label ID="discoveredLbl" Text="Source Of Exposure?" runat ="server"></asp:Label>
-            <asp:TextBox ID="dscvrdtxtbox" runat="server" style="margin-left: 26px" Width="114px"></asp:TextBox>
+            <asp:Label ID="discoveredLbl" Text="Source Of Exposure?" runat="server"></asp:Label>
+            <asp:TextBox ID="dscvrdtxtbox" runat="server" Style="margin-left: 26px" Width="114px"></asp:TextBox>
             <br />
             <asp:Label ID="cusPhoneLbl" runat="server" Text="Phone:" Width="40px"></asp:Label>
             <asp:TextBox ID="addCPhone" runat="server" Width="128px" Style="margin-left: 122px"></asp:TextBox>
@@ -36,14 +36,16 @@
             <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="String"></asp:CompareValidator>
             <br />
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
-            <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest"  runat="server" style="margin-left: 67px"></asp:DropDownList>
+            <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest" runat="server" Style="margin-left: 67px"></asp:DropDownList>
             <br />
             <asp:Label ID="ifAuctionLbl" runat="server" Text="If Auction:"></asp:Label>
             <asp:DropDownList ID="ifAuctionDropDownList" DataTextField="IfAuction" DataValueField="IfAuction" runat="server"></asp:DropDownList>
             <br />
             <asp:Label ID="ifMovingLbl" runat="server" Text="If Moving:"></asp:Label>
-            From Address: <asp:TextBox ID="fromtxtBox" runat="server"></asp:TextBox>
-            To Address: <asp:TextBox ID="toTxtBox" runat="server"></asp:TextBox>
+            From Address:
+            <asp:TextBox ID="fromtxtBox" runat="server"></asp:TextBox>
+            To Address:
+            <asp:TextBox ID="toTxtBox" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="downsizingLbl" runat="server" Text="Downsizing?"></asp:Label>
             <asp:DropDownList ID="downsizeDropDownList" DataTextField="Downsizing" DataValueField="Downsizing" runat="server"></asp:DropDownList>
