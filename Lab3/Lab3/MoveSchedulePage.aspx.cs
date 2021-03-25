@@ -41,7 +41,7 @@ namespace Lab3
                 EmpDropDown.DataBind();
                 con.Close();
             }
-            
+
 
 
 
@@ -54,7 +54,7 @@ namespace Lab3
                 addressTxtBox.Text = address;
             }
 
-           if (Application["LookAtDate"] != null)
+            if (Application["LookAtDate"] != null)
             {
                 string lookAt = Application["LookAtDate"].ToString();
                 lookAtTxtBox.Text = lookAt;
@@ -68,7 +68,7 @@ namespace Lab3
 
         protected void empListBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void TruckDropDown_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,10 +101,10 @@ namespace Lab3
             cmd.Parameters.AddWithValue("@EmployeeID", EmpDropDown.SelectedValue.ToString());
 
             SqlDataAdapter adapter = new SqlDataAdapter();
-            
+
             cmd.Connection = con;
             adapter.SelectCommand = cmd;
-            
+
             DataTable datatable = new DataTable();
             adapter.Fill(datatable);
             EmpDetailsView.DataSource = datatable;
