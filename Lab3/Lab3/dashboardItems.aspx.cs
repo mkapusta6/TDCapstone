@@ -14,6 +14,11 @@ namespace Lab3
 
         }
 
+        protected void formsBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("bootsrapFormSelection.aspx");
+        }
+
         // This is aspx side from example
         //        <%this is the client side code for the design and display%>
         //<asp:Panel ID = "Panel1" runat="server" DefaultButton="btnSubmit">

@@ -1,0 +1,8 @@
+Sprint 2 TODO:
+--------------
+
+LOGIN PAGE
+-----------------------------------------------------------------
+1.) Login works just by typing admin doesn't matter what password
+2.) Add status label for incorrect password
+3.) Add validation controls

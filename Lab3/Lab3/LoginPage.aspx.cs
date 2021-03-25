@@ -37,7 +37,7 @@ namespace Lab3
             loginCommand.CommandText = "JeremyEzellLab3";
 
             loginCommand.Parameters.AddWithValue("@EmpUsername", usrnameTxtBox.Text);
-            loginCommand.Parameters.AddWithValue("@EmpPassword", usrnameTxtBox.Text);
+            loginCommand.Parameters.AddWithValue("@EmpPassword", pswrdTxtBox.Text);
 
 
 

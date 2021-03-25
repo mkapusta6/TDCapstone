@@ -21,12 +21,12 @@
                 <div class="col-sm-6 form-group">
                     <label for="name">
                         Your Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="col-sm-6 form-group">
                     <label for="email">
                         Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email">
                 </div>
             </div>
 
@@ -197,6 +197,6 @@ todoListInput.val("");
     </asp:Content>
 
 <asp:Content ID="buttonTemplateContent" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <button type="button" class="btn-primary btn-lg btn-warning" style="width: 219px">+ New Form</button>
+    <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
         </asp:Content>
 

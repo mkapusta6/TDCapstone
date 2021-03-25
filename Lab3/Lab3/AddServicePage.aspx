@@ -7,11 +7,11 @@
         <%--Beginning section of page layout and buttons--%>
         <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 157px;">
             <legend>Service Form</legend>
-            <asp:Label ID="serviceTypeLbl" runat="server" Text="" Width="127px"></asp:Label>
-            <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
+            <asp:Label ID="serviceTypeLbl" runat="server" Text=""></asp:Label>
+            <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false" CssClass="form-control"></asp:TextBox>
             <br />
             <asp:Label ID="dateLastModifiedLbl" runat="server" Text="Last Updated" Width="123px"></asp:Label>
-            <asp:TextBox ID="dateLastModifiedTxtBox" runat="server" Width="128px" Style="margin-left: 13px"></asp:TextBox>
+            <asp:TextBox ID="dateLastModifiedTxtBox" runat="server" class="form-control"></asp:TextBox>
             Format as MM/DD/YYYY
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDateLastModified" ControlToValidate="dateLastModifiedTxtBox" runat="server" ErrorMessage="Last Update Info Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidatorDateLastModified" ControlToValidate="dateLastModifiedTxtBox" Operator="DataTypeCheck" Type="Date" runat="server" ErrorMessage="Invalid Date" ForeColor="Red"></asp:CompareValidator>

@@ -77,7 +77,6 @@
     <Content Include="assets\loginStyle.css" />
     <Content Include="assets\normalize.css" />
     <Content Include="assets\todoList.css" />
-    <Content Include="bootsrapNavigationMaster.aspx" />
     <Content Include="bootstrapLogin.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -93,9 +92,13 @@
     <Content Include="CreateNewTicketPage.aspx" />
     <Content Include="CustomerLogin.aspx" />
     <Content Include="EditTicketPage.aspx" />
+    <Content Include="fonts\font-awesome.min.css" />
+    <Content Include="fonts\icon-font.min.css" />
     <Content Include="images\amazing-solid-green-background.jpg" />
+    <Content Include="images\form Images-initialContactForm.mp4" />
     <Content Include="images\formTemplateImage.png" />
     <Content Include="images\header-logo.png" />
+    <Content Include="images\initialContactFormPic1.jpg" />
     <Content Include="images\Vertical Green Gradient iOS7 iPhone 5 Wallpaper-320x480.jpg" />
     <Content Include="InitialContactPage.aspx" />
     <Content Include="loginDecisionPage.aspx" />
@@ -183,6 +186,12 @@
     <Content Include="SystemsRequestPage.aspx" />
     <Content Include="TicketPage.aspx" />
     <Content Include="TrackTicketsPage.aspx" />
+    <Content Include="vendor\animate.css" />
+    <Content Include="vendor\animsition.min.css" />
+    <Content Include="vendor\bootstrap.min.css" />
+    <Content Include="vendor\daterangepicker.css" />
+    <Content Include="vendor\hamburgers.min.css" />
+    <Content Include="vendor\select2.min.css" />
     <Content Include="ViewInfoPage.aspx" />
     <Content Include="FolderPage.aspx" />
     <Content Include="MoveFormPage.aspx" />
@@ -208,6 +217,11 @@
     <Content Include="navigationDash.Master" />
     <Content Include="dashboardItems.aspx" />
     <Content Include="bootsrapFormSelection.aspx" />
+    <Content Include="bootsrapInitialContact.aspx" />
+    <Content Include="bootstrapAddService.aspx" />
+    <Content Include="bootstrapCreateNewTicket.aspx" />
+    <Content Include="bootstrapMovingForm.aspx" />
+    <Content Include="bootstrapAuctionScheduling.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="images\CustomerPortal.png" />
     <Content Include="images\loginHeader.jpg" />
@@ -224,13 +238,6 @@
     </Compile>
     <Compile Include="Activities.Master.designer.cs">
       <DependentUpon>Activities.Master</DependentUpon>
-    </Compile>
-    <Compile Include="bootsrapNavigationMaster.aspx.cs">
-      <DependentUpon>bootsrapNavigationMaster.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="bootsrapNavigationMaster.aspx.designer.cs">
-      <DependentUpon>bootsrapNavigationMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="bootstrapLogin.aspx.cs">
       <DependentUpon>bootstrapLogin.aspx</DependentUpon>
@@ -426,6 +433,41 @@
     <Compile Include="bootsrapFormSelection.aspx.designer.cs">
       <DependentUpon>bootsrapFormSelection.aspx</DependentUpon>
     </Compile>
+    <Compile Include="bootsrapInitialContact.aspx.cs">
+      <DependentUpon>bootsrapInitialContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootsrapInitialContact.aspx.designer.cs">
+      <DependentUpon>bootsrapInitialContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapAddService.aspx.cs">
+      <DependentUpon>bootstrapAddService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapAddService.aspx.designer.cs">
+      <DependentUpon>bootstrapAddService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapCreateNewTicket.aspx.cs">
+      <DependentUpon>bootstrapCreateNewTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapCreateNewTicket.aspx.designer.cs">
+      <DependentUpon>bootstrapCreateNewTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapMovingForm.aspx.cs">
+      <DependentUpon>bootstrapMovingForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapMovingForm.aspx.designer.cs">
+      <DependentUpon>bootstrapMovingForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapAuctionScheduling.aspx.cs">
+      <DependentUpon>bootstrapAuctionScheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapAuctionScheduling.aspx.designer.cs">
+      <DependentUpon>bootstrapAuctionScheduling.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -455,6 +497,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

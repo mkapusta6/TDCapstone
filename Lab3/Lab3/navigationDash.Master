@@ -5,9 +5,9 @@
 <html lang="en">
 <head runat="server">
      <meta charset="UTF-8">
-		<title> Oishii - Fine Japanese Cuisine</title>
+		<title> Green Valley</title>
 		<meta name="description" content="Oishii - Fine Japanese Cuisine ">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"/>
 		<link rel="stylesheet" type="text/css" href="assets/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/layout.css">
@@ -43,10 +43,10 @@
         </div>
         <div class="collapse navbar-collapse navbar-right" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#intro">Dashboard</a></li>
-   				<li><a href="#about">Forms</a></li>
-   				<li><a href="#portfolio">Reports</a></li>
-    			<li><a href="#contact">Reserve</a></li>
+                <li><a href="dashboardItems.aspx">Dashboard</a></li>
+   				<li><a href="bootsrapFormSelection.aspx">Forms</a></li>
+   				<li><a href="#portfolio">Client Folders</a></li>
+    			<li><a href="#contact">Reports</a></li>
             </ul>
         </div>
     </div>
