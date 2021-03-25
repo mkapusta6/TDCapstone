@@ -30,8 +30,15 @@ namespace Lab3
             DBConn.Open();
             SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = DBConn;
-            loginCommand.CommandText = "SELECT PasswordHash FROM Pass WHERE Username = @Username";
-            loginCommand.Parameters.Add(new SqlParameter("@Username", usrnameTxtBox.Text));
+            loginCommand.CommandType = CommandType.StoredProcedure;
+            loginCommand.CommandText = "JeremyEzellLab3";
+
+            loginCommand.Parameters.AddWithValue("@EmpUsername", usrnameTxtBox.Text);
+            loginCommand.Parameters.AddWithValue("@EmpPassword", pswrdTxtBox.Text);
+
+
+
+
 
             SqlDataReader reader = loginCommand.ExecuteReader();
 

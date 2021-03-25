@@ -32,7 +32,7 @@
                     <%--<label for="email" class="sr-only">Email</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email address">--%>
                     <asp:Label ID="emailLbl" runat="server" class="sr-only" Text="Email address"></asp:Label>
-                    <asp:TextBox ID="email" type="email" class="form-control" placeholder="Email address" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="email"  class="form-control" placeholder="Email address" runat="server"></asp:TextBox>
                   </div> 
                   <div class="form-group mb-4">
                     <%--<label for="password" class="sr-only">Password</label>
@@ -41,7 +41,7 @@
                     <asp:TextBox ID="password" type="password" class="form-control" placeholder="***********" runat="server"></asp:TextBox>
                   </div>
                   <%--<input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login">--%>
-                  <asp:Button ID="Button1" class ="btn btn-block login-btn mb-4" runat="server" Text="Login" />
+                  <asp:Button ID="loginBtn" class ="btn btn-block login-btn mb-4" runat="server" Text="Login" OnClick="loginBtn_Click" />
                 
                 <%--<a href="#!" class="forgot-password-link">Forgot password?</a>--%>
                 <%--<p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>--%>
