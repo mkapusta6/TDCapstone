@@ -103,6 +103,7 @@ INSERT INTO ServiceTicket VALUES ('New', '02/18/2021', '4', '4', '4', 'Chase You
 
 CREATE TABLE Equipment
 	(EquipmentID int IDENTITY(1,1) PRIMARY KEY,
+	EquipmentName varchar(30) NULL,
 	EquipmentType varchar(20) NULL,
 	EquipmentCount int NULL,
 	EquipmentStatus varchar(20) NULL,

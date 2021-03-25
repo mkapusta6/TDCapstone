@@ -15,6 +15,15 @@ namespace Lab3
     {
 
         /// <summary>
+        /// CompletionTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table CompletionTable;
+
+        /// <summary>
         /// finalCostLabel1 control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label paymentLbl;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// PaymentReceivedDD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList PaymentReceivedDD;
 
         /// <summary>
         /// expereinceLbl control.
@@ -69,13 +78,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox experienceTextBox2;
 
         /// <summary>
-        /// reviewFollowUpLabel3 control.
+        /// ReviewFollowUpLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label reviewFollowUpLabel3;
+        protected global::System.Web.UI.WebControls.Label ReviewFollowUpLbl;
 
         /// <summary>
         /// crewLabel1 control.
@@ -87,31 +96,76 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label crewLabel1;
 
         /// <summary>
-        /// adressesMilageLabel1 control.
+        /// StartAddressLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label adressesMilageLabel1;
+        protected global::System.Web.UI.WebControls.Label StartAddressLbl;
 
         /// <summary>
-        /// addressMilageTextBox3 control.
+        /// StartAddressTBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addressMilageTextBox3;
+        protected global::System.Web.UI.WebControls.TextBox StartAddressTBox;
 
         /// <summary>
-        /// trucksUsedLabel4 control.
+        /// DestAddressLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label trucksUsedLabel4;
+        protected global::System.Web.UI.WebControls.Label DestAddressLbl;
+
+        /// <summary>
+        /// DestAddressTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DestAddressTBox;
+
+        /// <summary>
+        /// MileageLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MileageLbl;
+
+        /// <summary>
+        /// MileageTBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MileageTBox;
+
+        /// <summary>
+        /// TrucksUsedLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TrucksUsedLbl;
+
+        /// <summary>
+        /// TrucksGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TrucksGridView;
 
         /// <summary>
         /// addiotionalNotesLabel1 control.

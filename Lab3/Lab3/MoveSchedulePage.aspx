@@ -20,12 +20,41 @@
         <asp:Label ID="numOfTrucks" runat="server" Text="# Of Trucks:"></asp:Label>
         <asp:TextBox ID="numTrucksTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="truckListBtn" runat="server" Text="Edit/View Trucks" OnClick="truckListBtn_Click"/>
+        <asp:DropDownList 
+            ID="TruckDropDown" 
+            runat="server"
+            AutoPostBack="true"
+            onSelectedIndexChanged="TruckDropDown_SelectedIndexChanged"
+            ></asp:DropDownList>
+        <asp:Button ID="AddTruckButton" runat="server" Text="Add Truck to Move" OnClick="AddTruckButton_Click" />
+        <asp:Button ID="EditTruckButton" runat="server" Text="Edit Selected Truck Information" OnClick="EditTruckButton_Click" />
+        <asp:DetailsView 
+            ID="TruckDetailsView" 
+            runat="server" 
+            Height="50px" 
+            Width="125px"
+            AutoGenerateRows="true"
+            DataKeyNames="EquipmentID"
+            visible="false"></asp:DetailsView>
         <br />
         <asp:Label ID="menAmountLbl" runat="server" Text="# Of Men:"></asp:Label>
-        <asp:TextBox ID="menAmountTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="menAmountTextBox" runat="server"></asp:TextBox><br />
         <br />
-        <asp:Button ID="empListBtn" runat="server" Text="Edit/View Employees" OnClick="empListBtn_Click" />
+        <asp:DropDownList 
+            ID="EmpDropDown" 
+            runat="server"
+            OnSelectedIndexChanged="EmpDropDown_SelectedIndexChanged"></asp:DropDownList>
+        <asp:Button ID="AddEmpButton" runat="server" Text="Add Employee To Move" OnClick="AddEmpButton_Click" />
+        <asp:Button ID="EditEmpButton" runat="server" Text="Edit Selected Employee Information" OnClick="EditEmpButton_Click" />
+        <asp:DetailsView 
+            ID="EmpDetailsView" 
+            runat="server" 
+            Height="50px"  
+            Width="125px"
+            AutoGenerateRows="true"
+            DataKeyNames="EmployeeID"
+            visible="false"
+            ></asp:DetailsView>
         <br />
         <asp:Label ID="contractPriceLbl" runat="server" Text="Contract Price Estimate:"></asp:Label>
         <asp:TextBox ID="contractTextBox1" runat="server"></asp:TextBox>
