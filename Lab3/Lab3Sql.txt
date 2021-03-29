@@ -102,7 +102,7 @@ INSERT INTO ServiceTicket VALUES ('New', '02/18/2021', '4', '4', '4', 'Chase You
 
 
 CREATE TABLE Equipment
-	(EquipmentID int IDENTITY(1,1) PRIMARY KEY,
+	(EquipmentID int IDENTITY(1,1),
 	EquipmentName varchar(30) NULL,
 	EquipmentType varchar(20) NULL,
 	EquipmentCount int NULL,
@@ -114,7 +114,20 @@ CREATE TABLE Equipment
 	Crew varchar(40) NULL,
 	NumberOfTrucks varchar(20) NULL,
 	TruckTypes varchar(30) NULL,
-	EquipmentDescription varchar(30) NULL);
+	EquipmentDescription varchar(30) NULL,
+CONSTRAINT Equipment_PK PRIMARY KEY(EquipmentID));
+
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('2015', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('2011', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('Cube', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('GMC', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('Green', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('Van', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+INSERT INTO Equipment (EquipmentName, EquipmentType, EquipmentCount, EquipmentStatus, SuppliesNeeded, TruckAccess, NumberOfBoxes, BoxType, Crew, NumberOfTrucks, TruckTypes, EquipmentDescription) VALUES ('Trailer', 'truck', '200', 'available', 'n/a', 'yes', '1', 'big', '13', '1', '2', '2015');
+
+
+
+
 
 
 CREATE TABLE TicketHistory
@@ -170,12 +183,12 @@ CREATE TABLE EmployeeWorkflow
 Create Table Auction(
 	AuctionID int IDENTITY(1,1) NOT NULL,
 	AuctionHeading varchar(50) NOT NULL,
-	AuctionDate DateTime NOT NULL,
+	AuctionDate DateTime NULL,
 	AuctionLookAt DateTime NULL,
 	AuctionBringIn DateTime NULL,
 	AuctionPickUp DateTime NULL,
 	R_CustomerName varchar(30) NOT NULL,
-	R_Item varchar(50),
+	R_Item varchar(50) NULL,
 	CustomerID int NOT NULL,
 	ServiceTicketID int NOT NULL,
 CONSTRAINT Auction_PK PRIMARY KEY (AuctionID),
@@ -189,6 +202,7 @@ INSERT INTO Auction (AuctionHeading, AuctionDate, AuctionLookAt, AuctionBringIn,
 
 Create Table Moving(
 	MovingID int IDENTITY(1,1) NOT NULL,
+	MoveName varchar(40) NULL,
 	HouseStories varchar(40) NULL,
 	DistanceFromTruck varchar(40) NULL,
 	DrivewayAccessibility varchar(40) NULL,
@@ -206,9 +220,11 @@ Create Table Moving(
 	PricingMethod varchar(max) NULL,
 	ContractPrice varchar(30) NULL,
 	FinalDate date NULL,
+	FromAddress varchar(100) NULL,
+	ToAddress varchar(100) NULL,
 	CustomerID int NOT NULL,
 CONSTRAINT Moving_PK PRIMARY KEY (MovingID),
-CONSTRAINT Moving_FK FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)); 
+CONSTRAINT Moving_FK1 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)); 
 
 INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('2', 'Short', 'Fair', 'Fair', 'Attic', '2', 'Taped', '3', 'Necessary', 'Clothes', 'Room has low ceiling', 'Please lock door when done', '04/01/2021', '1');
 INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Long', 'Fair', 'Fair', 'Bedroom#1', '2', 'Taped', '6', 'Unecessary', 'Jerseys', 'Door opens inverted', 'Please lock door when done', '04/02/2021', '2');
@@ -218,7 +234,8 @@ INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, Load
 Create Table MovingEmployeeEquipmentInv(
 	MovingID int NOT NULL,
 	EmployeeID int NOT NULL,
-	EquipmentID int NOT NULL,
+	ServiceTicketID int NOT NULL,
+	TruckName varchar(40) NULL,
 	CostOfSupplies varchar(30) NULL,
 	Mours varchar(30) NULL,
 	Milage varchar(30) NULL,
@@ -227,7 +244,75 @@ Create Table MovingEmployeeEquipmentInv(
 	CostOfEachWorker varchar(30) NULL,
 	FoodHotelReq varchar(30) NULL,
 	MenAmount varchar(30) NULL,
+	FromAddress varchar(100) NULL,
+	ToAddress varchar(100) NULL,
 
 CONSTRAINT MovingEmpEq_FK FOREIGN KEY (MovingID) REFERENCES Moving(MovingID),
 CONSTRAINT MovingEmpEq_FK2 FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
-CONSTRAINT MovingEmpEq_FK3 FOREIGN KEY (EquipmentID) REFERENCES Equipment(EquipmentID));
+CONSTRAINT MovingEmpEq_FK3 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID));
+
+Create Table AuctionPickUp(
+	AuctionLookAt DateTime NULL,
+	AuctionBringIn DateTime NULL,
+	AuctionPickUp DateTime NULL,
+	ContactDate date NULL,
+	StorageLocation varchar(40) NULL,
+	Cosignor varchar(40) NULL,
+	AppraisalDate date NULL,
+	SaleDate date NULL,
+	PBringInDate date NULL,
+	PPickUpDate date NULL,
+	PLookAtDate date NULL,
+	PAppraisalDate date NULL,
+	PSaleDate date NULL,
+	AuctionID int NOT NULL,
+	ServiceTicketID int NOT NULL,
+	CustomerID int NOT NULL,
+CONSTRAINT AuctionPickUp_FK1 FOREIGN KEY (AuctionID) REFERENCES Auction(AuctionID),
+CONSTRAINT AuctionPickUp_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
+CONSTRAINT AuctionPickUp_FK3 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID));
+
+INSERT INTO AuctionPickUp(ContactDate, StorageLocation, Cosignor, AppraisalDate, SaleDate, PBringInDate, PPickUpDate, PLookAtDate, PAppraisalDate, PSaleDate, AuctionID, ServiceTicketID, CustomerID) VALUES ('04/12/2021', 'UPS Garage', 'Creg', '04/12/2021', '04/22/2021', '04/10/2021', '04/13/2021', '04/11/2021', '04/12/2021', '04/22/2021', '1', '1', '1');
+INSERT INTO AuctionPickUp(ContactDate, StorageLocation, Cosignor, AppraisalDate, SaleDate, PBringInDate, PPickUpDate, PLookAtDate, PAppraisalDate, PSaleDate, AuctionID, ServiceTicketID, CustomerID) VALUES ('04/12/2021', 'UPS Garage', 'Creg', '04/12/2021', '04/22/2021', '04/10/2021', '04/13/2021', '04/11/2021', '04/12/2021', '04/22/2021', '2', '2', '2');
+INSERT INTO AuctionPickUp(ContactDate, StorageLocation, Cosignor, AppraisalDate, SaleDate, PBringInDate, PPickUpDate, PLookAtDate, PAppraisalDate, PSaleDate, AuctionID, ServiceTicketID, CustomerID) VALUES ('04/12/2021', 'UPS Garage', 'Creg', '04/12/2021', '04/22/2021', '04/10/2021', '04/13/2021', '04/11/2021', '04/12/2021', '04/22/2021', '3', '3', '3');
+INSERT INTO AuctionPickUp(ContactDate, StorageLocation, Cosignor, AppraisalDate, SaleDate, PBringInDate, PPickUpDate, PLookAtDate, PAppraisalDate, PSaleDate, AuctionID, ServiceTicketID, CustomerID) VALUES ('04/12/2021', 'UPS Garage', 'Creg', '04/12/2021', '04/22/2021', '04/10/2021', '04/13/2021', '04/11/2021', '04/12/2021', '04/22/2021', '4', '4', '4');
+
+Create Table AuctionCompletion(
+	FinalCost varchar(20) NULL,
+	PaymentReceived tinyint NULL,
+	Experience varchar(MAX) NULL,
+	AdditionalExpenses varchar(MAX) NULL,
+	followUp varchar(MAX),
+	Crew varchar(MAX),
+	fromAddress varchar(50),
+	toAddress varchar(50),
+	trucksUsed varchar(MAX),
+	AdditionalNotes varchar(MAX),
+	AuctionID int NOT NULL,
+	ServiceTicketID int NOT NULL,
+	CustomerID int NOT NULL,
+CONSTRAINT Completion_FK1 FOREIGN KEY (AuctionID) REFERENCES Auction(AuctionID),
+CONSTRAINT Completion_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
+CONSTRAINT Completion_FK3 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID));
+
+
+Create Table MoveCompletion(
+	FinalCost varchar(20) NULL,
+	PaymentReceived tinyint NULL,
+	Experience varchar(MAX) NULL,
+	AdditionalExpenses varchar(MAX) NULL,
+	followUp varchar(MAX),
+	Crew varchar(MAX),
+	fromAddress varchar(50),
+	toAddress varchar(50),
+	trucksUsed varchar(MAX),
+	AdditionalNotes varchar(MAX),
+	MovingID int NOT NULL,
+	ServiceTicketID int NOT NULL,
+	CustomerID int NOT NULL,
+CONSTRAINT Completion_FK1 FOREIGN KEY (MovingID) REFERENCES Moving(MovingID),
+CONSTRAINT Completion_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
+CONSTRAINT Completion_FK3 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID));
+
+	
+	

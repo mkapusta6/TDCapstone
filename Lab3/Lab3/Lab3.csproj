@@ -95,10 +95,17 @@
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\icon-font.min.css" />
     <Content Include="images\amazing-solid-green-background.jpg" />
+    <Content Include="images\AuctionPickUpIcon.png" />
+    <Content Include="images\AuctionSchedulingIcon.png" />
+    <Content Include="images\CompletionFormIcon.png" />
     <Content Include="images\form Images-initialContactForm.mp4" />
     <Content Include="images\formTemplateImage.png" />
     <Content Include="images\header-logo.png" />
     <Content Include="images\initialContactFormPic1.jpg" />
+    <Content Include="images\InitialContactIcon.png" />
+    <Content Include="images\MoveSchedulingIcon.png" />
+    <Content Include="images\MovingFormIcon.png" />
+    <Content Include="images\ServiceOrderIcon.png" />
     <Content Include="images\Vertical Green Gradient iOS7 iPhone 5 Wallpaper-320x480.jpg" />
     <Content Include="InitialContactPage.aspx" />
     <Content Include="loginDecisionPage.aspx" />
@@ -222,6 +229,10 @@
     <Content Include="bootstrapCreateNewTicket.aspx" />
     <Content Include="bootstrapMovingForm.aspx" />
     <Content Include="bootstrapAuctionScheduling.aspx" />
+    <Content Include="bootstrapMoveSchedulePage.aspx" />
+    <Content Include="bootstrapAuctionPickUpPage.aspx" />
+    <Content Include="bootstrapCompletionForm.aspx" />
+    <Content Include="bootstrapClientFolder.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="images\CustomerPortal.png" />
     <Content Include="images\loginHeader.jpg" />
@@ -467,6 +478,34 @@
     </Compile>
     <Compile Include="bootstrapAuctionScheduling.aspx.designer.cs">
       <DependentUpon>bootstrapAuctionScheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapMoveSchedulePage.aspx.cs">
+      <DependentUpon>bootstrapMoveSchedulePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapMoveSchedulePage.aspx.designer.cs">
+      <DependentUpon>bootstrapMoveSchedulePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapAuctionPickUpPage.aspx.cs">
+      <DependentUpon>bootstrapAuctionPickUpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapAuctionPickUpPage.aspx.designer.cs">
+      <DependentUpon>bootstrapAuctionPickUpPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapCompletionForm.aspx.cs">
+      <DependentUpon>bootstrapCompletionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapCompletionForm.aspx.designer.cs">
+      <DependentUpon>bootstrapCompletionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapClientFolder.aspx.cs">
+      <DependentUpon>bootstrapClientFolder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapClientFolder.aspx.designer.cs">
+      <DependentUpon>bootstrapClientFolder.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -37,7 +37,7 @@
             runat="server" CssClass="form-control"></asp:DropDownList>
         <br />
         <asp:Label ID="dateLbl" runat="server" Text="Occurence Date:"></asp:Label>
-        <asp:TextBox ID="dateTextBox" runat="server" CssClass="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="dateTextBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
         <br />
         <asp:Label ID="truckAccessLabel" runat="server" Text="Truck Accessibility:"></asp:Label>
         <asp:DropDownList ID="truckDropDownList1" runat="server" DataTextField="TruckAccess" DataValueField="TruckAccess" CssClass="form-control"></asp:DropDownList>
@@ -66,9 +66,9 @@
         <asp:DropDownList ID="statusDropDownList1" DataTextField="EquipmentStatus" DataValueField="EquipmentStatus" runat="server" CssClass="form-control"></asp:DropDownList>
         <br />
 
-        <asp:Button ID="popBtn" runat="server" CssClass="btn btn-secondary btn-sm" Text="Populate Fields" OnClick="popBtn_Click"/>
-        <asp:Button ID="clrBt" runat="server" Text="Clear Fields" OnClick="clrBt_Click"/>
-        <asp:Button ID="addAuctionBtn" runat="server" Text="Make Auction Live" OnClick="addAuctionBtn_Click"/>
+        <asp:Button ID="popBtn" runat="server" CssClass="btn btn-success btn-sm" Text="Populate Fields" OnClick="popBtn_Click"/>
+        <asp:Button ID="clrBt" runat="server" Text="Clear Fields" OnClick="clrBt_Click" CssClass="btn btn-success btn-sm"/>
+        <asp:Button ID="addAuctionBtn" runat="server" Text="Make Auction Live" OnClick="addAuctionBtn_Click" CssClass="btn btn-warning"/>
         <br />
         <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
     </fieldset>
@@ -76,10 +76,10 @@
     <fieldset>
         <legend>View Bring Ins And Look Ats' Form</legend>
         <asp:Button ID="bringInBtn" runat="server" Text="Show Bring In Dates" CssClass="btn btn-secondary btn-sm" OnClick="bringInBtn_Click" />
-        <asp:Button ID="srchAuctionDateBtn" runat="server" Text="Search Auction Dates For Cosignors" OnClick="srchAuctionDateBtn_Click" />
+        <asp:Button ID="srchAuctionDateBtn" runat="server" Text="Search Auction Dates For Cosignors" OnClick="srchAuctionDateBtn_Click" CssClass="btn btn-secondary btn-sm" />
         <br />
         <asp:Label ID="uploadLbl" runat="server" Text="Upload Scanned Inventory Paper:"></asp:Label>
-        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn btn-secondary" />
         <br />
         <asp:Image ID="Image1" runat="server" />
         <br />

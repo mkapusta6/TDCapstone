@@ -90,7 +90,7 @@
                 <asp:TextBox ID="whatIsBeingSoldTxtBox" runat="server" CssClass="form-control" Placeholder="What Is Being Sold"></asp:TextBox>
                 <br />
                 <asp:Label ID="deadlineLbl" runat="server" Text="Desired Deadline Date:"></asp:Label>
-                <asp:TextBox ID="addDeadlineTxtBox" runat="server" CssClass="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+                <asp:TextBox ID="addDeadlineTxtBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 <br />
                 <asp:Label ID="cusEmailLbl" runat="server" Text="Email:" for="addCEmail"></asp:Label>
                 <asp:TextBox ID="addCEmail" runat="server" class="form-control" Placeholder="Email"></asp:TextBox>
@@ -117,11 +117,12 @@
                 <br />
 
                 <asp:Label ID="currentDateLbl" runat="server" Text="Date Created"></asp:Label>
-                <asp:TextBox ID="currentDateTxtBox" runat="server" CssClass="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+                <asp:TextBox ID="currentDateTxtBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 <br />
-                <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" class="btn btn-primary btn-lg" OnClick="addCustBtn_Click" />
-                <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" class="btn btn-primary btn-lg" CausesValidation="false" OnClick="populateBtn_Click" />
-                <asp:Button ID="clearBtn" runat="server" Text="Clear Form" class="btn btn-primary btn-lg" CausesValidation="false" OnClick="clearBtn_Click" />
+               <%-- <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" CssClass="btn btn-warning" OnClick="addCustBtn_Click" />--%>
+                <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" CssClass="btn btn-success btn-sm" CausesValidation="false" OnClick="populateBtn_Click" />
+                <asp:Button ID="clearBtn" runat="server" Text="Clear Form" class="btn btn-success btn-sm" CausesValidation="false" OnClick="clearBtn_Click" />
+                <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" CssClass="btn btn-warning" OnClick="addCustBtn_Click" />
                 <br />
                 <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
             </div>

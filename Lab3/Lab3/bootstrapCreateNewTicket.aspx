@@ -62,32 +62,32 @@
             ></asp:DropDownList>
         <br />
         <asp:Label ID="ticketStrtLbl" runat="server" Text="Date Started:"></asp:Label>
-        <asp:TextBox ID="ticketStrtTxtBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="ticketStrtTxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <asp:RequiredFieldValidator ID="tcktStartRequiredFieldValidator" ControlToValidate="ticketStrtTxtBox" runat="server" ErrorMessage="Date Required" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="date1Lbl" runat="server" Text="Date/Time Option #1:"></asp:Label>
-        <asp:TextBox ID="date1TxtBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="date1TxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <br />
         <asp:Label ID="date2Lbl" runat="server" Text="Date/Time Option #2:"></asp:Label>
-        <asp:TextBox ID="date2TxtBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="date2TxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <br />
         <asp:Label ID="lookAtLbl" runat="server" Text="Look At Date:"></asp:Label>
-        <asp:TextBox ID="lookAtTextBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="lookAtTextBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <br />
         <asp:Label ID="bringInLbl" runat="server" Text="Bring In Date:"></asp:Label>
-        <asp:TextBox ID="bringInTextBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="bringInTextBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <br />
         <asp:Label ID="pickUpLbl" runat="server" Text="Pick Up Date:"></asp:Label>
-        <asp:TextBox ID="pickUpTextBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+        <asp:TextBox ID="pickUpTextBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
         <br />
 
         <asp:Label ID="addSrvcList" runat="server" Text="Additional Services:"></asp:Label>
         <asp:DropDownList ID="addServicesDDL" DataTextField="AddServices" DataValueField="AddServices" runat="server" class="form-control"></asp:DropDownList>
         <br />
         <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false" class="form-control"></asp:TextBox>
-        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-primary btn-lg" OnClick="popBtn_Click" CausesValidation="false"/>
-        <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-primary btn-lg" OnClick="clearBtn_Click" CausesValidation="false"/>
-        <asp:Button ID="createSrvcTckt" runat="server" Text="Complete Service Form" class="btn btn-primary btn-lg" OnClick="createSrvcTckt_Click"/>
+        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>
+        <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-success btn-sm" OnClick="clearBtn_Click" CausesValidation="false"/>
+        <asp:Button ID="createSrvcTckt" runat="server" Text="Complete Service Form" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>
         <br />
         <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
     </fieldset>

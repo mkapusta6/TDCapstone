@@ -10,6 +10,9 @@
         .auto-style3 {
             margin-left: 280px;
         }
+        .auto-style4 {
+            margin-left: 554px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
@@ -30,13 +33,15 @@
             <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
 
             <%--Customer Dropdown--%>
-    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style1" Height="147px" Width="140px" />
-    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style2" Height="147px" Width="140px" />
-    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style3" Height="147px" Width="140px" />
+    <asp:ImageButton ID="initialContactFormButton" runat="server" ImageUrl="images/InitialContactIcon.png" CssClass="auto-style1" Height="147px" Width="140px" OnClick="initialContactFormButton_Click" />
+    <asp:ImageButton ID="serviceFormBtn" runat="server" ImageUrl="images/ServiceOrderIcon.png" CssClass="auto-style2" Height="147px" Width="140px" OnClick="serviceFormBtn_Click"  />
+    <asp:ImageButton ID="auctionSchedulingFormBtn" runat="server" ImageUrl="images/AuctionSchedulingIcon.png" CssClass="auto-style3" Height="147px" Width="140px" OnClick="auctionSchedulingFormBtn_Click" />
     <br /> 
-    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style1" Height="147px" Width="140px"  />
-    <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style2" Height="147px" Width="140px" />
-    <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="images/formTemplateImage.png" CssClass="auto-style3" Height="147px" Width="140px" />
+    <asp:ImageButton ID="movingFormBtn" runat="server" ImageUrl= "images/MovingFormIcon.png" CssClass="auto-style1" Height="147px" Width="140px" OnClick="movingFormBtn_Click" />
+    <asp:ImageButton ID="movingScheduleFormBtn" runat="server" ImageUrl="images/MoveSchedulingIcon.png" CssClass="auto-style2" Height="147px" Width="140px" OnClick="movingScheduleFormBtn_Click" />
+    <asp:ImageButton ID="pickUpFormBtn" runat="server" ImageUrl="images/AuctionPickUpIcon.png" CssClass="auto-style3" Height="147px" Width="140px" OnClick="pickUpFormBtn_Click" />
+    <br />
+    <asp:ImageButton ID="completionFormBtn" runat="server" ImageUrl="images/CompletionFormIcon.png" CssClass="auto-style4"  Height="147px" Width="140px" OnClick="completionFormBtn_Click" />
 
                
                 </div>

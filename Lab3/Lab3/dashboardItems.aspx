@@ -2,11 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="emailTemplateContent" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    
     <div class="row">
     <div class="col-md-6 col-md-offset-3" id="form_container">
-        <h2>Contact Us</h2>
+        <h2>Confirmation Email</h2>
         <p>
-           Please send your message below. We will get back to you at the earliest!
+           Client Email Template
         </p>
         <form role="form" method="post" id="reused_form">
 
@@ -20,7 +21,7 @@
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label for="name">
-                        Your Name:</label>
+                        Name:</label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="col-sm-6 form-group">
@@ -118,7 +119,7 @@ $(function()
 </asp:Content>
 
 <asp:Content ID="toDoListContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="assets/todoList.css">
+   <%-- <link rel="stylesheet" type="text/css" href="assets/todoList.css">
    <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -193,10 +194,21 @@ todoListInput.val("");
 
         });
     })(jQuery);
-</script>
+</script>--%>
     </asp:Content>
 
 <asp:Content ID="buttonTemplateContent" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <div class="form-group row">
+  <div class="col-xs-2">
+    <label for="TextBox1">Search For Customer</label>
+     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+      <asp:Button ID="Button1" runat="server" Text="Search" CssClass="btn btn-secondary" />
+  </div>
+             </div>
+
     <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
+
+    <br />
+    <br />
         </asp:Content>
 

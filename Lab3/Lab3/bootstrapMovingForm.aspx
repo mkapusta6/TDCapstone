@@ -21,6 +21,9 @@
             <%--Customer Dropdown--%>
             <div class="form-group">
     <fieldset>
+        <asp:Label ID="moveNameLbl" runat="server" Text="Move Name:"></asp:Label>
+        <asp:TextBox ID="moveNameTxtBox" runat="server" CssClass="form-control"></asp:TextBox>
+        <br />
         <asp:Label ID="storiesLbl" runat="server" Text="# Of Stories:"></asp:Label>
         <asp:DropDownList ID="storiesDropDownList" DataTextField="HouseStories" DataValueField="HouseStories" runat="server" CssClass="form-control"></asp:DropDownList>
         <br />
@@ -77,9 +80,9 @@
         <asp:DropDownList ID="customerDropDownList" DataSourceID="custDtaSrc" runat="server" DataTextField="CustomerName" DataValueField="CustomerID" CssClass="form-control"></asp:DropDownList>
         <br />
         <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false"></asp:TextBox>
-        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-primary btn-lg" OnClick="popBtn_Click" CausesValidation="false"/>
-        <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-primary btn-lg" OnClick="clearBtn_Click" CausesValidation="false"/>
-        <asp:Button ID="createSrvcTckt" runat="server" Text="Create Service Ticket" class="btn btn-primary btn-lg" OnClick="createSrvcTckt_Click"/>
+        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>
+        <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-success btn-sm" OnClick="clearBtn_Click" CausesValidation="false"/>
+        <asp:Button ID="createSrvcTckt" runat="server" Text="Create Service Ticket" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>
         <br />
         <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
     </fieldset>

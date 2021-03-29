@@ -97,14 +97,15 @@ namespace Lab3
             {
 
 
-                SqlCommand MyCommand = new SqlCommand("INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, " +
-                    "BoxType, NumberOfBoxes, Blankets, Items, Accessibility, ValueOfItem, AdditionalNotes, CustomerID) Values (@HouseStories, @DistanceFromTruck, " +
+                SqlCommand MyCommand = new SqlCommand("INSERT INTO Moving (MoveName, HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, " +
+                    "BoxType, NumberOfBoxes, Blankets, Items, Accessibility, ValueOfItem, AdditionalNotes, CustomerID) Values (@MoveName, @HouseStories, @DistanceFromTruck, " +
                     "@DrivewayAccessibility, @LoadingConditions, @HouseSection, @Mfloor, @BoxType, @NumberOfBoxes, @Blankets, @Items, @Accessibility," +
                     " @ValueOfItem, @AdditionalNotes, @CustomerID)", myConnection);
 
 
                 int CustomerID = int.Parse(customerDropDownList.SelectedValue);
 
+                MyCommand.Parameters.AddWithValue("@MoveName", moveNameTxtBox.Text);
                 MyCommand.Parameters.AddWithValue("@HouseStories", storiesDropDownList.SelectedValue);
                 MyCommand.Parameters.AddWithValue("@DistanceFromTruck", distDropDownList.SelectedValue);
                 MyCommand.Parameters.AddWithValue("@DrivewayAccessibility", dwayDropDownList1.SelectedValue);

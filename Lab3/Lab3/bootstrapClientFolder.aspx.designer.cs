@@ -11,7 +11,7 @@ namespace Lab3
 {
 
 
-    public partial class WebForm22
+    public partial class WebForm31
     {
 
         /// <summary>
@@ -24,66 +24,66 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
 
         /// <summary>
-        /// initialContactFormButton control.
+        /// DropDownListLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton initialContactFormButton;
+        protected global::System.Web.UI.WebControls.Label DropDownListLbl;
 
         /// <summary>
-        /// serviceFormBtn control.
+        /// ddlCustomerList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton serviceFormBtn;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCustomerList;
 
         /// <summary>
-        /// auctionSchedulingFormBtn control.
+        /// btnLoadCustomerData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton auctionSchedulingFormBtn;
+        protected global::System.Web.UI.WebControls.Button btnLoadCustomerData;
 
         /// <summary>
-        /// movingFormBtn control.
+        /// btnShowAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton movingFormBtn;
+        protected global::System.Web.UI.WebControls.Button btnShowAll;
 
         /// <summary>
-        /// movingScheduleFormBtn control.
+        /// btnShowServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton movingScheduleFormBtn;
+        protected global::System.Web.UI.WebControls.Button btnShowServices;
 
         /// <summary>
-        /// pickUpFormBtn control.
+        /// grdServiceReults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton pickUpFormBtn;
+        protected global::System.Web.UI.WebControls.GridView grdServiceReults;
 
         /// <summary>
-        /// completionFormBtn control.
+        /// dtasrcCustomerList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton completionFormBtn;
+        protected global::System.Web.UI.WebControls.SqlDataSource dtasrcCustomerList;
     }
 }
