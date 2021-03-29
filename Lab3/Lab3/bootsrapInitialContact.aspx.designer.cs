@@ -195,6 +195,15 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label ifMovingLbl;
 
         /// <summary>
+        /// FromAddLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label FromAddLbl;
+
+        /// <summary>
         /// fromtxtBox control.
         /// </summary>
         /// <remarks>
@@ -202,6 +211,15 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox fromtxtBox;
+
+        /// <summary>
+        /// ToAddLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ToAddLbl;
 
         /// <summary>
         /// toTxtBox control.

@@ -49,6 +49,71 @@ namespace Lab3
 
                 currentDateTxtBox.Text += DateTime.Now.ToString();
 
+
+
+                if (interestList.SelectedValue == "Auction")
+                {
+                    ifAuctionLbl.Visible = true;
+                    ifAuctionLbl.Enabled = true;
+                    ifAuctionDropDownList.Visible = true;
+                    ifAuctionDropDownList.Enabled = true;
+
+                    ifMovingLbl.Visible = false;
+                    ifMovingLbl.Enabled = false;
+                    FromAddLbl.Visible = false;
+                    FromAddLbl.Enabled = false;
+                    fromtxtBox.Visible = false;
+                    fromtxtBox.Enabled = false;
+                }
+
+                else
+                {
+                    ifAuctionLbl.Visible = false;
+                    ifAuctionLbl.Enabled = false;
+                    ifAuctionDropDownList.Visible = false;
+                    ifAuctionDropDownList.Enabled = false;
+
+                    ifMovingLbl.Visible = true;
+                    ifMovingLbl.Enabled = true;
+                    FromAddLbl.Visible = true;
+                    FromAddLbl.Enabled = true;
+                    fromtxtBox.Visible = true;
+                    fromtxtBox.Enabled = true;
+                }
+
+            }
+
+            else
+            {
+                if (interestList.SelectedValue == "Auction")
+                {
+                    ifAuctionLbl.Visible = true;
+                    ifAuctionLbl.Enabled = true;
+                    ifAuctionDropDownList.Visible = true;
+                    ifAuctionDropDownList.Enabled = true;
+
+                    ifMovingLbl.Visible = false;
+                    ifMovingLbl.Enabled = false;
+                    FromAddLbl.Visible = false;
+                    FromAddLbl.Enabled = false;
+                    fromtxtBox.Visible = false;
+                    fromtxtBox.Enabled = false;
+                }
+
+                else
+                {
+                    ifAuctionLbl.Visible = false;
+                    ifAuctionLbl.Enabled = false;
+                    ifAuctionDropDownList.Visible = false;
+                    ifAuctionDropDownList.Enabled = false;
+
+                    ifMovingLbl.Visible = true;
+                    ifMovingLbl.Enabled = true;
+                    FromAddLbl.Visible = true;
+                    FromAddLbl.Enabled = true;
+                    fromtxtBox.Visible = true;
+                    fromtxtBox.Enabled = true;
+                }
             }
             //    SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
             //    con.Open();
