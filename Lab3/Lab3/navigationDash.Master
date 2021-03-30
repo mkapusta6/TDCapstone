@@ -7,7 +7,8 @@
      <meta charset="UTF-8">
 		<title> Green Valley</title>
 		<meta name="description" content="Oishii - Fine Japanese Cuisine ">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif" 
+        type="text/css" rel="stylesheet"> 
 		<link rel="stylesheet" type="text/css" href="assets/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/layout.css">
@@ -48,6 +49,8 @@
    				<li><a href="#portfolio">Client Folders</a></li>
     			<li><a href="#contact">Reports</a></li>
             </ul>
+
+            
         </div>
     </div>
 </nav>
@@ -57,22 +60,22 @@
          <br />
          <br />
          <br />
-         <br />
-         <br />
 
+         
          
           <%--Button Template--%>
          <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
             </asp:ContentPlaceHolder>
 
-         <%--Email template--%>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+         
+        <%-- toDo List Template--%>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
             </asp:ContentPlaceHolder>
 
-        <%-- toDo List Template--%>
-         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         <%--Email template--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
 
             </asp:ContentPlaceHolder>
 

@@ -2,11 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="emailTemplateContent" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    
     <div class="row">
     <div class="col-md-6 col-md-offset-3" id="form_container">
-        <h2>Contact Us</h2>
+        <h2>Confirmation Email</h2>
         <p>
-           Please send your message below. We will get back to you at the earliest!
+           Client Email Template
         </p>
         <form role="form" method="post" id="reused_form">
 
@@ -20,7 +21,7 @@
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label for="name">
-                        Your Name:</label>
+                        Name:</label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="col-sm-6 form-group">
@@ -50,75 +51,66 @@
     </div>
 </div>
     <script>
-$(function()
-{
-    function after_form_submitted(data)
-    {
-        if(data.result == 'success')
-        {
-            $('form#reused_form').hide();
-            $('#success_message').show();
-            $('#error_message').hide();
-        }
-        else
-        {
-            $('#error_message').append('<ul></ul>');
-
-            jQuery.each(data.errors,function(key,val)
-            {
-                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-            });
-            $('#success_message').hide();
-            $('#error_message').show();
-
-            //reverse the response on the button
-            $('button[type="button"]', $form).each(function()
-            {
-                $btn = $(this);
-                label = $btn.prop('orig_label');
-                if(label)
-                {
-                    $btn.prop('type','submit' );
-                    $btn.text(label);
-                    $btn.prop('orig_label','');
+        $(function () {
+            function after_form_submitted(data) {
+                if (data.result == 'success') {
+                    $('form#reused_form').hide();
+                    $('#success_message').show();
+                    $('#error_message').hide();
                 }
+                else {
+                    $('#error_message').append('<ul></ul>');
+
+                    jQuery.each(data.errors, function (key, val) {
+                        $('#error_message ul').append('<li>' + key + ':' + val + '</li>');
+                    });
+                    $('#success_message').hide();
+                    $('#error_message').show();
+
+                    //reverse the response on the button
+                    $('button[type="button"]', $form).each(function () {
+                        $btn = $(this);
+                        label = $btn.prop('orig_label');
+                        if (label) {
+                            $btn.prop('type', 'submit');
+                            $btn.text(label);
+                            $btn.prop('orig_label', '');
+                        }
+                    });
+
+                }//else
+            }
+
+            $('#reused_form').submit(function (e) {
+                e.preventDefault();
+
+                $form = $(this);
+                //show some response on the button
+                $('button[type="submit"]', $form).each(function () {
+                    $btn = $(this);
+                    $btn.prop('type', 'button');
+                    $btn.prop('orig_label', $btn.text());
+                    $btn.text('Sending ...');
+                });
+
+
+                $.ajax({
+                    type: "POST",
+                    url: 'handler.php',
+                    data: $form.serialize(),
+                    success: after_form_submitted,
+                    dataType: 'json'
+                });
+
             });
-
-        }//else
-    }
-
-	$('#reused_form').submit(function(e)
-      {
-        e.preventDefault();
-
-        $form = $(this);
-        //show some response on the button
-        $('button[type="submit"]', $form).each(function()
-        {
-            $btn = $(this);
-            $btn.prop('type','button' );
-            $btn.prop('orig_label',$btn.text());
-            $btn.text('Sending ...');
         });
-
-
-                    $.ajax({
-                type: "POST",
-                url: 'handler.php',
-                data: $form.serialize(),
-                success: after_form_submitted,
-                dataType: 'json'
-            });
-
-      });
-});
     </script>
 
     
 </asp:Content>
 
 <asp:Content ID="toDoListContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="assets/todoList.css">
+   <%-- <link rel="stylesheet" type="text/css" href="assets/todoList.css">
    <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -193,10 +185,20 @@ todoListInput.val("");
 
         });
     })(jQuery);
-</script>
+</script>--%>
     </asp:Content>
 
 <asp:Content ID="buttonTemplateContent" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
-        </asp:Content>
+    <div class="form-group row">
+  <div class="col-xs-2">
+    <label for="TextBox1">Search For Customer</label>
+     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+      <asp:Button ID="Button1" runat="server" Text="Search" CssClass="btn btn-secondary" />
+  </div>
+             </div>
 
+    <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
+
+    <br />
+    <br />
+        </asp:Content>

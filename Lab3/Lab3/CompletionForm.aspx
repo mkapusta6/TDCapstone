@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Activities.Master" AutoEventWireup="true" CodeBehind="CompletionForm.aspx.cs" Inherits="Lab3.WebForm20" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <fieldset>
         <legend>Completion Form</legend>
-        <asp:Table ID="CompletionTable" runat="server" CellSpacing="15">
+     <asp:Table ID="CompletionTable" runat="server" CellSpacing="15">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="finalCostLabel1" runat="server" Text="Final Cost:"></asp:Label>
@@ -80,5 +79,5 @@
             </asp:TableRow>
         </asp:Table>
         <br />
-    </fieldset>
+    </fieldset> 
 </asp:Content>

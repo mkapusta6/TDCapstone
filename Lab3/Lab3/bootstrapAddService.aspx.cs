@@ -46,7 +46,7 @@ namespace Lab3
                 myConnection.Open();
                 MyCommand.ExecuteNonQuery();
                 addedLbl.Text = "Service Successfully Created.";
-                Response.Redirect("CreateNewTicketPage.aspx");
+                Response.Redirect("bootstrapCreateNewTicket.aspx");
             }
             dateLastModifiedTxtBox.Text = String.Empty;
             srvcDescriptionTxtBox.Text = String.Empty;

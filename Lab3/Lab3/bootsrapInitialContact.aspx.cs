@@ -60,8 +60,8 @@ namespace Lab3
 
                     ifMovingLbl.Visible = false;
                     ifMovingLbl.Enabled = false;
-                    FromAddLbl.Visible = false;
-                    FromAddLbl.Enabled = false;
+                  //  FromAddLbl.Visible = false;
+                   // FromAddLbl.Enabled = false;
                     fromtxtBox.Visible = false;
                     fromtxtBox.Enabled = false;
                 }
@@ -75,8 +75,8 @@ namespace Lab3
 
                     ifMovingLbl.Visible = true;
                     ifMovingLbl.Enabled = true;
-                    FromAddLbl.Visible = true;
-                    FromAddLbl.Enabled = true;
+                    //FromAddLbl.Visible = true;
+                    //FromAddLbl.Enabled = true;
                     fromtxtBox.Visible = true;
                     fromtxtBox.Enabled = true;
                 }
@@ -94,8 +94,8 @@ namespace Lab3
 
                     ifMovingLbl.Visible = false;
                     ifMovingLbl.Enabled = false;
-                    FromAddLbl.Visible = false;
-                    FromAddLbl.Enabled = false;
+                   // FromAddLbl.Visible = false;
+                    //FromAddLbl.Enabled = false;
                     fromtxtBox.Visible = false;
                     fromtxtBox.Enabled = false;
                 }
@@ -109,8 +109,8 @@ namespace Lab3
 
                     ifMovingLbl.Visible = true;
                     ifMovingLbl.Enabled = true;
-                    FromAddLbl.Visible = true;
-                    FromAddLbl.Enabled = true;
+                    //FromAddLbl.Visible = true;
+                    //FromAddLbl.Enabled = true;
                     fromtxtBox.Visible = true;
                     fromtxtBox.Enabled = true;
                 }

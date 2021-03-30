@@ -49,20 +49,20 @@
         <asp:DropDownList ID="statusDropDownList1" DataTextField="EquipmentStatus" DataValueField="EquipmentStatus" runat="server"></asp:DropDownList>
         <br />
 
-        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" OnClick="popBtn_Click"/>
-        <asp:Button ID="clrBt" runat="server" Text="Clear Fields" OnClick="clrBt_Click"/>
-        <asp:Button ID="addAuctionBtn" runat="server" Text="Make Auction Live" OnClick="addAuctionBtn_Click"/>
+        <asp:Button ID="popBtn" runat="server" Text="Populate Fields" OnClick="popBtn_Click" CssClass="btn btn-success"/>
+        <asp:Button ID="clrBt" runat="server" Text="Clear Fields" OnClick="clrBt_Click" CssClass="btn btn-success"/>
+        <asp:Button ID="addAuctionBtn" runat="server" Text="Make Auction Live" OnClick="addAuctionBtn_Click" CssClass="btn btn-warning"/>
         <br />
         <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
     </fieldset>
     <br />
     <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 63px;">
         <legend>View Bring Ins And Look Ats' Form</legend>
-        <asp:Button ID="bringInBtn" runat="server" Text="Show Bring In Dates" OnClick="bringInBtn_Click" />
-        <asp:Button ID="srchAuctionDateBtn" runat="server" Text="Search Auction Dates For Cosignors" OnClick="srchAuctionDateBtn_Click" />
+        <asp:Button ID="bringInBtn" runat="server" Text="Show Bring In Dates" OnClick="bringInBtn_Click" CssClass="btn btn-secondary" />
+        <asp:Button ID="srchAuctionDateBtn" runat="server" Text="Search Auction Dates For Cosignors" OnClick="srchAuctionDateBtn_Click" CssClass="btn btn-secondary" />
         <br />
         <asp:Label ID="uploadLbl" runat="server" Text="Upload Scanned Inventory Paper:"></asp:Label>
-        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn btn-secondary" />
         <br />
         <asp:Image ID="Image1" runat="server" />
         <br />

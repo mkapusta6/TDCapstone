@@ -26,9 +26,8 @@
             <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
             <br />
             <asp:Label ID="dateLastModifiedLbl" runat="server" Text="Last Updated"></asp:Label>
-            <asp:TextBox ID="dateLastModifiedTxtBox" runat="server" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
+            <asp:TextBox ID="dateLastModifiedTxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorDateLastModified" ControlToValidate="dateLastModifiedTxtBox" runat="server" ErrorMessage="Last Update Info Required" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="CompareValidatorDateLastModified" ControlToValidate="dateLastModifiedTxtBox" Operator="DataTypeCheck" Type="Date" runat="server" ErrorMessage="Invalid Date" ForeColor="Red"></asp:CompareValidator>
             <br />
             <asp:Label ID="srvcDescriptionLbl" runat="server" Text="Service Description"></asp:Label>
             <asp:TextBox ID="srvcDescriptionTxtBox" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
@@ -36,9 +35,10 @@
             <br />
 
                 
-            <asp:Button ID="addServiceBtn" runat="server" Text="Save And Continue To Next Part Of Service Form" OnClick="addServiceBtn_Click" class="btn btn-primary btn-lg" />
-                <asp:Button ID="populateServiceBtn" runat="server" Text="Populate Fields" CausesValidation="false" OnClick="populateServiceBtn_Click" class="btn btn-primary btn-lg"/>
-                <asp:Button ID="clearServiceBtn" runat="server" Text="Clear Fields" CausesValidation="false" OnClick="clearServiceBtn_Click" class="btn btn-primary btn-lg" />
+            <%--<asp:Button ID="addServiceBtn" runat="server" Text="Save And Continue To Next Part Of Service Form" OnClick="addServiceBtn_Click" class="btn btn-warning" />--%>
+                <asp:Button ID="populateServiceBtn" runat="server" Text="Populate Fields" CausesValidation="false" OnClick="populateServiceBtn_Click" class="btn btn-success btn-sm"/>
+                <asp:Button ID="clearServiceBtn" runat="server" Text="Clear Fields" CausesValidation="false" OnClick="clearServiceBtn_Click" class="btn btn-success btn-sm" />
+                <asp:Button ID="addServiceBtn" runat="server" Text="Save And Continue To Next Part Of Service Form" OnClick="addServiceBtn_Click" class="btn btn-warning" />
             <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
         </fieldset>
 </div>
