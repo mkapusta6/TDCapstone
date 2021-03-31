@@ -25,6 +25,13 @@ namespace Lab3
                 addServicesDDL.Items.Add(new ListItem("Cleaning"));
                 addServicesDDL.Items.Add(new ListItem("Trash Removal"));
 
+                DateTime now = DateTime.Now;
+
+                string reqDate = now.ToString();
+
+                r_DateLbl.Text = "Request Date: " + reqDate;
+                r_DateTxtBox.Text = reqDate;
+
 
 
 
@@ -43,6 +50,28 @@ namespace Lab3
                 string serviceType = Application["ServiceType"].ToString();
                 serviceTypeTxtBox.Text = serviceType;
             }
+
+
+            if (Application["CustomerName"] != null)
+            {
+                string custName = Application["CustomerName"].ToString();
+                nameLbl.Text = "Customer Name: " + custName;
+                custNameTextBox.Text = custName;
+            }
+
+            if (Application["CustomerEmail"] != null)
+            {
+                string custEmail = Application["CustomerEmail"].ToString();
+                emailRequestLbl.Text = "Customer Email: " + custEmail;
+                emailRequestTxtBox.Text = custEmail;
+            }
+
+            //if (Application["CustomerDate"] != null)
+            //{
+            //    string reqDate = Application["CustomerDate"].ToString();
+            //    r_DateLbl.Text = "Request Date: " + reqDate;
+            //    r_DateTxtBox.Text = reqDate;
+            //}
         }
 
         protected void popBtn_Click(object sender, EventArgs e)
@@ -83,6 +112,9 @@ namespace Lab3
                 SqlCommand otherCommand = new SqlCommand("INSERT INTO Service_T (ServiceType, dateLastModified, " +
                        "ServiceDescription) Values (@ServiceType, @dateLastModified, @ServiceDescription)", myConection);
 
+                SqlCommand requestcommand = new SqlCommand("INSERT INTO Request(EmailRequest, ServiceType, R_Description, R_Date)" +
+                    " VALUES (@EmailRequest, @ServiceType, @R_Description, @R_Date)", myConection);
+
                 int CustomerID = int.Parse(custDropDownList.SelectedValue);
 
 
@@ -113,9 +145,19 @@ namespace Lab3
                     otherCommand.Parameters.AddWithValue("@ServiceDescription", srvcDescriptionTxtBox.Text);
                     Application["ServiceDescription"] = srvcDescriptionTxtBox.Text;
 
+                
+
+
+
+                requestcommand.Parameters.AddWithValue("@EmailRequest", emailRequestTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("R_Description", srvcDescriptionTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@R_Date", DateTime.Now);
+
                     myConection.Open();
                     Mycommand.ExecuteNonQuery();
                     otherCommand.ExecuteNonQuery();
+                    requestcommand.ExecuteNonQuery();
                     //addedLbl.Text = "Service Successfully Created.";
                     myConection.Close();
             }

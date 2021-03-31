@@ -20,16 +20,13 @@
     <fieldset>
         <legend>Service Order Form</legend>
         <asp:Label ID="nameLbl" runat="server" Text="Customer Name:"></asp:Label>
-        <asp:TextBox ID="custNameTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="custNameTextBox" runat="server" Visible="false"></asp:TextBox>
         <br />
-        <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email"></asp:Label>
-        <asp:TextBox ID="emailRequestTxtBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="r_descriptionLbl" runat="server" Text="Customer Description"></asp:Label>
-        <asp:TextBox ID="descriptionTextBox" runat="server"></asp:TextBox>
+        <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email:"></asp:Label>
+        <asp:TextBox ID="emailRequestTxtBox" runat="server" Visible="false"></asp:TextBox>
         <br />
         <asp:Label ID="r_DateLbl" runat="server" Text="Customer Date"></asp:Label>
-        <asp:TextBox ID="r_DateTxtBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="r_DateTxtBox" runat="server" Visible="false"></asp:TextBox>
         <br />
         <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
             <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>

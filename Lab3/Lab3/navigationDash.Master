@@ -61,6 +61,21 @@
          <br />
          <br />
 
+<%--         <div class="form-group row">
+  <div class="col-xs-2">
+    <label for="TextBox1">Search For Customer</label>
+     <asp:TextBox ID="searchBox" runat="server" CssClass="form-control"></asp:TextBox>
+      <asp:Button ID="searchButton" runat="server" Text="Search" CssClass="btn btn-secondary" OnClick="searchButton_Click" />
+
+      <asp:Button ID="notificationBtn" runat="server" Text="View Service Requests" OnClick="notificationBtn_Click" />
+
+      <asp:GridView ID="searchForCustGrd" runat="server"></asp:GridView>
+            <asp:Label ID="statusLbl" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl2" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl3" runat="server" ForeColor="Red" Text="" Font-Bold="true"></asp:Label>
+         
+  </div>
+             </div>--%>
          
          
           <%--Button Template--%>
