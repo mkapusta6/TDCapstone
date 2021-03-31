@@ -30,6 +30,14 @@ namespace Lab3
 
             }
 
+            if (Application["CustomerInterest"] != null)
+            {
+                string customerInterest = Application["CustomerInterest"].ToString();
+                serviceTxtBox.Text = customerInterest;
+                serviceTypeLbl.Text = "Service Type: " + customerInterest;
+
+            }
+
             if (Application["ServiceType"] != null)
             {
                 string serviceType = Application["ServiceType"].ToString();
@@ -72,6 +80,9 @@ namespace Lab3
                 SqlCommand Mycommand = new SqlCommand("INSERT INTO ServiceTicket(TicketStatus, TicketStartDate, CustomerID, ServiceID, EmployeeID, ServiceTicketName, DateTimeOptionOne, DateTimeOptionTwo, LookAtDate, BringInDate, PickUpDate, AddServices, ServiceType)" +
                     " VALUES (@TicketStatus, @TicketStartDate, @CustomerID, @ServiceID, @EmployeeID, @ServiceTicketName, @DateTimeOptionOne, @DateTimeOptionTwo, @LookAtDate, @BringInDate, @PickUpDate, @AddServices, @ServiceType)", myConection);
 
+                SqlCommand otherCommand = new SqlCommand("INSERT INTO Service_T (ServiceType, dateLastModified, " +
+                       "ServiceDescription) Values (@ServiceType, @dateLastModified, @ServiceDescription)", myConection);
+
                 int CustomerID = int.Parse(custDropDownList.SelectedValue);
 
 
@@ -95,9 +106,19 @@ namespace Lab3
                 Mycommand.Parameters.AddWithValue("@AddServices", addServicesDDL.SelectedValue);
                 Mycommand.Parameters.AddWithValue("@ServiceType", serviceTypeTxtBox.Text);
 
-                myConection.Open();
-                Mycommand.ExecuteNonQuery();
-                myConection.Close();
+
+                    otherCommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+                    Application["ServiceType"] = serviceTxtBox.Text;
+                    otherCommand.Parameters.AddWithValue("@dateLastModified", dateLastModifiedTxtBox.Text);
+                    otherCommand.Parameters.AddWithValue("@ServiceDescription", srvcDescriptionTxtBox.Text);
+                    Application["ServiceDescription"] = srvcDescriptionTxtBox.Text;
+
+                    myConection.Open();
+                    Mycommand.ExecuteNonQuery();
+                    otherCommand.ExecuteNonQuery();
+                    //addedLbl.Text = "Service Successfully Created.";
+                    myConection.Close();
+            }
 
                 ticketStrtTxtBox.Text = String.Empty;
                 tcktNameTxtBox.Text = String.Empty;
@@ -107,8 +128,7 @@ namespace Lab3
                 bringInTextBox.Text = String.Empty;
                 pickUpTextBox.Text = String.Empty;
 
-                addedLbl.Text = "Ticket Successfully Created";
-            }
+                addedLbl.Text = "Successfuly created";
         }
     }
 }
