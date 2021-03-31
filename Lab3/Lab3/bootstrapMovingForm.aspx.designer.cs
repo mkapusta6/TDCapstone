@@ -51,24 +51,6 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox moveNameTxtBox;
 
         /// <summary>
-        /// moveNameLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label moveNameLbl;
-
-        /// <summary>
-        /// moveNameTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox moveNameTxtBox;
-
-        /// <summary>
         /// storiesLbl control.
         /// </summary>
         /// <remarks>
