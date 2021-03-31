@@ -5,6 +5,21 @@
     
     <div class="row">
     <div class="col-md-6 col-md-offset-3" id="form_container">
+
+        <h2>Open Service Requests</h2>
+        <asp:GridView 
+            ID="RequestGrid" 
+            runat="server"
+            autogeneratecolumns="false"
+            emptydatatext = "No Data Available"
+            dataKeyNames="RequestID"
+            >
+            <Columns>
+
+            </Columns>
+        </asp:GridView>
+
+
         <h2>Confirmation Email</h2>
         <p>
            Client Email Template
