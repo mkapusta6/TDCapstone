@@ -176,8 +176,55 @@ namespace Lab3
                 MyCommand.ExecuteNonQuery();
                 myConnection.Close();
 
+                fromTextBox.Text = String.Empty;
+                toTextBox2.Text = String.Empty;
+                pricingTextBox.Text = String.Empty;
+                numTrucksTextBox.Text = String.Empty;
+                menAmountTextBox.Text = String.Empty;
+                contractTextBox1.Text = String.Empty;
+                suppliesTextBox2.Text = String.Empty;
+                mHoursTextBox3.Text = String.Empty;
+                milageTextBox.Text = String.Empty;
+                fuelTextBox.Text = String.Empty;
+                insuranceTextBox.Text = String.Empty;
+                workerCostTextBox.Text = String.Empty;
+
                 addedLbl.Text = "Auction Successfully Added";
             }
+        }
+
+        protected void ButtonClr_Click(object sender, EventArgs e)
+        {
+            fromTextBox.Text = String.Empty;
+            toTextBox2.Text = String.Empty;
+            pricingTextBox.Text = String.Empty;
+            numTrucksTextBox.Text = String.Empty;
+            menAmountTextBox.Text = String.Empty;
+            contractTextBox1.Text = String.Empty;
+            suppliesTextBox2.Text = String.Empty;
+            mHoursTextBox3.Text = String.Empty;
+            milageTextBox.Text = String.Empty;
+            fuelTextBox.Text = String.Empty;
+            insuranceTextBox.Text = String.Empty;
+            workerCostTextBox.Text = String.Empty;
+        }
+
+        protected void ButtonPop_Click(object sender, EventArgs e)
+        {
+            fromTextBox.Text = "11811 Woodland View";
+            toTextBox2.Text = "22391 WoddPark Ln";
+            pricingTextBox.Text = "Estimate";
+            numTrucksTextBox.Text = "2";
+            menAmountTextBox.Text = "3";
+            contractTextBox1.Text = "120.00";
+            suppliesTextBox2.Text = "24.00";
+            mHoursTextBox3.Text = "15";
+            milageTextBox.Text = "24";
+            fuelTextBox.Text = "4 Galllons";
+            insuranceTextBox.Text = "Progressive";
+            workerCostTextBox.Text = "40.00";
+
+
         }
     }
 }

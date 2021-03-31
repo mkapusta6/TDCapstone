@@ -15,13 +15,22 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
+        /// addedLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
+        protected global::System.Web.UI.WebControls.Label addedLbl;
+
+        /// <summary>
+        /// serviceContHeaderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label serviceContHeaderLbl;
 
         /// <summary>
         /// srvcTcktName control.
@@ -139,15 +148,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ticketStrtTxtBox;
-
-        /// <summary>
-        /// tcktStartRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator tcktStartRequiredFieldValidator;
 
         /// <summary>
         /// date1Lbl control.
@@ -292,15 +292,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button createSrvcTckt;
-
-        /// <summary>
-        /// addedLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addedLbl;
 
         /// <summary>
         /// dtaSrcCust control.

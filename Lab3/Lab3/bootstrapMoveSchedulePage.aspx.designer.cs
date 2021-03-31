@@ -15,15 +15,6 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
-
-        /// <summary>
         /// addedLbl control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label addedLbl;
+
+        /// <summary>
+        /// moveScheduleHeaderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label moveScheduleHeaderLbl;
 
         /// <summary>
         /// moveNameLbl control.
@@ -429,22 +429,22 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.DropDownList foodHotelDropDownList;
 
         /// <summary>
-        /// Button1 control.
+        /// ButtonClr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button ButtonClr;
 
         /// <summary>
-        /// Button2 control.
+        /// ButtonPop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button ButtonPop;
 
         /// <summary>
         /// submitBtn control.

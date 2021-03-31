@@ -6,19 +6,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
     <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Moving Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="movingHeaderLbl" runat="server" Text="Moving Form" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
 
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
-
-            <%--Customer Dropdown--%>
             <div class="form-group">
     <fieldset>
         <asp:Label ID="moveNameLbl" runat="server" Text="Move Name:"></asp:Label>
@@ -82,9 +79,8 @@
         <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false"></asp:TextBox>
         <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>
         <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-success btn-sm" OnClick="clearBtn_Click" CausesValidation="false"/>
-        <asp:Button ID="createSrvcTckt" runat="server" Text="Create Service Ticket" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>
-        <br />
-        <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+        <asp:Button ID="createSrvcTckt" runat="server" Text="Create Move" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>
+
     </fieldset>
     </div>
             </div>

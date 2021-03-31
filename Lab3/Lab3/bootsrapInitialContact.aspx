@@ -1,25 +1,32 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/navigationDash.Master" AutoEventWireup="true" CodeBehind="bootsrapInitialContact.aspx.cs" Inherits="Lab3.WebForm24" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="Scripts/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.phone_us').mask('(000) 000-0000');
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+
+
+
     <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Initial Contact Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="initialContactHeaderLbl" runat="server" Text="Initial Contact Form" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
 
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
 
-            <%--Customer Dropdown--%>
             <div class="form-group">
                 <table>
 
@@ -31,10 +38,6 @@
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFirstName" ControlToValidate="addCustFirstName" runat="server" ErrorMessage="First Name Required" ForeColor="Red"></asp:RequiredFieldValidator></td>
 
-                        <%--<asp:Label ID="lblCustomers" runat="server" Text="Customer" for="ddlCustomer"></asp:Label>
-                    <asp:DropDownList ID="ddlCustomer" runat="server" class="dropdown"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"
-                        ControlToValidate="ddlCustomer" Text="Select a Customer" ValidationGroup="CreateService"></asp:RequiredFieldValidator>--%>
 
 
                         <td>
@@ -59,13 +62,17 @@
                 <br />
                             <asp:Label ID="discoveredLbl" Text="Source Of Exposure?" runat="server" for="dscvrdtxtbox"></asp:Label>
                             <asp:TextBox ID="dscvrdtxtbox" runat="server" class="form-control" Placeholder="***Fill in exactly what this is***"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredExposure" runat="server" ControlToValidate="dscvrdtxtBox"  ErrorMessage="Source Of Exposure Required" ForeColor="Red"></asp:RequiredFieldValidator>
    
                 
                 <br />
                 <asp:Label ID="cusPhoneLbl" runat="server" Text="Phone:" for="addCPhone"></asp:Label>
-                <asp:TextBox ID="addCPhone" runat="server" class="form-control" Placeholder="Phone Number"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredPhoneNumber" ControlToValidate="addCPhone" runat="server" ErrorMessage="Phone Number Required" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="String"></asp:CompareValidator>
+                <asp:TextBox ID="addCPhone" runat="server" class="form-control phone_us" TextMode="Phone" Placeholder="Phone Number"></asp:TextBox>
+                
+
+                <%--<asp:RequiredFieldValidator ID="RequiredPhoneNumber" ControlToValidate="addCPhone" runat="server" ErrorMessage="Phone Number Required" ForeColor="Red"></asp:RequiredFieldValidator>--%>
+                <%--<asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>--%>
+
                 <br />
                 <asp:Label ID="interestLbl" runat="server" Text="Service Interested In" for="interestList"></asp:Label>
                 <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest" runat="server" class="form-control"></asp:DropDownList>
@@ -76,6 +83,7 @@
                 <asp:Label ID="ifMovingLbl" runat="server" Text="If Moving:"></asp:Label>
                 From Address:
             <asp:TextBox ID="fromtxtBox" runat="server" CssClass="form-control" Placeholder="From Address"></asp:TextBox>
+
                 To Address:
             <asp:TextBox ID="toTxtBox" runat="server" CssClass="form-control" Placeholder="To Address"></asp:TextBox>
                 <br />
@@ -94,6 +102,8 @@
                 <br />
                 <asp:Label ID="cusEmailLbl" runat="server" Text="Email:" for="addCEmail"></asp:Label>
                 <asp:TextBox ID="addCEmail" runat="server" class="form-control" Placeholder="Email"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator" ControlToValidate="addCEmail" runat="server" ErrorMessage="Invalid Email" ForeColor="Red" Operator="DataTypeCheck" Type="String"></asp:CompareValidator>
+
                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorCusEmail" ControlToValidate="addCEmail" runat="server" ErrorMessage="Email Required" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
                 <asp:Label ID="cusStreetLbl" runat="server" Text="State:" for="addCStreet"></asp:Label>
@@ -118,13 +128,13 @@
 
                 <asp:Label ID="currentDateLbl" runat="server" Text="Date Created"></asp:Label>
                 <asp:TextBox ID="currentDateTxtBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="currentDateRequiredFieldValidator" runat="server" ControlToValidate="currentDateTxtBox" ForeColor="Red" ErrorMessage="Date Required" ></asp:RequiredFieldValidator>
                 <br />
                <%-- <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" CssClass="btn btn-warning" OnClick="addCustBtn_Click" />--%>
                 <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" CssClass="btn btn-success btn-sm" CausesValidation="false" OnClick="populateBtn_Click" />
                 <asp:Button ID="clearBtn" runat="server" Text="Clear Form" class="btn btn-success btn-sm" CausesValidation="false" OnClick="clearBtn_Click" />
                 <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" CssClass="btn btn-warning" OnClick="addCustBtn_Click" />
-                <br />
-                <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+                
             </div>
         </div>
         <asp:SqlDataSource ID="srcAddCustomer" runat="server"
@@ -133,92 +143,4 @@
 
     </div>
 
-    <%--<div class="row">
-                <div class="form-group col-4">
-                    <asp:Label ID="lblStartDate" runat="server" Text="Start Date" for="txtStartDate"></asp:Label>
-                    <asp:TextBox ID="txtStartDate" runat="server" Placeholder="Start Date" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvStartDate" runat="server"
-                        ErrorMessage="RequiredFieldValidator" ControlToValidate="txtStartDate"
-                        Text="Please Select a Start Date" ValidationGroup="CreateService">
-                    </asp:RequiredFieldValidator>
-                </div>
-
-                <div class="form-group col-4">
-                    <asp:Label ID="lblEndDate" runat="server" Text="End Date" for="txtEndDate"></asp:Label>
-                    <asp:TextBox ID="txtEndDate" runat="server" Placeholder="End Date" class="form-control" TextMode="DateTimeLocal"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvEndDate" runat="server"
-                        ErrorMessage="RequiredFieldValidator" ControlToValidate="txtEndDate"
-                        Text="Please Select an End Date" ValidationGroup="CreateService">
-                    </asp:RequiredFieldValidator>--%>
-    <%--<asp:CustomValidator ID="dateValidation" runat="server" Text="Start Date Must Be Before End Date" ErrorMessage="CustomValidator"
-                            OnServerValidate="dateValidation_ServerValidate" ValidationGroup="CreateService"></asp:CustomValidator>--%>
-    <%-- </div>
-            </div>--%>
-
-    <%--<asp:CustomValidator ID="checkNotOverlappingService" runat="server" ErrorMessage="CustomValidator" ValidationGroup="CreateService"
-                    OnServerValidate="checkNotOverlappingService_ServerValidate" Text="This Overlaps with a Current Move for this customer"></asp:CustomValidator>--%>
-
-
-    <%-- <div class="form-group">
-                <asp:Label ID="lblServiceCost" runat="server" Text="Service Cost" for="txtServiceCost"></asp:Label>
-                <asp:TextBox ID="txtServiceCost" runat="server" class="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvServiceCost" runat="server"
-                    ErrorMessage="RequiredFieldValidator" ControlToValidate="txtServiceCost"
-                    Text="Please Enter a Service Cost." ValidationGroup="CreateService">
-                </asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="compareDouble" runat="server" ErrorMessage="CompareValidator"
-                    ControlToValidate="txtServiceCost" Text="Invalid Cost" ValidationGroup="CreateService"
-                    Operator="DataTypeCheck" Type="Currency"></asp:CompareValidator>
-            </div>--%>
-
-    <%--  <asp:Label ID="Address" runat="server" Text="Auction Address"></asp:Label>
-            <div class="form-group">
-                <asp:TextBox ID="txtAddress" runat="server" Placeholder="Address" class="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvAddress" runat="server"
-                    ErrorMessage="RequiredFieldValidator" ControlToValidate="txtAddress"
-                    Text="Please Enter An Address." ValidationGroup="CreateService">
-                </asp:RequiredFieldValidator>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-md-6">
-                    <asp:TextBox ID="txtCity" runat="server" Placeholder="City" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvCity" runat="server"
-                        ErrorMessage="RequiredFieldValidator" ControlToValidate="txtCity"
-                        Text="Please Enter A City." ValidationGroup="CreateService">
-                    </asp:RequiredFieldValidator>
-                </div>--%>
-
-    <%--<div class="col-md-2">
-                    <asp:DropDownList ID="ddlState" runat="server" class="form-control"></asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="rfvState" runat="server"
-                        ErrorMessage="RequiredFieldValidator" ControlToValidate="ddlState"
-                        Text="Please Select A State." ValidationGroup="CreateService">
-                    </asp:RequiredFieldValidator>
-                </div>
-
-                <div class="col-md-4">
-                    <asp:TextBox ID="txtZipCode" runat="server" Placeholder="Zip" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvZipCode" runat="server"
-                        ErrorMessage="RequiredFieldValidator" ControlToValidate="txtZipCode"
-                        Text="Please Enter Zip Code." ValidationGroup="CreateService">
-                    </asp:RequiredFieldValidator>
-                </div>
-            </div>--%>
-
-
-
-    <%-- <asp:TextBox ID="txtNotes" runat="server" Placeholder="Notes or Employee Accomodations" TextMode="MultiLine" Class="form-control mb-2"></asp:TextBox>
-
-            <div class="form-group">
-                <div class="d-flex justify-content-around">
-                    <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn btn-primary btn-lg" CausesValidation="false" />
-                    <asp:Button ID="btnSave" runat="server" Text="Save" class="btn btn-primary  btn-lg" ValidationGroup="CreateService" />
-                    <asp:Button ID="btnPopulate" runat="server" Text="Populate" class="btn btn-secondary btn-lg" CausesValidation="false" />
-                </div>
-            </div>
-        </div>
-    </div>--%>
-
-    <%--</div>--%>
 </asp:Content>

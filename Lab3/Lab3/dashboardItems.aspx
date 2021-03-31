@@ -202,7 +202,7 @@ todoListInput.val("");
   <div class="col-xs-2">
     <label for="TextBox1">Search For Customer</label>
      <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
-      <asp:Button ID="Button1" runat="server" Text="Search" CssClass="btn btn-secondary" />
+      <asp:Button ID="searchButton" runat="server" Text="Search" CssClass="btn btn-secondary" OnClick="searchButton_Click" />
   </div>
              </div>
 

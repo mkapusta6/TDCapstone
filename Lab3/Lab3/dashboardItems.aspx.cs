@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +19,37 @@ namespace Lab3
         protected void formsBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("bootsrapFormSelection.aspx");
+        }
+
+        protected void searchButton_Click(object sender, EventArgs e)
+        {
+            //string sqlQuery = "Select Customer.CustomerName, Customer.CustomerEmail, Customer.CustomerPhone from Customer WHERE Customer.CustomerName LIKE '%" + searchTxtBox.Text + "%'";
+
+            //SqlConnection sqlConnect = new
+            //SqlConnection("Server=localhost;Database=Lab3;Trusted_Connection=Yes;");
+            //SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlQuery, sqlConnect);
+
+            //DataTable dtforGridview = new DataTable();
+            //sqlAdapter.Fill(dtforGridview);
+            //searchForCustGrd.DataSource = dtforGridview;
+            //searchForCustGrd.DataBind();
+
+            //int rowCount = searchForCustGrd.Rows.Count;
+            //searchForCustGrd.DataBind();
+            //rowCount = searchForCustGrd.Rows.Count;
+
+            //if (rowCount <= 0)
+            //{
+            //    statusLbl.Text = String.Empty;
+            //    statusLbl3.Text = String.Empty;
+            //    statusLbl3.Text = "Customer does not exist.";
+            //}
+            //else
+            //{
+            //    statusLbl.Text = String.Empty;
+            //    statusLbl2.Text = String.Empty;
+            //    statusLbl2.Text = "Customer exists.";
+            //}
         }
 
         // This is aspx side from example

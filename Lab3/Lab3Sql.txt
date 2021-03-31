@@ -226,10 +226,10 @@ Create Table Moving(
 CONSTRAINT Moving_PK PRIMARY KEY (MovingID),
 CONSTRAINT Moving_FK1 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)); 
 
-INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('2', 'Short', 'Fair', 'Fair', 'Attic', '2', 'Taped', '3', 'Necessary', 'Clothes', 'Room has low ceiling', 'Please lock door when done', '04/01/2021', '1');
-INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Long', 'Fair', 'Fair', 'Bedroom#1', '2', 'Taped', '6', 'Unecessary', 'Jerseys', 'Door opens inverted', 'Please lock door when done', '04/02/2021', '2');
-INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('3', 'Medium', 'Fair', 'Fair', 'Living Room', '1', 'Taped', '1', 'Necessary', 'Printer', 'Location has faulty locks', 'Please lock door when done', '04/03/2021', '3');
-INSERT INTO Moving (HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('4', 'Short', 'Fair', 'Fair', 'Basement', '1', 'Taped', '4', 'Necessary', 'Memorabilia', 'Living Room spacious', 'Please lock door when done', '04/04/2021', '4');
+INSERT INTO Moving (MoveName, HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('Noahs Move', '2', 'Short', 'Fair', 'Fair', 'Attic', '2', 'Taped', '3', 'Necessary', 'Clothes', 'Room has low ceiling', 'Please lock door when done', '04/01/2021', '1');
+INSERT INTO Moving (MoveName, HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('Kobes Move', '3', 'Long', 'Fair', 'Fair', 'Bedroom#1', '2', 'Taped', '6', 'Unecessary', 'Jerseys', 'Door opens inverted', 'Please lock door when done', '04/02/2021', '2');
+INSERT INTO Moving (MoveName, HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('Dwights Move', '3', 'Medium', 'Fair', 'Fair', 'Living Room', '1', 'Taped', '1', 'Necessary', 'Printer', 'Location has faulty locks', 'Please lock door when done', '04/03/2021', '3');
+INSERT INTO Moving (MoveName, HouseStories, DistanceFromTruck, DrivewayAccessibility, LoadingConditions, HouseSection, Mfloor, BoxType, NumberOfBoxes, Blankets, Items, Accessibility, AdditionalNotes, FinalDate, CustomerID) VALUES ('Chases Move', '4', 'Short', 'Fair', 'Fair', 'Basement', '1', 'Taped', '4', 'Necessary', 'Memorabilia', 'Living Room spacious', 'Please lock door when done', '04/04/2021', '4');
 
 Create Table MovingEmployeeEquipmentInv(
 	MovingID int NOT NULL,
@@ -310,9 +310,6 @@ Create Table MoveCompletion(
 	MovingID int NOT NULL,
 	ServiceTicketID int NOT NULL,
 	CustomerID int NOT NULL,
-CONSTRAINT Completion_FK1 FOREIGN KEY (MovingID) REFERENCES Moving(MovingID),
-CONSTRAINT Completion_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
-CONSTRAINT Completion_FK3 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID));
-
-	
-	
+CONSTRAINT MoveCompletion_FK1 FOREIGN KEY (MovingID) REFERENCES Moving(MovingID),
+CONSTRAINT MoveCompletion_FK2 FOREIGN KEY (ServiceTicketID) REFERENCES ServiceTicket(ServiceTicketID),
+CONSTRAINT MoveCompletion_FK3 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID));

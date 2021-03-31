@@ -23,16 +23,11 @@
     <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Form Selection Page" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="formSelectHeaderLbl" runat="server" Text="Form Selection Page" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
-
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
-
-            <%--Customer Dropdown--%>
     <asp:ImageButton ID="initialContactFormButton" runat="server" ImageUrl="images/InitialContactIcon.png" CssClass="auto-style1" Height="147px" Width="140px" OnClick="initialContactFormButton_Click" />
     <asp:ImageButton ID="serviceFormBtn" runat="server" ImageUrl="images/ServiceOrderIcon.png" CssClass="auto-style2" Height="147px" Width="140px" OnClick="serviceFormBtn_Click"  />
     <asp:ImageButton ID="auctionSchedulingFormBtn" runat="server" ImageUrl="images/AuctionSchedulingIcon.png" CssClass="auto-style3" Height="147px" Width="140px" OnClick="auctionSchedulingFormBtn_Click" />

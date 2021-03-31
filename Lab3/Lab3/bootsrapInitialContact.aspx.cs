@@ -188,7 +188,7 @@ namespace Lab3
             //addCustomerTxtBox.Text += "Jazmine Sullivan";
             addCustFirstName.Text += "Jazmine";
             addCustLastName.Text += "Sullivan";
-            addCPhone.Text += "8782223549";
+            addCPhone.Text += 8782223549;
             addCEmail.Text += "sullivan@gmail.com";
             addCStreet.Text += "VA";
             addCCity.Text += "Fairfax";

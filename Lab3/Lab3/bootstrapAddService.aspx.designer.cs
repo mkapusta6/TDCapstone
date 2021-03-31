@@ -15,13 +15,22 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
+        /// addedLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
+        protected global::System.Web.UI.WebControls.Label addedLbl;
+
+        /// <summary>
+        /// addServiceHeaderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label addServiceHeaderLbl;
 
         /// <summary>
         /// serviceTypeLbl control.
@@ -58,15 +67,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dateLastModifiedTxtBox;
-
-        /// <summary>
-        /// RequiredFieldValidatorDateLastModified control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDateLastModified;
 
         /// <summary>
         /// srvcDescriptionLbl control.
@@ -121,14 +121,5 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button addServiceBtn;
-
-        /// <summary>
-        /// addedLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addedLbl;
     }
 }

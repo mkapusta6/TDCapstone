@@ -7,19 +7,16 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green"></asp:Label>
      <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Auction Pick Up Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="auctionPickUpPageHeaderLbl" runat="server" Text="Auction Pick Up Form" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
 
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
-
-            <%--Customer Dropdown--%>
             <div class="form-group">
     <fieldset>
         <legend>Auction Pick Up Form</legend>

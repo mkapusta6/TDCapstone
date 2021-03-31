@@ -68,6 +68,7 @@ namespace Lab3
 
         protected void popBtn_Click(object sender, EventArgs e)
         {
+            moveNameTxtBox.Text = "Jazmine Move";
             boxTypeTxtBox.Text = "taped";
             numBoxTxtBox.Text = "4";
             blanketTextBox.Text = "Necessary";
@@ -78,6 +79,7 @@ namespace Lab3
 
         protected void clearBtn_Click(object sender, EventArgs e)
         {
+            moveNameTxtBox.Text = String.Empty;
             boxTypeTxtBox.Text = String.Empty;
             numBoxTxtBox.Text = String.Empty;
             blanketTextBox.Text = String.Empty;
@@ -131,6 +133,7 @@ namespace Lab3
                 myConnection.Open();
                 MyCommand.ExecuteNonQuery();
 
+                moveNameTxtBox.Text = String.Empty;
                 boxTypeTxtBox.Text = String.Empty;
                 numBoxTxtBox.Text = String.Empty;
                 blanketTextBox.Text = String.Empty;

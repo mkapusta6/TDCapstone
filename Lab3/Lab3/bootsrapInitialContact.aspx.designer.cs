@@ -15,13 +15,22 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
+        /// addedLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
+        protected global::System.Web.UI.WebControls.Label addedLbl;
+
+        /// <summary>
+        /// initialContactHeaderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label initialContactHeaderLbl;
 
         /// <summary>
         /// cusFirstNameLbl control.
@@ -114,6 +123,15 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox dscvrdtxtbox;
 
         /// <summary>
+        /// RequiredExposure control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredExposure;
+
+        /// <summary>
         /// cusPhoneLbl control.
         /// </summary>
         /// <remarks>
@@ -130,24 +148,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addCPhone;
-
-        /// <summary>
-        /// RequiredPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPhoneNumber;
-
-        /// <summary>
-        /// CompareValidatorPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPhone;
 
         /// <summary>
         /// interestLbl control.
@@ -321,6 +321,15 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox addCEmail;
 
         /// <summary>
+        /// CompareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator;
+
+        /// <summary>
         /// RequiredFieldValidatorCusEmail control.
         /// </summary>
         /// <remarks>
@@ -474,6 +483,15 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox currentDateTxtBox;
 
         /// <summary>
+        /// currentDateRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator currentDateRequiredFieldValidator;
+
+        /// <summary>
         /// populateBtn control.
         /// </summary>
         /// <remarks>
@@ -499,15 +517,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button addCustBtn;
-
-        /// <summary>
-        /// addedLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addedLbl;
 
         /// <summary>
         /// srcAddCustomer control.

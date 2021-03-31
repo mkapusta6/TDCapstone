@@ -6,19 +6,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green"></asp:Label>
     <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Auction Scheduling Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="auctionSchedulingHeaderLbl" runat="server" Text="Auction Scheduling Form" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
-
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
-
-            <%--Customer Dropdown--%>
             <div class="form-group">
     <fieldset>
         <legend>Auction House</legend>
@@ -69,8 +66,7 @@
         <asp:Button ID="popBtn" runat="server" CssClass="btn btn-success btn-sm" Text="Populate Fields" OnClick="popBtn_Click"/>
         <asp:Button ID="clrBt" runat="server" Text="Clear Fields" OnClick="clrBt_Click" CssClass="btn btn-success btn-sm"/>
         <asp:Button ID="addAuctionBtn" runat="server" Text="Make Auction Live" OnClick="addAuctionBtn_Click" CssClass="btn btn-warning"/>
-        <br />
-        <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+        
     </fieldset>
     <br />
     <fieldset>

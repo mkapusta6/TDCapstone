@@ -6,19 +6,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
      <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Service Order Form (Continued)" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="serviceContHeaderLbl" runat="server" Text="Service Order Form (Continued)" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
 
-            <%--<div class="card-body form-group">--%>
-            <%--<asp:Label ID="outputLbl" runat="server" Text=""></asp:Label>--%>
-
-            <%--Customer Dropdown--%>
             <div class="form-group">
     <fieldset>
         <legend>Continued Service Form</legend>
@@ -63,7 +60,7 @@
         <br />
         <asp:Label ID="ticketStrtLbl" runat="server" Text="Date Started:"></asp:Label>
         <asp:TextBox ID="ticketStrtTxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="tcktStartRequiredFieldValidator" ControlToValidate="ticketStrtTxtBox" runat="server" ErrorMessage="Date Required" ForeColor="Red"></asp:RequiredFieldValidator>
+        <%--<asp:RequiredFieldValidator ID="tcktStartRequiredFieldValidator" ControlToValidate="ticketStrtTxtBox" runat="server" ErrorMessage="Date Required" ForeColor="Red"></asp:RequiredFieldValidator>--%>
         <br />
         <asp:Label ID="date1Lbl" runat="server" Text="Date/Time Option #1:"></asp:Label>
         <asp:TextBox ID="date1TxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
@@ -88,8 +85,7 @@
         <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>
         <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-success btn-sm" OnClick="clearBtn_Click" CausesValidation="false"/>
         <asp:Button ID="createSrvcTckt" runat="server" Text="Complete Service Form" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>
-        <br />
-        <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+        <%--<asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>--%>
     </fieldset>
     </div>
             </div>

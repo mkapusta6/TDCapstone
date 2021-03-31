@@ -6,16 +6,17 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green"></asp:Label>
     <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Move Scheduling Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="moveScheduleHeaderLbl" runat="server" Text="Move Scheduling Form" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
             <br />
     <fieldset>
-        <asp:Label ID="addedLbl" runat="server" Text="" ForeColor="Green"></asp:Label>
+        
         <legend>Move Form</legend>
     <%--use application to get address and look at date--%>
         <asp:Label ID="moveNameLbl" runat="server" Text="Move Title:"></asp:Label>
@@ -108,8 +109,8 @@
         
         <br />
 
-        <asp:Button ID="Button1" runat="server" Text="Clear Fields" CssClass="btn btn-success btn-sm" />
-        <asp:Button ID="Button2" runat="server" Text="Button" CssClass="btn btn-success btn-sm" />
+        <asp:Button ID="ButtonClr" runat="server" Text="Clear Fields" CssClass="btn btn-success btn-sm" OnClick="ButtonClr_Click" />
+        <asp:Button ID="ButtonPop" runat="server" Text="Populate Fields" CssClass="btn btn-success btn-sm" OnClick="ButtonPop_Click" />
         <asp:Button ID="submitBtn" runat="server" Text="Submit" CssClass="btn btn-warning" OnClick="submitBtn_Click"/>
 
     </fieldset>
