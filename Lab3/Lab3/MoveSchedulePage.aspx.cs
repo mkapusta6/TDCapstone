@@ -25,7 +25,7 @@ namespace Lab3
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 adapter.SelectCommand.Parameters.AddWithValue("@EquipmentType", "Truck");
 
-                adapter.Fill(trucksTable);
+                adapter.Fill(trucksTable); 
                 TruckDropDown.DataSource = trucksTable;
                 TruckDropDown.DataTextField = "EquipmentName";
                 TruckDropDown.DataValueField = "EquipmentID";

@@ -22,12 +22,13 @@ namespace Lab3
 
         protected void popBtn_Click(object sender, EventArgs e)
         {
-
+            lookAtTxtBox.Text = "04/12/2021";
+            storageTextBox7.Text = "Box Storage";
+            cosignorTxtBox.Text = "Authentic Signing";
         }
 
         protected void clrBt_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void addAuctionBtn_Click(object sender, EventArgs e)
@@ -77,6 +78,11 @@ namespace Lab3
 
                 myConnection.Open();
                 MyCommand.ExecuteNonQuery();
+
+                storageTextBox7.Text = String.Empty;
+                cosignorTxtBox.Text = String.Empty;
+
+                addedLbl.Text = "Form has been successfully submitted";
             }
         }
     }

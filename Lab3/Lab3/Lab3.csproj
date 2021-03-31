@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="AspNet.ScriptManager.jQuery, Version=3.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.5.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
@@ -123,6 +126,17 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="Scripts\inputmask\inputmask.js" />
+    <Content Include="Scripts\inputmask\inputmask.min.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.js" />
+    <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -233,6 +247,10 @@
     <Content Include="bootstrapCreateNewTicket.aspx" />
     <Content Include="bootstrapMovingForm.aspx" />
     <Content Include="bootstrapAuctionScheduling.aspx" />
+    <Content Include="bootstrapMoveSchedulePage.aspx" />
+    <Content Include="bootstrapAuctionPickUpPage.aspx" />
+    <Content Include="bootstrapCompletionForm.aspx" />
+    <Content Include="bootstrapClientFolder.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="images\CustomerPortal.png" />
     <Content Include="images\loginHeader.jpg" />
@@ -506,6 +524,34 @@
     </Compile>
     <Compile Include="bootstrapAuctionScheduling.aspx.designer.cs">
       <DependentUpon>bootstrapAuctionScheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapMoveSchedulePage.aspx.cs">
+      <DependentUpon>bootstrapMoveSchedulePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapMoveSchedulePage.aspx.designer.cs">
+      <DependentUpon>bootstrapMoveSchedulePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapAuctionPickUpPage.aspx.cs">
+      <DependentUpon>bootstrapAuctionPickUpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapAuctionPickUpPage.aspx.designer.cs">
+      <DependentUpon>bootstrapAuctionPickUpPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapCompletionForm.aspx.cs">
+      <DependentUpon>bootstrapCompletionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapCompletionForm.aspx.designer.cs">
+      <DependentUpon>bootstrapCompletionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bootstrapClientFolder.aspx.cs">
+      <DependentUpon>bootstrapClientFolder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapClientFolder.aspx.designer.cs">
+      <DependentUpon>bootstrapClientFolder.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

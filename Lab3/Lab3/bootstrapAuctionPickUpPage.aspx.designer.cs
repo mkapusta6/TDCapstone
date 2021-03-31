@@ -15,13 +15,22 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
+        /// addedLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
+        protected global::System.Web.UI.WebControls.Label addedLbl;
+
+        /// <summary>
+        /// auctionPickUpPageHeaderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label auctionPickUpPageHeaderLbl;
 
         /// <summary>
         /// AuctionHeaderLbl control.

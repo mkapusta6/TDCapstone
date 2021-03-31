@@ -25,8 +25,23 @@ namespace Lab3
                 addServicesDDL.Items.Add(new ListItem("Cleaning"));
                 addServicesDDL.Items.Add(new ListItem("Trash Removal"));
 
+                DateTime now = DateTime.Now;
+
+                string reqDate = now.ToString();
+
+                r_DateLbl.Text = "Request Date: " + reqDate;
+                r_DateTxtBox.Text = reqDate;
 
 
+
+
+            }
+
+            if (Application["CustomerInterest"] != null)
+            {
+                string customerInterest = Application["CustomerInterest"].ToString();
+                serviceTxtBox.Text = customerInterest;
+                serviceTypeLbl.Text = "Service Type: " + customerInterest;
 
             }
 
@@ -35,6 +50,28 @@ namespace Lab3
                 string serviceType = Application["ServiceType"].ToString();
                 serviceTypeTxtBox.Text = serviceType;
             }
+
+
+            if (Application["CustomerName"] != null)
+            {
+                string custName = Application["CustomerName"].ToString();
+                nameLbl.Text = "Customer Name: " + custName;
+                custNameTextBox.Text = custName;
+            }
+
+            if (Application["CustomerEmail"] != null)
+            {
+                string custEmail = Application["CustomerEmail"].ToString();
+                emailRequestLbl.Text = "Customer Email: " + custEmail;
+                emailRequestTxtBox.Text = custEmail;
+            }
+
+            //if (Application["CustomerDate"] != null)
+            //{
+            //    string reqDate = Application["CustomerDate"].ToString();
+            //    r_DateLbl.Text = "Request Date: " + reqDate;
+            //    r_DateTxtBox.Text = reqDate;
+            //}
         }
 
         protected void popBtn_Click(object sender, EventArgs e)
@@ -72,6 +109,12 @@ namespace Lab3
                 SqlCommand Mycommand = new SqlCommand("INSERT INTO ServiceTicket(TicketStatus, TicketStartDate, CustomerID, ServiceID, EmployeeID, ServiceTicketName, DateTimeOptionOne, DateTimeOptionTwo, LookAtDate, BringInDate, PickUpDate, AddServices, ServiceType)" +
                     " VALUES (@TicketStatus, @TicketStartDate, @CustomerID, @ServiceID, @EmployeeID, @ServiceTicketName, @DateTimeOptionOne, @DateTimeOptionTwo, @LookAtDate, @BringInDate, @PickUpDate, @AddServices, @ServiceType)", myConection);
 
+                SqlCommand otherCommand = new SqlCommand("INSERT INTO Service_T (ServiceType, dateLastModified, " +
+                       "ServiceDescription) Values (@ServiceType, @dateLastModified, @ServiceDescription)", myConection);
+
+                SqlCommand requestcommand = new SqlCommand("INSERT INTO Request(EmailRequest, ServiceType, R_Description, R_Date)" +
+                    " VALUES (@EmailRequest, @ServiceType, @R_Description, @R_Date)", myConection);
+
                 int CustomerID = int.Parse(custDropDownList.SelectedValue);
 
 
@@ -95,9 +138,29 @@ namespace Lab3
                 Mycommand.Parameters.AddWithValue("@AddServices", addServicesDDL.SelectedValue);
                 Mycommand.Parameters.AddWithValue("@ServiceType", serviceTypeTxtBox.Text);
 
-                myConection.Open();
-                Mycommand.ExecuteNonQuery();
-                myConection.Close();
+
+                    otherCommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+                    Application["ServiceType"] = serviceTxtBox.Text;
+                    otherCommand.Parameters.AddWithValue("@dateLastModified", dateLastModifiedTxtBox.Text);
+                    otherCommand.Parameters.AddWithValue("@ServiceDescription", srvcDescriptionTxtBox.Text);
+                    Application["ServiceDescription"] = srvcDescriptionTxtBox.Text;
+
+                
+
+
+
+                requestcommand.Parameters.AddWithValue("@EmailRequest", emailRequestTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("R_Description", srvcDescriptionTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@R_Date", DateTime.Now);
+
+                    myConection.Open();
+                    Mycommand.ExecuteNonQuery();
+                    otherCommand.ExecuteNonQuery();
+                    requestcommand.ExecuteNonQuery();
+                    //addedLbl.Text = "Service Successfully Created.";
+                    myConection.Close();
+            }
 
                 ticketStrtTxtBox.Text = String.Empty;
                 tcktNameTxtBox.Text = String.Empty;
@@ -107,8 +170,7 @@ namespace Lab3
                 bringInTextBox.Text = String.Empty;
                 pickUpTextBox.Text = String.Empty;
 
-                addedLbl.Text = "Ticket Successfully Created";
-            }
+                addedLbl.Text = "Successfuly created";
         }
     }
 }

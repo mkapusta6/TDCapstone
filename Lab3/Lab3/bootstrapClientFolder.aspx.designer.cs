@@ -15,13 +15,13 @@ namespace Lab3
     {
 
         /// <summary>
-        /// lblCreateNewCustomer control.
+        /// clientFolderHeaderLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCreateNewCustomer;
+        protected global::System.Web.UI.WebControls.Label clientFolderHeaderLbl;
 
         /// <summary>
         /// DropDownListLbl control.

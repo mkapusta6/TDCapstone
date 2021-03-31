@@ -9,7 +9,7 @@
      <div class="container col-6">
         <div class="card">
             <div class="card-header text-center">
-                <asp:Label ID="lblCreateNewCustomer" runat="server" Text="Completion Form" Class="h3 m-2"></asp:Label>
+                <asp:Label ID="clientFolderHeaderLbl" runat="server" Text="Client Folder" Class="h3 m-2"></asp:Label>
 
             </div>
             <br />
@@ -20,7 +20,7 @@
 
             <%--Customer Dropdown--%>
             <div class="form-group">
-                <fieldset style="text-align: left; position: relative; background-color: #FFFF99; top: 0px; left: 0px; height: 63px;">
+                <fieldset>
                 <legend>Information Toggle Form</legend>
                 <asp:Label ID="DropDownListLbl" runat="server" Text="Select Customer" CssClass="form-control"></asp:Label>
                 <asp:DropDownList
@@ -44,7 +44,7 @@
                     ID="grdServiceReults"
                     runat="server"
                     AlternatingRowStyle-BackColor="#eaaaff"
-                    EmptyDataText="">
+                    EmptyDataText="" class="table table-bordered table-condensed">
                 </asp:GridView>
             </fieldset>
         </div>

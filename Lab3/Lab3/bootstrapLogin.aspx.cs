@@ -57,5 +57,10 @@ namespace Lab3
             //usrnameTxtBox.Text = HttpUtility.HtmlEncode(usrnameTxtBox.Text);
             //pswrdTxtBox.Text = HttpUtility.HtmlEncode(pswrdTxtBox.Text);
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NewCustomerAccountPage.aspx");
+        }
     }
 }

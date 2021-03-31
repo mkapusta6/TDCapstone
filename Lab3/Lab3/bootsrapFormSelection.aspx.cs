@@ -20,7 +20,7 @@ namespace Lab3
 
         protected void serviceFormBtn_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("bootstrapAddService.aspx");
+            Response.Redirect("bootstrapCreateNewTicket.aspx");
         }
 
         protected void auctionSchedulingFormBtn_Click(object sender, ImageClickEventArgs e)

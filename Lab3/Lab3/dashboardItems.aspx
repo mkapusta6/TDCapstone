@@ -5,21 +5,6 @@
     
     <div class="row">
     <div class="col-md-6 col-md-offset-3" id="form_container">
-
-        <h2>Open Service Requests</h2>
-        <asp:GridView 
-            ID="RequestGrid" 
-            runat="server"
-            autogeneratecolumns="false"
-            emptydatatext = "No Data Available"
-            dataKeyNames="RequestID"
-            >
-            <Columns>
-
-            </Columns>
-        </asp:GridView>
-
-
         <h2>Confirmation Email</h2>
         <p>
            Client Email Template
@@ -125,6 +110,8 @@
 </asp:Content>
 
 <asp:Content ID="toDoListContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    Push Notification:
+        <asp:Label ID="pushNotificationLabel" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
    <%-- <link rel="stylesheet" type="text/css" href="assets/todoList.css">
    <div class="page-content page-container" id="page-content">
     <div class="padding">
@@ -207,12 +194,21 @@ todoListInput.val("");
     <div class="form-group row">
   <div class="col-xs-2">
     <label for="TextBox1">Search For Customer</label>
-     <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
-      <asp:Button ID="Button1" runat="server" Text="Search" CssClass="btn btn-secondary" />
+     <asp:TextBox ID="searchBox" runat="server" CssClass="form-control"></asp:TextBox>
+      <asp:Button ID="searchButton" runat="server" Text="Search" CssClass="btn btn-secondary" OnClick="searchButton_Click" />
+
+      <asp:Button ID="notificationBtn" runat="server" Text="View Service Requests" OnClick="notificationBtn_Click" CssClass="btn btn-secondary" />
+
+      <asp:GridView ID="searchForCustGrd" runat="server" class="table table-bordered table-condensed"></asp:GridView>
+            <asp:Label ID="statusLbl" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl2" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
+            <asp:Label ID="statusLbl3" runat="server" ForeColor="Red" Text="" Font-Bold="true"></asp:Label>
   </div>
              </div>
 
     <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
+
+
 
     <br />
     <br />

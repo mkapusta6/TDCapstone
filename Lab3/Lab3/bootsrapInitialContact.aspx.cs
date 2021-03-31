@@ -200,10 +200,12 @@ namespace Lab3
                     Application["CustomerInterest"] = interestList.SelectedValue;
 
                     MyCommand.Parameters.AddWithValue("@CustomerEmail", addCEmail.Text);
+                    Application["CustomerEmail"] = addCEmail.Text;
                     MyCommand.Parameters.AddWithValue("@CustomerState", addCStreet.Text);
                     MyCommand.Parameters.AddWithValue("@CustomerCity", addCCity.Text);
                     MyCommand.Parameters.AddWithValue("@CustomerZip", addCZip.Text);
                     MyCommand.Parameters.AddWithValue("@CustomerName", addCustFirstName.Text + ' ' + addCustLastName.Text);
+                    Application["CustomerName"] = addCustFirstName.Text + ' ' + addCustLastName.Text;
 
                     MyCommand.Parameters.AddWithValue("@IfAuction", ifAuctionDropDownList.SelectedValue);
                     MyCommand.Parameters.AddWithValue("@FromAddress", fromtxtBox.Text);
@@ -253,7 +255,7 @@ namespace Lab3
             //addCustomerTxtBox.Text += "Jazmine Sullivan";
             addCustFirstName.Text += "Jazmine";
             addCustLastName.Text += "Sullivan";
-            addCPhone.Text += "8782223549";
+            addCPhone.Text += 8782223549;
             addCEmail.Text += "sullivan@gmail.com";
             addCStreet.Text += "VA";
             addCCity.Text += "Fairfax";
