@@ -75,16 +75,59 @@ namespace Lab3
 
         protected void notificationBtn_Click(object sender, EventArgs e)
         {
-            string sqlQuery = "Select EmailRequest as 'User', ServiceType as 'Service', R_Date as 'Date Generated', R_Description as 'Description' from Request";
+           // string sqlQuery = "Select EmailRequest as 'User', ServiceType as 'Service', R_Date as 'Date Generated', R_Description as 'Description' from Request";
 
-            SqlConnection sqlConnect = new
-            SqlConnection("Server=localhost;Database=Lab3;Trusted_Connection=Yes;");
-            SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlQuery, sqlConnect);
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
+            //SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlQuery, sqlConnect);
 
-            DataTable dtforGridView = new DataTable();
-            sqlAdapter.Fill(dtforGridView);
-            searchForCustGrd.DataSource = dtforGridView;
-            searchForCustGrd.DataBind();
+            //DataTable dtforGridView = new DataTable();
+            //sqlAdapter.Fill(dtforGridView);
+            //searchForCustGrd.DataSource = dtforGridView;
+            //searchForCustGrd.DataBind();
+
+
+            string sqlQuery2 = "Select RequestID, EmailRequest, ServiceType, R_Description, R_Date from Request";
+            SqlDataAdapter adapter2 = new SqlDataAdapter(sqlQuery2, sqlConnect);
+
+            DataTable dtforRequests = new DataTable();
+            adapter2.Fill(dtforRequests);
+            RequestGrid.DataSource = dtforRequests;
+            RequestGrid.DataBind();
+        }
+
+        protected void RequestGrid_RowCommand(Object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Select")
+            {
+                //Response.Redirect("bootstrapMovingForm.aspx");
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow selectedRow = RequestGrid.Rows[index];
+
+                int requestID = (int)RequestGrid.DataKeys[selectedRow.RowIndex].Value;
+
+
+                TableCell email = selectedRow.Cells[1];
+                TableCell serviceType = selectedRow.Cells[2];
+                TableCell description = selectedRow.Cells[3];
+                TableCell date = selectedRow.Cells[4];
+
+                Session["RequestID"] = requestID.ToString();
+                Session["email"] = email.Text;
+                Session["serviceType"] = serviceType.Text;
+                Session["description"] = description.Text;
+                Session["date"] = date.Text;
+
+                if (serviceType.Text == "Auction")
+                {
+                    Response.Redirect("bootstrapAuctionPickUpPage.aspx");
+                }
+                else if (serviceType.Text == "Moving")
+                {
+                    Response.Redirect("bootstrapMovingForm.aspx");
+                }
+            }
         }
 
         // This is aspx side from example

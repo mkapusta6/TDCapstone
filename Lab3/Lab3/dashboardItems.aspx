@@ -199,7 +199,30 @@ todoListInput.val("");
 
       <asp:Button ID="notificationBtn" runat="server" Text="View Service Requests" OnClick="notificationBtn_Click" CssClass="btn btn-secondary" />
 
-      <asp:GridView ID="searchForCustGrd" runat="server" class="table table-bordered table-condensed"></asp:GridView>
+      <asp:GridView ID="searchForCustGrd" runat="server" class="table table-bordered table-condensed">
+          
+      </asp:GridView>
+
+      <asp:GridView 
+          ID="RequestGrid" 
+          runat="server"
+          class="table table-bordered table-condensed"
+          DataKeyNames="RequestID"
+          emptydatatext="No data selected"
+          autogeneratecolumns="false"
+          onrowcommand="RequestGrid_RowCommand">
+
+          <Columns>
+              <asp:BoundField DataField="RequestID" HeaderText="RequestID" visible="false" ReadOnly="true" />
+              <asp:BoundField DataField="EmailRequest" HeaderText="Email" SortExpression="Email" />
+              <asp:BoundField DataField="ServiceType" HeaderText="Service Type" SortExpression="Service Type" />
+              <asp:BoundField DataField="R_Description" HeaderText="Service Description" SortExpression="Service Description" />
+              <asp:BoundField DataField="R_Date" HeaderText="Date" SortExpression="Date" />
+              <asp:buttonfield buttontype="Button" commandname="Select" headertext="Complete Request" Text="Select" />
+          </Columns>
+      </asp:GridView>
+
+
             <asp:Label ID="statusLbl" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
             <asp:Label ID="statusLbl2" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
             <asp:Label ID="statusLbl3" runat="server" ForeColor="Red" Text="" Font-Bold="true"></asp:Label>
