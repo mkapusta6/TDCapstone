@@ -20,6 +20,13 @@ namespace Lab3
                 foodHotelDropDownList.Items.Add(new ListItem("Yes"));
                 foodHotelDropDownList.Items.Add(new ListItem("No"));
 
+                DateTime now = DateTime.Now;
+
+                string reqDate = now.ToString();
+
+                r_DateLbl.Text = "Request Date: " + reqDate;
+                r_DateTxtBox.Text = reqDate;
+
                 Session["EmpSelected"] = EmpDropDown.SelectedValue.ToString();
                 DataTable trucksTable = new DataTable();
                 SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString);
@@ -61,6 +68,73 @@ namespace Lab3
             {
                 string lookAt = Application["LookAtDate"].ToString();
                 lookAtTxtBox.Text = lookAt;
+            }
+
+
+            if (Application["CustomerInterest"] != null)
+            {
+                string customerInterest = Application["CustomerInterest"].ToString();
+                serviceTxtBox.Text = customerInterest;
+                serviceTypeLbl.Text = "Service Type: " + customerInterest;
+
+            }
+
+            
+
+            if (Application["CustomerName"] != null)
+            {
+                string custName = Application["CustomerName"].ToString();
+                nameLbl.Text = "Customer Name: " + custName;
+                custNameTextBox.Text = custName;
+            }
+
+            if (Application["CustomerEmail"] != null)
+            {
+                string custEmail = Application["CustomerEmail"].ToString();
+                emailRequestLbl.Text = "Customer Email: " + custEmail;
+                emailRequestTxtBox.Text = custEmail;
+            }
+
+
+            String DBConn;
+
+            DBConn = WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString;
+
+
+            using (SqlConnection myConnection = new SqlConnection(DBConn))
+            {
+
+
+                //Query for getting Count
+                string QueryCnt = "select count(*) from dbo.Customer";
+                string QueryCntSD = "select count(*) from Service_T";
+                string QueryCntMV = "select count(*) from Moving";
+
+                //Execute Queries and save results into variables
+                SqlCommand CmdCnt = myConnection.CreateCommand();
+                CmdCnt.CommandText = QueryCnt;
+                SqlCommand CmdCntSD = myConnection.CreateCommand();
+                CmdCntSD.CommandText = QueryCntSD;
+                SqlCommand CmdCntMV = myConnection.CreateCommand();
+                CmdCntMV.CommandText = QueryCntMV;
+
+
+                myConnection.Open();
+                Int32 CustomerCnt = (Int32)CmdCnt.ExecuteScalar();
+                int count = CustomerCnt - 1;
+                Int32 SDCnt = (Int32)CmdCntSD.ExecuteScalar();
+                int sdCount = SDCnt;
+                Int32 moveCount = (Int32)CmdCntMV.ExecuteScalar();
+                int mvCount = moveCount;
+                myConnection.Close();
+
+
+                moveTitleLst.SelectedIndex = mvCount - 1;
+                moveForDdl.SelectedIndex = count;
+                srvcDdl.SelectedIndex = sdCount - 1;
+
+                //string i = CustomerCnt.ToString();
+                //valDropDownList1.Items.Add(new ListItem(i));
             }
         }
 
@@ -190,6 +264,8 @@ namespace Lab3
                 workerCostTextBox.Text = String.Empty;
 
                 addedLbl.Text = "Auction Successfully Added";
+
+                Response.Redirect("bootstrapCompletionForm.aspx");
             }
         }
 

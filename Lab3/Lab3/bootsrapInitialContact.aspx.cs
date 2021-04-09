@@ -19,11 +19,11 @@ namespace Lab3
                 initialContactList.Items.Add("Via Phone");
                 initialContactList.Items.Add("Via Email");
 
-                interestList.Items.Add("Moving");
-                interestList.Items.Add("Auction");
-                interestList.Items.Add("Appraisal");
-                interestList.Items.Add("Consignment");
-                interestList.Items.Add("Combination");
+                //interestList.Items.Add("Moving");
+                //interestList.Items.Add("Auction");
+                //interestList.Items.Add("Appraisal");
+                //interestList.Items.Add("Consignment");
+                //interestList.Items.Add("Combination");
 
                 ifAuctionDropDownList.Items.Add("N/A");
                 ifAuctionDropDownList.Items.Add("Bringing Items Themeselves");
@@ -131,8 +131,8 @@ namespace Lab3
                     MyCommand.Parameters.AddWithValue("@Discovered", dscvrdtxtbox.Text);
 
                     MyCommand.Parameters.AddWithValue("@CustomerPhone", addCPhone.Text);
-                    MyCommand.Parameters.AddWithValue("@CustomerInterest", interestList.SelectedValue);
-                    Application["CustomerInterest"] = interestList.SelectedValue;
+                    MyCommand.Parameters.AddWithValue("@CustomerInterest", interestListTextBox.Text);
+                    Application["CustomerInterest"] = interestListTextBox.Text;
 
                     MyCommand.Parameters.AddWithValue("@CustomerEmail", addCEmail.Text);
                     Application["CustomerEmail"] = addCEmail.Text;
@@ -178,7 +178,7 @@ namespace Lab3
 
                     addedLbl.Text = "Customer Successully Added";
 
-
+                    Response.Redirect("bootstrapAddService.aspx");
 
                 }
 
@@ -216,6 +216,41 @@ namespace Lab3
             whatIsBeingSoldTxtBox.Text = String.Empty;
             addDeadlineTxtBox.Text = String.Empty;
             addAddressTxtBox.Text = String.Empty;
+        }
+
+        protected void auctionCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (auctionCheckBox.Checked)
+            {
+                interestListTextBox.Text = "Auction";
+                ifAuctionLbl.Visible = true;
+                ifAuctionDropDownList.Visible = true;
+                howMuchToSellLbl.Visible = true;
+                howMuchDropDownList.Visible = true;
+                whatIsBeingSoldLbl.Visible = true;
+                whatIsBeingSoldTxtBox.Visible = true;
+
+
+            }
+        }
+
+        protected void moveCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (moveCheckbox.Checked)
+            {
+                interestListTextBox.Text = "Moving";
+                ifMovingLbl.Visible = true;
+                fromtxtBox.Visible = true;
+                toAddressLbl.Visible = true;
+                toTxtBox.Visible = true;
+                downsizingLbl.Visible = true;
+                downsizeDropDownList.Visible = true;
+                sellingEstateLbl.Visible = true;
+                estateDropDownList.Visible = true;
+
+
+            }
+           
         }
     }
 }

@@ -20,7 +20,13 @@
     <fieldset>
         <legend>Service Order Form</legend>
         <asp:Label ID="nameLbl" runat="server" Text="Customer Name:"></asp:Label>
-        <asp:TextBox ID="custNameTextBox" runat="server" Visible="false"></asp:TextBox>
+        <asp:DropDownList 
+            ID="custDropDownList" 
+            runat="server"
+            DataSourceID ="dtaSrcCust"
+            DataTextField="CustomerName"
+            DataValueField="CustomerID" class="form-control" Enabled="false"
+            ></asp:DropDownList>
         <br />
         <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email:"></asp:Label>
         <asp:TextBox ID="emailRequestTxtBox" runat="server" Visible="false"></asp:TextBox>
@@ -30,15 +36,29 @@
         <br />
         <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
             <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
-            <br />
+        <br />
+        <asp:Label ID="srvcLbl" runat="server" Text="Service Description:"></asp:Label>
+        <asp:DropDownList 
+            ID="srvcDropDownList" 
+            runat="server"
+            DataSourceID ="dtaSrcSrvc"
+            DataTextField="ServiceDescription"
+            DataValueField="ServiceID"  Enabled="false" class="form-control"
+            ></asp:DropDownList>
+        
+        <br />
+        <br />
+            <%--<br />
             <asp:Label ID="dateLastModifiedLbl" runat="server" Text="Last Updated"></asp:Label>
             <asp:TextBox ID="dateLastModifiedTxtBox" runat="server" class="form-control" TextMode="Date"></asp:TextBox>
                 <%--<asp:RequiredFieldValidator ID="RequiredFieldValidatorDateLastModified" ControlToValidate="dateLastModifiedTxtBox" runat="server" ErrorMessage="Last Update Info Required" ForeColor="Red"></asp:RequiredFieldValidator>--%>
-            <br />
+            <%--<br />
             <asp:Label ID="srvcDescriptionLbl" runat="server" Text="Service Description"></asp:Label>
             <asp:TextBox ID="srvcDescriptionTxtBox" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorSrvcDescription" ControlToValidate="srvcDescriptionTxtBox" runat="server" ErrorMessage="Service Description Required" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
+            <br />--%>
+        <%--<asp:Button ID="continueBtn" runat="server" Text="Continue ->" CssClass="btn btn-secondary" OnClick="continueBtn_Click" />--%>
+       <%-- <br />--%>
         <asp:Label ID="srvcTcktName" runat="server" Text="Service Ticket Name:"></asp:Label>
         <asp:TextBox ID="tcktNameTxtBox" runat="server" class="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="tcktNameRequiredFieldValidator" ControlToValidate="tcktNameTxtBox" runat="server" ErrorMessage="Ticket Name Required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -52,24 +72,7 @@
             DataValueFIeld ="TicketStatus" class="form-control"
             ></asp:DropDownList>
         <br />
-        <asp:Label ID="custLbl" runat="server" Text="Customer:"></asp:Label>
-        <asp:DropDownList 
-            ID="custDropDownList" 
-            runat="server"
-            DataSourceID ="dtaSrcCust"
-            DataTextField="CustomerName"
-            DataValueField="CustomerID" class="form-control"
-            ></asp:DropDownList>
-        <br />
-        <asp:Label ID="srvcLbl" runat="server" Text="Service:"></asp:Label>
-        <asp:DropDownList 
-            ID="srvcDropDownList" 
-            runat="server"
-            DataSourceID ="dtaSrcSrvc"
-            DataTextField="ServiceDescription"
-            DataValueField="ServiceID" class="form-control"
-            ></asp:DropDownList>
-        <br />
+        
         <asp:Label ID="empLbl" runat="server" Text="Employee:"></asp:Label>
         <asp:DropDownList 
             ID="empDropDownList"
@@ -102,7 +105,7 @@
         <asp:Label ID="addSrvcList" runat="server" Text="Additional Services:"></asp:Label>
         <asp:DropDownList ID="addServicesDDL" DataTextField="AddServices" DataValueField="AddServices" runat="server" class="form-control"></asp:DropDownList>
         <br />
-        <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false" class="form-control"></asp:TextBox>
+        <asp:TextBox ID="serviceTypeTxtBox" runat="server" class="form-control" Visible="false"></asp:TextBox>
         <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>
         <asp:Button ID="clearBtn" runat="server" Text="Clear Fields" class="btn btn-success btn-sm" OnClick="clearBtn_Click" CausesValidation="false"/>
         <asp:Button ID="createSrvcTckt" runat="server" Text="Complete Service Request" class="btn btn-warning" OnClick="createSrvcTckt_Click"/>

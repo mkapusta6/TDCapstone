@@ -130,6 +130,8 @@ namespace Lab3
                 addNotesTextBox.Text = String.Empty;
 
                 auctionAddLbl.Text = "Auction Completed Successfully";
+
+                Response.Redirect("dashboardItems.aspx");
             }
         }
 

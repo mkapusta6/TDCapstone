@@ -119,8 +119,7 @@ $(function()
 </asp:Content>
 
 <asp:Content ID="toDoListContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Push Notification:
-        <asp:Label ID="pushNotificationLabel" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+    
    <%-- <link rel="stylesheet" type="text/css" href="assets/todoList.css">
    <div class="page-content page-container" id="page-content">
     <div class="padding">
@@ -200,22 +199,54 @@ todoListInput.val("");
     </asp:Content>
 
 <asp:Content ID="buttonTemplateContent" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-    <div class="form-group row">
-  <div class="col-xs-2">
+    Push Notification:
+        <asp:Label ID="pushNotificationLabel" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+    <br />
+    <asp:Button ID="notificationBtn" runat="server" Text="View Service Requests" OnClick="notificationBtn_Click" CssClass="btn btn-secondary" Width="183px" />
+
+    <br />
+
+    
     <label for="TextBox1">Search For Customer</label>
-     <asp:TextBox ID="searchBox" runat="server" CssClass="form-control"></asp:TextBox>
+     <asp:TextBox ID="searchBox" runat="server" CssClass="form-control" style="left: 0px; top: 0px; width: 20%"></asp:TextBox>
       <asp:Button ID="searchButton" runat="server" Text="Search" CssClass="btn btn-secondary" OnClick="searchButton_Click" />
+      <br />
+       <br />
+    <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Customer" OnClick="formsBtn_Click" CausesValidation="false"/>
 
-      <asp:Button ID="notificationBtn" runat="server" Text="View Service Requests" OnClick="notificationBtn_Click" CssClass="btn btn-secondary" />
 
+         <div class="text-center">
+    
       <asp:GridView ID="searchForCustGrd" runat="server" class="table table-bordered table-condensed"></asp:GridView>
+        
+        <asp:GridView 
+          ID="RequestGrid" 
+          runat="server"
+          class="table table-bordered table-condensed"
+          DataKeyNames="RequestID"
+          emptydatatext="No data selected"
+          autogeneratecolumns="false"
+          onrowcommand="RequestGrid_RowCommand">
+
+          <Columns>
+              <asp:BoundField DataField="RequestID" HeaderText="RequestID" visible="false" ReadOnly="true" />
+              <asp:BoundField DataField="EmailRequest" HeaderText="Email" SortExpression="Email" />
+              <asp:BoundField DataField="ServiceType" HeaderText="Service Type" SortExpression="Service Type" />
+              <asp:BoundField DataField="R_Description" HeaderText="Service Description" SortExpression="Service Description" />
+              <asp:BoundField DataField="R_Date" HeaderText="Date" SortExpression="Date" />
+              <asp:buttonfield buttontype="Button" commandname="Select" headertext="Complete Request" Text="Select" ControlStyle-CssClass="btn-success" />
+              <asp:buttonfield buttontype="Button" commandname="Edit" headertext="Edit Ticket" Text="Edit" ControlStyle-CssClass="btn-warning"/>
+          </Columns>
+      </asp:GridView>
+
             <asp:Label ID="statusLbl" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
             <asp:Label ID="statusLbl2" runat="server" Text="" ForeColor="Green" Font-Bold="true"></asp:Label>
             <asp:Label ID="statusLbl3" runat="server" ForeColor="Red" Text="" Font-Bold="true"></asp:Label>
-  </div>
-             </div>
+        </div>
 
-    <asp:Button ID="formsBtn" runat="server" class="btn-primary btn-lg btn-warning" style="width: 219px" Text="+ New Form" OnClick="formsBtn_Click" CausesValidation="false"/>
+    <br />
+
+    
 
 
 

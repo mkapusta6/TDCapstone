@@ -28,6 +28,8 @@
 
 
             <div class="form-group">
+                <fieldset>
+                    <legend>Basic</legend>
                 <table>
 
                     <tr>
@@ -48,6 +50,13 @@
                             <asp:RequiredFieldValidator ID="RequiredLastName" ControlToValidate="addCustLastName" runat="server" ErrorMessage="Last Name Required" ForeColor="Red"></asp:RequiredFieldValidator></td>
                     </tr>
                 </table>
+                    <br />
+
+                     <asp:Label ID="ifAuction" runat="server" Text="Service Interested In:"></asp:Label>
+        <asp:CheckBox ID="auctionCheckBox" runat="server" AutoPostBack="true" CssClass="form-control" Text="Auction" OnCheckedChanged="auctionCheckBox_CheckedChanged" />
+        <br />
+        <asp:CheckBox ID="moveCheckbox" runat="server" CssClass="form-control" Text="Move" AutoPostBack="true" OnCheckedChanged="moveCheckbox_CheckedChanged" />
+        <br />
                 <br />
 
                 <table>
@@ -74,28 +83,34 @@
                 <%--<asp:CompareValidator ID="CompareValidatorPhone" ControlToValidate="addCPhone" runat="server" ErrorMessage="Invalid Number" ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>--%>
 
                 <br />
-                <asp:Label ID="interestLbl" runat="server" Text="Service Interested In" for="interestList"></asp:Label>
-                <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest" runat="server" class="form-control"></asp:DropDownList>
+                <asp:Label ID="interestLbl" runat="server" Text="Service Interested In" for="interestList" Visible="false"></asp:Label>
+                <%--<asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest" runat="server" class="form-control"></asp:DropDownList>--%>
+                    <asp:TextBox ID="interestListTextBox" runat="server" CssClass="form-control" Visible="false"></asp:TextBox>
                 <br />
-                <asp:Label ID="ifAuctionLbl" runat="server" Text="If Auction:" for="ifAuctionDropDownList"></asp:Label>
-                <asp:DropDownList ID="ifAuctionDropDownList" DataTextField="IfAuction" DataValueField="IfAuction" runat="server" class="form-control"></asp:DropDownList>
-                <br />
-                <asp:Label ID="ifMovingLbl" runat="server" Text="If Moving:"></asp:Label>
-                From Address:
-            <asp:TextBox ID="fromtxtBox" runat="server" CssClass="form-control" Placeholder="From Address"></asp:TextBox>
+                </fieldset>
 
-                To Address:
-            <asp:TextBox ID="toTxtBox" runat="server" CssClass="form-control" Placeholder="To Address"></asp:TextBox>
                 <br />
-                <asp:Label ID="downsizingLbl" runat="server" Text="Downsizing?"></asp:Label>
-                <asp:DropDownList ID="downsizeDropDownList" DataTextField="Downsizing" DataValueField="Downsizing" runat="server" CssClass="form-control"></asp:DropDownList>
-                <asp:Label ID="sellingEstateLbl" runat="server" Text="Selling Estate?"></asp:Label>
-                <asp:DropDownList ID="estateDropDownList" DataTextField="SellingEstate" DataValueField="SellingEstate" runat="server" CssClass="form-control"></asp:DropDownList>
-                <asp:Label ID="howMuchToSellLbl" runat="server" Text="Amount Being Sold?"></asp:Label>
-                <asp:DropDownList ID="howMuchDropDownList" DataTextField="AmountToBeSold" DataValueField="AmountToBeSold" runat="server" CssClass="form-control"></asp:DropDownList>
+                <fieldset>
+                <legend>Additional</legend>
+                <asp:Label ID="ifAuctionLbl" runat="server" Text="Auction Options:" for="ifAuctionDropDownList" Visible="false"></asp:Label>
+                <asp:DropDownList ID="ifAuctionDropDownList" DataTextField="IfAuction" DataValueField="IfAuction" runat="server" class="form-control" Visible="false"></asp:DropDownList>
                 <br />
-                <asp:Label ID="whatIsBeingSoldLbl" runat="server" Text="What Is Being Sold?" for="whatIsBeingSoldTxtBox"></asp:Label>
-                <asp:TextBox ID="whatIsBeingSoldTxtBox" runat="server" CssClass="form-control" Placeholder="What Is Being Sold"></asp:TextBox>
+                <asp:Label ID="ifMovingLbl" runat="server" Text="From Address:" Visible="false"></asp:Label>
+            <asp:TextBox ID="fromtxtBox" runat="server" CssClass="form-control" Placeholder="From Address" Visible="false"></asp:TextBox>
+                <asp:Label ID="toAddressLbl" runat="server" Text="To Address:" Visible="false"></asp:Label>
+
+                
+            <asp:TextBox ID="toTxtBox" runat="server" CssClass="form-control" Placeholder="To Address" Visible="false"></asp:TextBox>
+                <br />
+                <asp:Label ID="downsizingLbl" runat="server" Text="Downsizing?" Visible="false"></asp:Label>
+                <asp:DropDownList ID="downsizeDropDownList" DataTextField="Downsizing" DataValueField="Downsizing" runat="server" CssClass="form-control" Visible="false"></asp:DropDownList>
+                <asp:Label ID="sellingEstateLbl" runat="server" Text="Selling Estate?" Visible="false"></asp:Label>
+                <asp:DropDownList ID="estateDropDownList" DataTextField="SellingEstate" DataValueField="SellingEstate" runat="server" CssClass="form-control" Visible="false"></asp:DropDownList>
+                <asp:Label ID="howMuchToSellLbl" runat="server" Text="Amount Being Sold?" Visible="false"></asp:Label>
+                <asp:DropDownList ID="howMuchDropDownList" DataTextField="AmountToBeSold" DataValueField="AmountToBeSold" runat="server" CssClass="form-control" Visible="false"></asp:DropDownList>
+                <br />
+                <asp:Label ID="whatIsBeingSoldLbl" runat="server" Text="What Is Being Sold?" for="whatIsBeingSoldTxtBox" Visible="false"></asp:Label>
+                <asp:TextBox ID="whatIsBeingSoldTxtBox" runat="server" CssClass="form-control" Placeholder="What Is Being Sold" Visible="false"></asp:TextBox>
                 <br />
                 <asp:Label ID="deadlineLbl" runat="server" Text="Desired Deadline Date:"></asp:Label>
                 <asp:TextBox ID="addDeadlineTxtBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
@@ -129,6 +144,7 @@
                 <asp:Label ID="currentDateLbl" runat="server" Text="Date Created"></asp:Label>
                 <asp:TextBox ID="currentDateTxtBox" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="currentDateRequiredFieldValidator" runat="server" ControlToValidate="currentDateTxtBox" ForeColor="Red" ErrorMessage="Date Required" ></asp:RequiredFieldValidator>
+                </fieldset>
                 <br />
                <%-- <asp:Button ID="addCustBtn" runat="server" Text="Add Customer" CssClass="btn btn-warning" OnClick="addCustBtn_Click" />--%>
                 <asp:Button ID="populateBtn" runat="server" Text="Populate Fields" CssClass="btn btn-success btn-sm" CausesValidation="false" OnClick="populateBtn_Click" />

@@ -13,6 +13,19 @@ namespace Lab3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                DateTime now = DateTime.Now;
+
+                string reqDate = now.ToString();
+
+                r_DateLbl.Text = "Request Date: " + reqDate;
+                r_DateTxtBox.Text = reqDate;
+            }
+
+
+
+
             if (Application["CustomerInterest"] != null)
             {
                 string customerInterest = Application["CustomerInterest"].ToString();
@@ -20,6 +33,34 @@ namespace Lab3
                 serviceTypeLbl.Text = "Service Type: " + customerInterest;
 
             }
+
+            if (Application["ServiceType"] != null)
+            {
+                string serviceType = Application["ServiceType"].ToString();
+                serviceTypeTxtBox.Text = serviceType;
+            }
+
+
+            if (Application["CustomerName"] != null)
+            {
+                string custName = Application["CustomerName"].ToString();
+                nameLbl.Text = "Customer Name: " + custName;
+                custNameTextBox.Text = custName;
+            }
+
+            if (Application["CustomerEmail"] != null)
+            {
+                string custEmail = Application["CustomerEmail"].ToString();
+                emailRequestLbl.Text = "Customer Email: " + custEmail;
+                emailRequestTxtBox.Text = custEmail;
+            }
+
+            //if (Application["CustomerDate"] != null)
+            //{
+            //    string reqDate = Application["CustomerDate"].ToString();
+            //    r_DateLbl.Text = "Request Date: " + reqDate;
+            //    r_DateTxtBox.Text = reqDate;
+            //}
         }
 
         protected void addServiceBtn_Click(object sender, EventArgs e)
@@ -28,31 +69,46 @@ namespace Lab3
             srvcDescriptionTxtBox.Text = HttpUtility.HtmlEncode(srvcDescriptionTxtBox.Text);
 
 
-            String DBConn;
+            
 
-            DBConn = WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString;
-
-            using (SqlConnection myConnection = new SqlConnection(DBConn))
+            String DBConnection;
+            DBConnection = WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString;
+            using (SqlConnection myConection = new SqlConnection(DBConnection))
             {
-                SqlCommand MyCommand = new SqlCommand("INSERT INTO Service_T (ServiceType, dateLastModified, " +
-                    "ServiceDescription) Values (@ServiceType, @dateLastModified, @ServiceDescription)", myConnection);
 
-                MyCommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+
+                SqlCommand otherCommand = new SqlCommand("INSERT INTO Service_T (ServiceType, dateLastModified, " +
+                       "ServiceDescription) Values (@ServiceType, @dateLastModified, @ServiceDescription)", myConection);
+
+                SqlCommand requestcommand = new SqlCommand("INSERT INTO Request(EmailRequest, ServiceType, R_Description, R_Date)" +
+                    " VALUES (@EmailRequest, @ServiceType, @R_Description, @R_Date)", myConection);
+
+
+
+
+                otherCommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
                 Application["ServiceType"] = serviceTxtBox.Text;
-                MyCommand.Parameters.AddWithValue("@dateLastModified", dateLastModifiedTxtBox.Text);
-                MyCommand.Parameters.AddWithValue("@ServiceDescription", srvcDescriptionTxtBox.Text);
+                otherCommand.Parameters.AddWithValue("@dateLastModified", dateLastModifiedTxtBox.Text);
+                otherCommand.Parameters.AddWithValue("@ServiceDescription", srvcDescriptionTxtBox.Text);
                 Application["ServiceDescription"] = srvcDescriptionTxtBox.Text;
 
-                myConnection.Open();
-                MyCommand.ExecuteNonQuery();
-                addedLbl.Text = "Service Successfully Created.";
+
+
+
+
+                requestcommand.Parameters.AddWithValue("@EmailRequest", emailRequestTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@ServiceType", serviceTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("R_Description", srvcDescriptionTxtBox.Text);
+                requestcommand.Parameters.AddWithValue("@R_Date", DateTime.Now);
+
+                myConection.Open();
+                otherCommand.ExecuteNonQuery();
+                requestcommand.ExecuteNonQuery();
+                //addedLbl.Text = "Service Successfully Created.";
+                myConection.Close();
                 Response.Redirect("bootstrapCreateNewTicket.aspx");
             }
-            dateLastModifiedTxtBox.Text = String.Empty;
-            srvcDescriptionTxtBox.Text = String.Empty;
-            serviceTypeLbl.Text = String.Empty;
-            serviceTxtBox.Text = String.Empty;
-        }
+    }
 
         protected void populateServiceBtn_Click(object sender, EventArgs e)
         {

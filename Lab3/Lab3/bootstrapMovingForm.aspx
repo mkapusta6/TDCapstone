@@ -18,6 +18,19 @@
 
             <div class="form-group">
     <fieldset>
+        <asp:Label ID="nameLbl" runat="server" Text="Customer Name:"></asp:Label>
+        <asp:DropDownList ID="customerDropDownList" DataSourceID="custDtaSrc" runat="server" DataTextField="CustomerName" DataValueField="CustomerID" Enabled="false"></asp:DropDownList>
+
+        <br />
+        <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email:"></asp:Label>
+        <asp:TextBox ID="emailRequestTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="r_DateLbl" runat="server" Text="Customer Date"></asp:Label>
+        <asp:TextBox ID="r_DateTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
+            <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
         <asp:Label ID="moveNameLbl" runat="server" Text="Move Name:"></asp:Label>
         <asp:TextBox ID="moveNameTxtBox" runat="server" CssClass="form-control"></asp:TextBox>
         <br />
@@ -72,9 +85,6 @@
         <br />
         <asp:Label ID="notesLabel" runat="server" Text="Additional Notes:"></asp:Label>
         <asp:TextBox ID="notesTextBox" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
-        <br />
-        <asp:Label ID="customerLabel" runat="server" Text="Customer:"></asp:Label>
-        <asp:DropDownList ID="customerDropDownList" DataSourceID="custDtaSrc" runat="server" DataTextField="CustomerName" DataValueField="CustomerID" CssClass="form-control"></asp:DropDownList>
         <br />
         <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false"></asp:TextBox>
         <asp:Button ID="popBtn" runat="server" Text="Populate Fields" class="btn btn-success btn-sm" OnClick="popBtn_Click" CausesValidation="false"/>

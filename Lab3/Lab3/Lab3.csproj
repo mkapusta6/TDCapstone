@@ -94,7 +94,7 @@
     <Content Include="AuctionPage.aspx" />
     <Content Include="CreateNewTicketPage.aspx" />
     <Content Include="CustomerLogin.aspx" />
-    <Content Include="EditTicketPage.aspx" />
+    <Content Include="bootstrapEditTicketPage.aspx" />
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\icon-font.min.css" />
     <Content Include="images\amazing-solid-green-background.jpg" />
@@ -339,12 +339,12 @@
     <Compile Include="CustomerLogin.aspx.designer.cs">
       <DependentUpon>CustomerLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditTicketPage.aspx.cs">
-      <DependentUpon>EditTicketPage.aspx</DependentUpon>
+    <Compile Include="bootstrapEditTicketPage.aspx.cs">
+      <DependentUpon>bootstrapEditTicketPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditTicketPage.aspx.designer.cs">
-      <DependentUpon>EditTicketPage.aspx</DependentUpon>
+    <Compile Include="bootstrapEditTicketPage.aspx.designer.cs">
+      <DependentUpon>bootstrapEditTicketPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="InitialContactPage.aspx.cs">
       <DependentUpon>InitialContactPage.aspx</DependentUpon>

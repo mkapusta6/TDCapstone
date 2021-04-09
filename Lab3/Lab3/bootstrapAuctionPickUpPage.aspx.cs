@@ -53,7 +53,7 @@ namespace Lab3
                 MyCommand.Parameters.AddWithValue("@AuctionBringIn", bringInTxtBox.Text);
                 MyCommand.Parameters.AddWithValue("@AuctionPickUp", pickUpTextBox.Text);
                 MyCommand.Parameters.AddWithValue("@CustomerID", custDropDownList1.SelectedValue);
-                MyCommand.Parameters.AddWithValue("@AuctionID", custDropDownList1.SelectedValue);
+                MyCommand.Parameters.AddWithValue("@AuctionID", auctionTitleList.SelectedValue);
                 MyCommand.Parameters.AddWithValue("@ServiceTicketID", sTicketDropDownList.SelectedValue);
                 //Application["CustomerInterest"] = interestList.SelectedValue;
 
@@ -85,6 +85,8 @@ namespace Lab3
                 cosignorTxtBox.Text = String.Empty;
 
                 addedLbl.Text = "Form has been successfully submitted";
+
+                Response.Redirect("bootstrapCompletionForm.aspx");
             }
         }
     }

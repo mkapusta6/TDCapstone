@@ -58,11 +58,77 @@ namespace Lab3
                 valDropDownList1.Items.Add(new ListItem("Medium"));
                 valDropDownList1.Items.Add(new ListItem("Low"));
 
+                DateTime now = DateTime.Now;
+
+                string reqDate = now.ToString();
+
+                r_DateLbl.Text = "Request Date: " + reqDate;
+                r_DateTxtBox.Text = reqDate;
+
+                String DBConn;
+
+                DBConn = WebConfigurationManager.ConnectionStrings["Lab3"].ConnectionString;
+
+
+                using (SqlConnection myConnection = new SqlConnection(DBConn))
+                {
+
+
+                    //Query for getting Count
+                    string QueryCnt = "select count(*) from dbo.Customer";
+
+                    //Execute Queries and save results into variables
+                    SqlCommand CmdCnt = myConnection.CreateCommand();
+                    CmdCnt.CommandText = QueryCnt;
+
+
+                    myConnection.Open();
+                    Int32 CustomerCnt = (Int32)CmdCnt.ExecuteScalar();
+                    int count = CustomerCnt - 1;
+                    myConnection.Close();
+
+
+
+                    customerDropDownList.SelectedIndex = count;
+                    //string i = CustomerCnt.ToString();
+                    //valDropDownList1.Items.Add(new ListItem(i));
+                }
+
+                
 
 
 
 
+            }
 
+
+            if (Application["CustomerInterest"] != null)
+            {
+                string customerInterest = Application["CustomerInterest"].ToString();
+                serviceTxtBox.Text = customerInterest;
+                serviceTypeLbl.Text = "Service Type: " + customerInterest;
+
+            }
+
+            if (Application["ServiceType"] != null)
+            {
+                string serviceType = Application["ServiceType"].ToString();
+                serviceTypeTxtBox.Text = serviceType;
+            }
+
+
+            if (Application["CustomerName"] != null)
+            {
+                string custName = Application["CustomerName"].ToString();
+                //nameLbl.Text = "Customer Name: " + custName;
+                //custNameTextBox.Text = custName;
+            }
+
+            if (Application["CustomerEmail"] != null)
+            {
+                string custEmail = Application["CustomerEmail"].ToString();
+                emailRequestLbl.Text = "Customer Email: " + custEmail;
+                emailRequestTxtBox.Text = custEmail;
             }
         }
 
@@ -142,6 +208,8 @@ namespace Lab3
                 notesTextBox.Text = String.Empty;
 
                 addedLbl.Text = "Form Successfully Submitted";
+
+                Response.Redirect("bootstrapMoveSchedulePage.aspx");
             }
         }
     }

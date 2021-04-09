@@ -19,7 +19,16 @@
 
             <div class="form-group">
             <fieldset>
-            <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
+            <asp:Label ID="nameLbl" runat="server" Text="Customer Name:"></asp:Label>
+        <asp:TextBox ID="custNameTextBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email:"></asp:Label>
+        <asp:TextBox ID="emailRequestTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="r_DateLbl" runat="server" Text="Customer Date"></asp:Label>
+        <asp:TextBox ID="r_DateTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
             <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
             <br />
             <asp:Label ID="dateLastModifiedLbl" runat="server" Text="Last Updated"></asp:Label>
@@ -30,6 +39,7 @@
             <asp:TextBox ID="srvcDescriptionTxtBox" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorSrvcDescription" ControlToValidate="srvcDescriptionTxtBox" runat="server" ErrorMessage="Service Description Required" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
+                <asp:TextBox ID="serviceTypeTxtBox" runat="server" Visible="false" class="form-control"></asp:TextBox>
 
                 
             <%--<asp:Button ID="addServiceBtn" runat="server" Text="Save And Continue To Next Part Of Service Form" OnClick="addServiceBtn_Click" class="btn btn-warning" />--%>

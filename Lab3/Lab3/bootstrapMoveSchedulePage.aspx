@@ -19,14 +19,26 @@
         
         <legend>Move Form</legend>
     <%--use application to get address and look at date--%>
+        <asp:Label ID="nameLbl" runat="server" Text="Customer Name:"></asp:Label>
+        <asp:TextBox ID="custNameTextBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="emailRequestLbl" runat="server" Text="Customer Email:"></asp:Label>
+        <asp:TextBox ID="emailRequestTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="r_DateLbl" runat="server" Text="Customer Date"></asp:Label>
+        <asp:TextBox ID="r_DateTxtBox" runat="server" Visible="false"></asp:TextBox>
+        <br />
+        <asp:Label ID="serviceTypeLbl" runat="server" Text="" ></asp:Label>
+            <asp:TextBox ID="serviceTxtBox" runat="server" Visible="false"></asp:TextBox>
+            <br />
         <asp:Label ID="moveNameLbl" runat="server" Text="Move Title:"></asp:Label>
-        <asp:DropDownList ID="moveTitleLst" runat="server" DataSourceID="dtaSrcMove" AutoPostBack="true" DataTextField="MoveName" DataValueField ="MovingID" CssClass="form-control"></asp:DropDownList>
+        <asp:DropDownList ID="moveTitleLst" runat="server" DataSourceID="dtaSrcMove" AutoPostBack="true" DataTextField="MoveName" DataValueField ="MovingID" CssClass="form-control" Enabled="false"></asp:DropDownList>
         <br />
         <asp:Label ID="moveForLbl" runat="server" Text="Move For:"></asp:Label>
-        <asp:DropDownList ID="moveForDdl" runat="server" DataSourceID="dtaSrcCust" DataTextField="CustomerName" DataValueField="CustomerID" CssClass="form-control"></asp:DropDownList>
+        <asp:DropDownList ID="moveForDdl" runat="server" DataSourceID="dtaSrcCust" DataTextField="CustomerName" DataValueField="CustomerID" CssClass="form-control" Enabled="false"></asp:DropDownList>
         <br />
         <asp:Label ID="srvcLbl" runat="server" Text="Service Ticket:"></asp:Label>
-        <asp:DropDownList ID="srvcDdl" runat="server" DataSourceID="date1Src" DataTextField="ServiceTicketName" DataValueField="ServiceTicketID" CssClass="form-control"></asp:DropDownList>
+        <asp:DropDownList ID="srvcDdl" runat="server" DataSourceID="date1Src" DataTextField="ServiceTicketName" DataValueField="ServiceTicketID" CssClass="form-control" Enabled="false"></asp:DropDownList>
         <br />
         <asp:Label ID="fromAddress" runat="server" Text="From Address:"></asp:Label>
         <asp:TextBox ID="fromTextBox" runat="server" CssClass="form-control"></asp:TextBox>

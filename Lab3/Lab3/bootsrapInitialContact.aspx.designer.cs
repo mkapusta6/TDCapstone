@@ -87,6 +87,33 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredLastName;
 
         /// <summary>
+        /// ifAuction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ifAuction;
+
+        /// <summary>
+        /// auctionCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox auctionCheckBox;
+
+        /// <summary>
+        /// moveCheckbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox moveCheckbox;
+
+        /// <summary>
         /// initialContactLbl control.
         /// </summary>
         /// <remarks>
@@ -159,13 +186,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label interestLbl;
 
         /// <summary>
-        /// interestList control.
+        /// interestListTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList interestList;
+        protected global::System.Web.UI.WebControls.TextBox interestListTextBox;
 
         /// <summary>
         /// ifAuctionLbl control.
@@ -202,6 +229,15 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox fromtxtBox;
+
+        /// <summary>
+        /// toAddressLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label toAddressLbl;
 
         /// <summary>
         /// toTxtBox control.

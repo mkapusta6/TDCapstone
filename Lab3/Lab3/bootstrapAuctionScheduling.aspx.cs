@@ -115,6 +115,8 @@ namespace Lab3
 
                 addedLbl.Text = "Auction Successfully Added";
 
+                Response.Redirect("bootstrapAuctionScheduling.aspx");
+
             }
         }
 

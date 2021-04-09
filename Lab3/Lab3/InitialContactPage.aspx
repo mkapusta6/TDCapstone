@@ -34,6 +34,7 @@
             <asp:Label ID="interestLbl" runat="server" Text="Service Interested In"></asp:Label>
             <asp:DropDownList ID="interestList" DataTextField="CustomerInterest" DataValueField="CustomerInterest"  runat="server" style="margin-left: 67px"></asp:DropDownList>
             <br />
+
             <asp:Label ID="ifAuctionLbl" runat="server" Text="If Auction:"></asp:Label>
             <asp:DropDownList ID="ifAuctionDropDownList" DataTextField="IfAuction" DataValueField="IfAuction" runat="server"></asp:DropDownList>
             <br />

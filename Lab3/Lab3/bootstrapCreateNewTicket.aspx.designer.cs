@@ -42,13 +42,13 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.Label nameLbl;
 
         /// <summary>
-        /// custNameTextBox control.
+        /// custDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox custNameTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList custDropDownList;
 
         /// <summary>
         /// emailRequestLbl control.
@@ -105,49 +105,22 @@ namespace Lab3
         protected global::System.Web.UI.WebControls.TextBox serviceTxtBox;
 
         /// <summary>
-        /// dateLastModifiedLbl control.
+        /// srvcLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label dateLastModifiedLbl;
+        protected global::System.Web.UI.WebControls.Label srvcLbl;
 
         /// <summary>
-        /// dateLastModifiedTxtBox control.
+        /// srvcDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateLastModifiedTxtBox;
-
-        /// <summary>
-        /// srvcDescriptionLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label srvcDescriptionLbl;
-
-        /// <summary>
-        /// srvcDescriptionTxtBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox srvcDescriptionTxtBox;
-
-        /// <summary>
-        /// RequiredFieldValidatorSrvcDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSrvcDescription;
+        protected global::System.Web.UI.WebControls.DropDownList srvcDropDownList;
 
         /// <summary>
         /// srvcTcktName control.
@@ -193,42 +166,6 @@ namespace Lab3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList tcktStatusDropDownList;
-
-        /// <summary>
-        /// custLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label custLbl;
-
-        /// <summary>
-        /// custDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList custDropDownList;
-
-        /// <summary>
-        /// srvcLbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label srvcLbl;
-
-        /// <summary>
-        /// srvcDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList srvcDropDownList;
 
         /// <summary>
         /// empLbl control.
